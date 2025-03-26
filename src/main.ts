@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import "@/assets/style/main.less";
 import App from './App.vue'
 import router from "./router";
+import '@/assets/style/iconfont/iconfont.css';
 // 状态机
 import {createPinia} from "pinia";
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'

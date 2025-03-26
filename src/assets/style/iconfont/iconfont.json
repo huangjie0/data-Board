@@ -1,0 +1,23 @@
+{
+  "id": "4871827",
+  "name": "DATA-BOARD",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33987007",
+      "name": "店铺",
+      "font_class": "dianpu",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "43598581",
+      "name": "深度思考",
+      "font_class": "shendusikao",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    }
+  ]
+}

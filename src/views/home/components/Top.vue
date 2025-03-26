@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-top data-w-h">
-        11
+        <i class="iconfont icon-dianpu"></i>
     </div>
 </template>
 <script setup lang="ts">
