@@ -1,7 +1,8 @@
 import { UserConfig, ConfigEnv, loadEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
+import legacy from "@vitejs/plugin-legacy";
 import path from 'path'
+
 const pathSrc = path.resolve(__dirname, "src")
 //自动导入插件
 import AutoImport from "unplugin-auto-import/vite"
@@ -11,14 +12,20 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+  // 获取环境变量
+  const env = loadEnv(mode, process.cwd());
   return {
     resolve: {
       alias: {
         "@": pathSrc,
       },
     },
+    base: `${env.VITE_BASE_PATH}/`,
     plugins: [
       vue(),
+      legacy({
+        targets: ["chrome 72"]
+      }),
       AutoImport({
         // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
         imports:["vue"],
@@ -34,21 +41,18 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         resolvers: [ElementPlusResolver()]
       }),
     ],
+    build: {
+      sourcemap: false,
+      target: "es5",
+      rollupOptions: {
+        output: {
+          format: "iife", // 使用兼容旧浏览器的格式
+        },
+      },
+    },
     server:{
       host: '0.0.0.0',//指定服务器应该监听哪个 IP 地址
-      port: 3000,//指定服务器端口号
-      strictPort: true,//端口被占用直接退出
-      https: false,//启用 TLS + HTTP/2
-      open: false,//在开发服务器启动时自动在浏览器中打开应用程序
-      // proxy:{
-      //   //配置自定义代理规则
-      //   [env.VITE_APP_BASE_API]:{
-      //     target: env.VITE_APP_DEV_URL,
-      //     changeOrigin: true,
-      //     rewrite: path => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), "")
-      //   }
-      // }
-      
+      port:10010     
     },
     css: {
       preprocessorOptions: {
