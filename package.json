@@ -4,17 +4,30 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "vite --open",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "build:production": "vue-tsc && vite build --mode production",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "@element-plus/icons-vue": "^2.3.1",
+    "autofit.js": "^3.2.5",
+    "axios": "^1.8.4",
+    "element-plus": "^2.9.7",
+    "less": "^4.2.2",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@types/node": "^22.13.13",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.7.2",
+    "unplugin-auto-import": "^19.1.1",
+    "unplugin-vue-components": "^28.4.1",
     "vite": "^6.2.0",
     "vue-tsc": "^2.2.4"
   }

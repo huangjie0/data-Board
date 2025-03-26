@@ -1,5 +1,22 @@
 import { createApp } from 'vue'
-import './style.css'
+import "@/assets/style/main.less";
 import App from './App.vue'
+import router from "./router";
+// 状态机
+import {createPinia} from "pinia";
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.directive('focus', (el:any, binding:any) => {
+    console.log(binding.value);
+    el.focus()
+})
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+}
+
+app.use(router);
+app.use(createPinia())
+app.mount('#app');
