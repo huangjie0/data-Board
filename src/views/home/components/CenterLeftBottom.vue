@@ -1,9 +1,12 @@
 <template>
     <div class="data-home-center-left-bottom data-w-h">
-        444
+        <TitleCard title="本年已完成可研项目数量" icon-class="icon-dianpu">
+            
+        </TitleCard>
     </div>
 </template>
 <script setup lang="ts">
+import TitleCard from '@/components/TitleCard.vue';
 
 </script>
 <style lang="less" scoped>

@@ -1,9 +1,10 @@
 <template>
     <div class="data-home-center-right data-w-h">
-        222
+        <TitleCard title="本年在途项目一览" icon-class="icon-shendusikao"></TitleCard>
     </div>
 </template>
 <script setup lang="ts">
+import TitleCard from '@/components/TitleCard.vue';
 
 </script>
 <style lang="less" scoped>

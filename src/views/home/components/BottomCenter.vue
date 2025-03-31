@@ -1,9 +1,10 @@
 <template>
     <div class="data-home-bottom-center data-w-h">
-        888
+        <TitleCard title="可研批复平均时长" icon-class="icon-dianpu"></TitleCard>
     </div>
 </template>
 <script setup lang="ts">
+import TitleCard from '@/components/TitleCard.vue';
 
 </script>
 <style lang="less" scoped>
