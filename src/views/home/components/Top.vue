@@ -6,42 +6,44 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed,ref } from 'vue';
 import BackgroundCard from '@/components/BackgroundCard.vue';
 import { getTopData } from '@/api/home/index.ts'
+
+const topData = ref({})
 
 const countData = computed(()=>{
     return [
         {
-            number:102,
+            number:topData.value?.bnwtkyxmsl??0,
             unit:'个',
             text:'本年累计委托可研项目数量',
             color:'#06b6a9',
             iconClass:'icon-dianpu'
         },
         {
-            number:216,
+            number:topData.value?.bnywckyxmsl??0,
             unit:'个',
             text:'本年累计完成可研评审项目数量',
             color:'#0596c6',
             iconClass:'icon-dianpu'
         },
         {
-            number:198,
+            number:topData.value?.jzmqrcqxms??0,
             unit:'个',
             text:'截至目前仍超期项目数',
             color:'#9285eb',
             iconClass:'icon-dianpu'
         },
         {
-            number:135,
+            number:topData.value?.bnkypfpjsc??0,
             unit:'日',
             text:'本年可研批复平均时长',
             color:'#fdaa56',
             iconClass:'icon-shendusikao'
         },
         {
-            number:117,
+            number:topData.value?.bnztxmpjsc??0,
             unit:'日',
             text:'本年在途项目平均时长',
             color:'#18bdc2',
@@ -51,9 +53,8 @@ const countData = computed(()=>{
 })
 
 onMounted(async ()=>{
-    const res = await getTopData()
-    console.log('1111',res);
-    
+    const res:any = await getTopData()
+    topData.value = res
 })
 </script>
 <style lang="less" scoped>

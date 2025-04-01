@@ -5,7 +5,7 @@
             <span class="title-card-top-text">
                 {{ title }}
             </span>
-            <div class="right-value">
+            <div class="right-value data-f1">
                 <slot name="rightValue"></slot>
             </div>
         </div>
@@ -27,13 +27,14 @@ defineProps<Params>();
 .title-card{
     &-top{
         display: flex;
-        justify-content: space-around;
+        justify-content: start;
         align-items: center;
         height: 40px;
         border-bottom: 1px solid var(--vt-c-text-dark-2);
         &-icon{
             font-size: 25px;
             color: #0d867f;
+            padding: 0 10px;
         }
         &-text{
             font-size: 17px;
@@ -45,7 +46,7 @@ defineProps<Params>();
     }
     .right-value{
         height: 100%;
-        width: 50%;
+        padding-right: 10px;
         display: flex;
         justify-content: end;
         align-items: center;
