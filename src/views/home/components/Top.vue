@@ -53,7 +53,7 @@ const countData = computed(()=>{
 
 onMounted(async ()=>{
     const res:any = await getTopData();
-    if(res.code == 200) topData.value = res.data;
+    if(res.code == 200) topData.value = res.data[0];
 })
 </script>
 <style lang="less" scoped>
