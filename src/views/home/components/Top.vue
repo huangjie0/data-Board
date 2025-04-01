@@ -6,7 +6,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed,ref } from 'vue';
 import BackgroundCard from '@/components/BackgroundCard.vue';
 import { getTopData } from '@/api/home/index.ts'
 
@@ -53,8 +52,8 @@ const countData = computed(()=>{
 })
 
 onMounted(async ()=>{
-    const res:any = await getTopData()
-    topData.value = res
+    const res:any = await getTopData();
+    if(res.code == 200) topData.value = res.data;
 })
 </script>
 <style lang="less" scoped>

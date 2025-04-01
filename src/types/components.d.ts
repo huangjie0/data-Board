@@ -12,6 +12,8 @@ declare module 'vue' {
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElSegmented: typeof import('element-plus/es')['ElSegmented']
+    MyEcharts: typeof import('./../components/MyEcharts.vue')['default']
+    Pie: typeof import('./../components/Pie.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']

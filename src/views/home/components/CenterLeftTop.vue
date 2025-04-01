@@ -6,12 +6,13 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
+            <Pie :data="pieData" :showLabelNormal="false"/>
         </TitleCard>
     </div>
 </template>
 <script setup lang="ts">
 import TitleCard from '@/components/TitleCard.vue';
-import { ref } from 'vue'
+import Pie from '@/components/Pie.vue';
 
 const value = ref(0)
 const options = [
@@ -28,6 +29,39 @@ const options = [
         value:2
     }
 ]
+
+const pieData = computed(()=>{
+    return [
+        {
+            name:'上海院',
+            value:40
+        },
+        {
+            name:'上海设计',
+            value:80
+        },
+        {
+            name:'羸海设计',
+            value:40
+        },
+        {
+            name:'东街设计',
+            value:30
+        },
+        {
+            name:'久隆设计',
+            value:66
+        },
+        {
+            name:'芜湖华瑞',
+            value:70
+        },
+        {
+            name:'市南设计',
+            value:39
+        }
+    ]
+})
 
 </script>
 <style lang="less" scoped>

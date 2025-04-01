@@ -13,7 +13,6 @@
     </div>
 </template>
 <script setup lang="ts">
-
 interface Params{
     number:number,
     unit?:string,
