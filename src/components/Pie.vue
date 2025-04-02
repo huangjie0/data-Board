@@ -9,7 +9,7 @@ interface Params{
     center?: any[],
     data:any[],
     itemGap?:number,
-    showLabelNormal?:boolean
+    showLabelNormal?:boolean,
 }
 
 const props = withDefaults(defineProps<Params>(),{

@@ -26,4 +26,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
   }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
+  }
 }

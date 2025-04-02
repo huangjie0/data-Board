@@ -6,7 +6,7 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
-            <Pie :data="pieData" :showLabelNormal="false"/>
+            <Pie :data="pieData" :showLabelNormal="false" v-if="!chartLoading"/>
         </TitleCard>
     </div>
 </template>
@@ -32,21 +32,21 @@ const options = [
 ]
 
 const pieData:any = ref([])
+const chartLoading = ref(null)
 
-onMounted(()=>{
-    getPieData()
-})
+onMounted(()=>{getPieData()})
 
 const getPieData = async ()=>{
     let params:any = {
         name:'bnwt',
         type:btnValue.value
     }
+    chartLoading.value = true;
     const res:any = await pieGetData(params);
     if(res.code == 200){
-        pieData.value = res.data;
+        pieData.value = res.data
+        chartLoading.value = false
     }
-    console.log(res);
 }
 
 const changeRadio = (val:number) => {
