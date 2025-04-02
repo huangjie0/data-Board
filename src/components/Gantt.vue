@@ -4,7 +4,6 @@
 <script lang="ts" setup>
 import { gantt } from 'dhtmlx-gantt';
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css'
-import ganttData from '@/assets/json/ganttData.json';
 
 const barHeight = 25;
 
@@ -14,6 +13,12 @@ const style = computed(() => {
     "--bar-position": -(barHeight / 2) + "px",
   };
 });
+
+interface Params {
+    ganttData:any[]
+}
+
+const props = defineProps<Params>();
 
 //初始化甘特图
 const initGantt = () => {
@@ -83,7 +88,7 @@ const initGantt = () => {
   gantt.config.readonly = true; //是否只读
   gantt.i18n.setLocale("cn"); //设置语言
   gantt.init("gantt_here"); //初始化
-  gantt.parse(ganttData); //填充数据
+  gantt.parse(props.ganttData); //填充数据
 };
 
 onMounted(() => {

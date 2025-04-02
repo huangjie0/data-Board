@@ -25,14 +25,14 @@ const countData = computed(()=>{
             unit:'个',
             text:'本年累计完成可研评审项目数量',
             color:'#0596c6',
-            iconClass:'icon-dianpu'
+            iconClass:'icon-canyin'
         },
         {
             number:topData.value?.jzmqrcqxms??0,
             unit:'个',
             text:'截至目前仍超期项目数',
             color:'#9285eb',
-            iconClass:'icon-dianpu'
+            iconClass:'icon-dayinji'
         },
         {
             number:topData.value?.bnkypfpjsc??0,
@@ -46,7 +46,7 @@ const countData = computed(()=>{
             unit:'日',
             text:'本年在途项目平均时长',
             color:'#18bdc2',
-            iconClass:'icon-shendusikao'
+            iconClass:'icon-canjiren'
         }
     ]
 })

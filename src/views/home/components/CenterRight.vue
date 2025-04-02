@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-center-right data-w-h">
-        <TitleCard title="本年在途项目一览" icon-class="icon-shendusikao">
+        <TitleCard title="本年在途项目一览" icon-class="icon-dianpu1">
             <div class="data-home-center-right-container data-w-h data-fdc data-between">
                 <div class="search-form">
                     <el-form :model="form" label-width="90px">
@@ -35,7 +35,7 @@
                     </el-form>
                 </div>
                 <div class="table-container">
-                    <Gantt/>
+                    <Gantt :gantt-data="ganttData"/>
                 </div>
                 <div class="sorter data-fdr">
                     <el-pagination 
@@ -59,6 +59,7 @@ import type { ComponentSize } from 'element-plus';
 import TitleCard from '@/components/TitleCard.vue';
 import Gantt from '@/components/Gantt.vue';
 import {getGdgsEntry,getSjdwEntry,getKhjlEntry} from '@/api/home/index.ts';
+import ganttData from '@/assets/json/ganttData.json';
 
 const form = reactive({
     powerSupplyCompany:'',
@@ -82,9 +83,9 @@ const total = ref(400)
 const handleSizeChange = (val: number) => {
   console.log(val)
 }
-// const handleCurrentChange = (val: number) => {
-//   console.log(val)
-// }
+const handleCurrentChange = (val: number) => {
+  console.log(val)
+}
 
 const commGetFunction = async (fun:Function,optionArray:any)=>{
     const res = await fun();

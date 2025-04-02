@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-right data-w-h">
-        <TitleCard title="当月可研评审通过率" icon-class="icon-dianpu">
+        <TitleCard title="当月可研评审通过率" icon-class="icon-penhu">
 
         </TitleCard>
     </div>

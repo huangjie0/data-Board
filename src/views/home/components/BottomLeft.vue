@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-bottom-left data-w-h">
-        <TitleCard title="在途项目平均时长" icon-class="icon-dianpu"></TitleCard>
+        <TitleCard title="在途项目平均时长" icon-class="icon-qingdan"></TitleCard>
     </div>
 </template>
 <script setup lang="ts">

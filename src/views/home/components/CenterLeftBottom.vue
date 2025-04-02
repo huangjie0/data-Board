@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-center-left-bottom data-w-h">
-        <TitleCard title="本年已完成可研项目数量" icon-class="icon-dianpu">
+        <TitleCard title="本年已完成可研项目数量" icon-class="icon-muai">
             <template #rightValue>
                 <el-radio-group v-model="btnValue" size="small" fill="#1ba49b" @change="changeRadio">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>

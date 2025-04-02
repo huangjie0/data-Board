@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4871827 */
-  src: url('iconfont.woff2?t=1742980648763') format('woff2'),
-       url('iconfont.woff?t=1742980648763') format('woff'),
-       url('iconfont.ttf?t=1742980648763') format('truetype');
+  src: url('iconfont.woff2?t=1743581346577') format('woff2'),
+       url('iconfont.woff?t=1743581346577') format('woff'),
+       url('iconfont.ttf?t=1743581346577') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,50 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-canyin:before {
+  content: "\e62c";
+}
+
+.icon-dayinji:before {
+  content: "\e62d";
+}
+
+.icon-canjiren:before {
+  content: "\e62e";
+}
+
+.icon-pingpangqiu:before {
+  content: "\e62f";
+}
+
+.icon-muai:before {
+  content: "\e630";
+}
+
+.icon-dianpu1:before {
+  content: "\e631";
+}
+
+.icon-qingdan:before {
+  content: "\e632";
+}
+
+.icon-qihang:before {
+  content: "\e633";
+}
+
+.icon-penhu:before {
+  content: "\e634";
+}
+
+.icon-jiaoliu:before {
+  content: "\e635";
+}
+
+.icon-faya:before {
+  content: "\e636";
 }
 
 .icon-dianpu:before {

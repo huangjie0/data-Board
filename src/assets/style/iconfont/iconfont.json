@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "43848090",
+      "name": "餐饮",
+      "font_class": "canyin",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "43848091",
+      "name": "打印机",
+      "font_class": "dayinji",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "43848092",
+      "name": "残疾人",
+      "font_class": "canjiren",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "43848093",
+      "name": "乒乓球",
+      "font_class": "pingpangqiu",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "43848094",
+      "name": "母爱",
+      "font_class": "muai",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "43848095",
+      "name": "店铺",
+      "font_class": "dianpu1",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "43848096",
+      "name": "清单",
+      "font_class": "qingdan",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "43848097",
+      "name": "骑行",
+      "font_class": "qihang",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "43848098",
+      "name": "喷壶",
+      "font_class": "penhu",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "43848099",
+      "name": "交流",
+      "font_class": "jiaoliu",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "43848100",
+      "name": "发芽",
+      "font_class": "faya",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
       "icon_id": "33987007",
       "name": "店铺",
       "font_class": "dianpu",
