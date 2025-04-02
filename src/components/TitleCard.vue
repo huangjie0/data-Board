@@ -42,6 +42,7 @@ defineProps<Params>();
     }
     &-content{
         overflow-y: auto;
+        overflow-x: hidden;
     }
     .right-value{
         height: 100%;

@@ -1,5 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
+    --board-home:#1ba49b;
     --vt-c-white: #ffffff;
     --vt-c-white-soft: #f8f8f8;
     --vt-c-white-mute: #f2f2f2;
@@ -101,8 +102,29 @@
   }
 
   :deep(.el-radio-button:hover .el-radio-button__inner) {
-    background-color: #1ba49b;
-    border-color: #1ba49b;
+    background-color: var(--board-home);
+    border-color: var(--board-home);
     color: var(--vt-c-white);
   }  
+
+  .dropdown,.el-select{
+    --el-border-color-hover: var(--board-home);
+    --el-color-primary:var(--board-home) !important;
+
+    .el-select-dropdown__item.is-selected{
+      color: var(--board-home) !important;
+    }
+  }
+
+  .el-select,.el-select-dropdown__item.is-selected{
+    color: var(--board-home) !important;
+  }
+
+  .el-pager li.is-active, .el-pager li:hover {
+    color: var(--board-home) !important;
+  }
   
+  .el-pagination button.is-active, .el-pagination button:hover {
+    color: var(--board-home) !important;
+  }
+

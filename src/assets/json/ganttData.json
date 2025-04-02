@@ -1,0 +1,128 @@
+{
+    "data": [
+      {
+        "id": "1",
+        "nickName": "璞烯晶新材料(上海)有限公司",
+        "theUnit": "金山",
+        "accountManager": "周芸文",
+        "designUnit": "市南设计",
+        "render": "split",
+        "text": ""
+      },
+      {
+        "id": "1-1",
+        "text": "征询答复",
+        "start_date": "2025-01-20",
+        "end_date": "2025-03-04",
+        "parent": "1",
+        "color": "#0596c6"
+      },
+      {
+        "id": "1-2",
+        "text": "供电方案答复",
+        "start_date": "2025-03-05",
+        "end_date": "2025-06-08",
+        "parent": "1",
+        "color": "#18bdc2"
+      },
+      {
+        "id": "1-3",
+        "text": "可研送审",
+        "start_date": "2025-06-09",
+        "end_date": "2025-09-10",
+        "parent": "1",
+        "color": "#9285eb"
+      },
+      {
+        "id": "1-4",
+        "text": "可研评审",
+        "start_date": "2025-09-11",
+        "end_date": "2025-12-28",
+        "parent": "1",
+        "color": "#57bc6f"
+      },
+      {
+        "id": "2",
+        "nickName": "璞烯晶新材料(上海)有限公司",
+        "theUnit": "金山",
+        "accountManager": "周芸文",
+        "designUnit": "市南设计",
+        "render": "split",
+        "text": ""
+      },
+      {
+        "id": "2-1",
+        "text": "征询答复",
+        "start_date": "2025-01-20",
+        "end_date": "2025-03-04",
+        "parent": "2",
+        "color": "#0596c6"
+      },
+      {
+        "id": "2-2",
+        "text": "供电方案答复",
+        "start_date": "2025-03-05",
+        "end_date": "2025-06-08",
+        "parent": "2",
+        "color": "#18bdc2"
+      },
+      {
+        "id": "2-3",
+        "text": "可研送审",
+        "start_date": "2025-06-09",
+        "end_date": "2025-09-10",
+        "parent": "2",
+        "color": "#9285eb"
+      },
+      {
+        "id": "2-4",
+        "text": "可研评审",
+        "start_date": "2025-09-11",
+        "end_date": "2025-12-28",
+        "parent": "2",
+        "color": "#57bc6f"
+      },
+      {
+        "id": "3",
+        "nickName": "璞烯晶新材料(上海)有限公司",
+        "theUnit": "金山",
+        "accountManager": "周芸文",
+        "designUnit": "市南设计",
+        "render": "split",
+        "text": ""
+      },
+      {
+        "id": "3-1",
+        "text": "征询答复",
+        "start_date": "2025-01-20",
+        "end_date": "2025-03-04",
+        "parent": "3",
+        "color": "#0596c6"
+      },
+      {
+        "id": "3-2",
+        "text": "供电方案答复",
+        "start_date": "2025-03-05",
+        "end_date": "2025-06-08",
+        "parent": "3",
+        "color": "#18bdc2"
+      },
+      {
+        "id": "3-3",
+        "text": "可研送审",
+        "start_date": "2025-06-09",
+        "end_date": "2025-09-10",
+        "parent": "3",
+        "color": "#9285eb"
+      },
+      {
+        "id": "3-4",
+        "text": "可研评审",
+        "start_date": "2025-09-11",
+        "end_date": "2025-12-28",
+        "parent": "3",
+        "color": "#57bc6f"
+      }
+    ]
+  }
+  
