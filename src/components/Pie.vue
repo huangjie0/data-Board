@@ -14,7 +14,7 @@ interface Params{
 
 const props = withDefaults(defineProps<Params>(),{
     radius:[20,80],
-    center:['35%', '50%'],
+    center:['35%', '48%'],
     itemGap:20,
     showLabelNormal:true
 })
@@ -23,10 +23,8 @@ const pieRef = ref();
 const myChart = ref(null);
 
 const initChart = ()=>{
-    if(pieRef.value){
-        myChart.value = echarts.init(pieRef.value);
-    }
-
+    if(pieRef.value) myChart.value = echarts.init(pieRef.value);
+    
     let option:any = {
         tooltip: {
             trigger: 'item'

@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BackgroundCard: typeof import('./../components/BackgroundCard.vue')['default']
+    Bar: typeof import('./../components/Bar.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElForm: typeof import('element-plus/es')['ElForm']
@@ -24,6 +25,7 @@ declare module 'vue' {
     Gantt: typeof import('./../components/Gantt.vue')['default']
     MyEcharts: typeof import('./../components/MyEcharts.vue')['default']
     Pie: typeof import('./../components/Pie.vue')['default']
+    Progress: typeof import('./../components/Progress.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
