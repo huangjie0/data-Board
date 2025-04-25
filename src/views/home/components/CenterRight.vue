@@ -28,20 +28,20 @@
                             
                             </el-col>
                             <el-col :span="6">
-                                <el-button plain color="#1ba49b">重置</el-button>
-                                <el-button color="#1ba49b">查询</el-button>
+                                <el-button plain color="#1ba49b" @click="resetForm">重置</el-button>
+                                <el-button color="#1ba49b" @click="getGanttData">查询</el-button>
                             </el-col>
                         </el-row>
                     </el-form>
                 </div>
-                <div class="table-container">
-                    <Gantt :gantt-data="ganttData"/>
+                <div class="table-container" v-loading="ganttLoading">
+                    <Gantt :gantt-data="ganttData" v-if="ganttData.data?.length"/>
                 </div>
                 <div class="sorter data-fdr">
                     <el-pagination 
                         v-model:current-page="pageIndex" 
                         v-model:page-size="pageSize" 
-                        :page-sizes="[10, 20, 30]" 
+                        :page-sizes="[5, 10, 15]" 
                         :size="size"
                         :background="background"
                         layout="total, sizes, prev, pager, next, jumper"
@@ -59,7 +59,6 @@ import type { ComponentSize } from 'element-plus';
 import TitleCard from '@/components/TitleCard.vue';
 import Gantt from '@/components/Gantt.vue';
 import {getGdgsEntry,getSjdwEntry,getKhjlEntry,getKyxmData} from '@/api/home/index.ts';
-import ganttData from '@/assets/json/ganttData.json';
 
 const form = reactive({ khjl:'', sjdw:'', gdgs:''})
 
@@ -70,10 +69,12 @@ const accountManagerOption:any[] = ref([])
 const designUnitOption:any[] = ref([])
 
 const pageIndex = ref(1)
-const pageSize = ref(10)
+const pageSize = ref(5)
 const size = ref<ComponentSize>('default')
 const background = ref(false)
 const total = ref(0)
+const ganttData = ref({}) 
+const ganttLoading = ref(false)
 
 const handleSizeChange = (val: number) => {
     pageSize.value = val
@@ -89,26 +90,45 @@ const commGetFunction = async (fun:Function,optionArray:any)=>{
     }
 }   
 
+const resetForm = ()=>{
+    for (const key in form) {
+        form[key] = ''
+    }
+}
+
 const getGanttData = async ()=>{
     let params:any = {
         params:form,
         pageSize: pageSize.value,
         pageIndex: pageIndex.value
     }
-
+    ganttLoading.value = true;
+    ganttData.value = {}
     const res = await getKyxmData(params);
     if(res.code === 200){
-        total.value = res.data.total
-    }
-    console.log(res);
-    
+        total.value = res.data.total;
+        let o:any = {}
+        let a:any[] = [];
+        let l:any = res.data.list.map((item:any) => {
+            return { nickName:item.hm, theUnit:item.gdgs, accountManager:item.khjl, designUnit:item.sjdw, render:"split", text:"", id:item.id }
+        })
+        res.data.list.forEach((item:any) => {
+            a.push({ id: `${item.id}-1`, text:"征询答复", start_date:item.zxdfStDate, end_date:item.zxdfEndDate, parent:item.id, color:"#0596c6"})
+            a.push({ id: `${item.id}-2`, text:"供电方案答复", start_date:item.gddfStDate, end_date:item.gddfEndDate, parent:item.id, color:"#18bdc2"})
+            a.push({ id: `${item.id}-3`, text:"可研送审", start_date:item.kyssStDate, end_date:item.kyssEndDate, parent:item.id, color:"#9285eb"})
+            a.push({ id: `${item.id}-4`, text:"可研评审", start_date:item.kypsStDate, end_date:item.kypsEndDate, parent:item.id, color:"#57bc6f"})
+        })
+        o.data = [...l,...a];
+        ganttData.value = o;
+        ganttLoading.value = false;
+    } 
 }
 
 onMounted(()=>{
     commGetFunction(getGdgsEntry,powerSupplyCompanyOption);
     commGetFunction(getKhjlEntry,accountManagerOption);
     commGetFunction(getSjdwEntry,designUnitOption);
-    getGanttData()
+    getGanttData();
 })
 
 </script>

@@ -23,3 +23,7 @@ export const getKhjlEntry = ()=>{
 export const getKyxmData = (params:any)=>{
   return request.post('/api/kyxm/getKyxmData',params);
 }
+
+export const getKytgl = ()=>{
+  return request.get('/api/view/getKytgl');
+}
