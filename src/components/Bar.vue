@@ -41,26 +41,15 @@ const initChart = ()=>{
                 }
             },
             axisTick:{
-                show:false,
-
+                show:false
             }
         },
         yAxis: {},
         series: [
-            { 
-                type: 'bar',
-                label:{
-                    show:true,
-                    position:'top',
-                    color:'#808080' 
-                },
-                itemStyle:{
-                    borderRadius: [3, 3, 0, 0]
-                }
-            },
-            { type: 'bar',label:{show:true,position:'top',color:'#808080'} },
-            { type: 'bar',label:{show:true,position:'top',color:'#808080'} },
-            { type: 'bar',label:{show:true,position:'top',color:'#808080'} }
+            { type: 'bar',label:{ show:true, position:'top', color:'#808080'}, itemStyle: { color:'#07b6a9' } },
+            { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#fd987c' } },
+            { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#85daf6' } },
+            { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#fdaa58' } }
         ]
     };
 

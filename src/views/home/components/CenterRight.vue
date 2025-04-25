@@ -7,21 +7,21 @@
                         <el-row :gutter="20">
                             <el-col :span="6">
                                 <el-form-item label="供电公司">
-                                    <el-select v-model="form.powerSupplyCompany" placeholder="请输入" popper-class="dropdown">
+                                    <el-select v-model="form.gdgs" placeholder="请输入" popper-class="dropdown">
                                         <el-option :label="item.label" :value="item.value" v-for="(item,index) in powerSupplyCompanyOption" :key="index"/>
                                     </el-select>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="6">
                                 <el-form-item label="客户经理">
-                                    <el-select v-model="form.accountManager" placeholder="请输入" popper-class="dropdown">
+                                    <el-select v-model="form.khjl" placeholder="请输入" popper-class="dropdown">
                                         <el-option :label="item.label" :value="item.value" v-for="(item,index) in accountManagerOption" :key="index"/>
                                     </el-select>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="6">
                                 <el-form-item label="设计单位">
-                                    <el-select v-model="form.designUnit" placeholder="请输入"  popper-class="dropdown">
+                                    <el-select v-model="form.sjdw" placeholder="请输入"  popper-class="dropdown">
                                         <el-option :label="item.label" :value="item.value" v-for="(item,index) in designUnitOption" :key="index"/>
                                     </el-select>
                                 </el-form-item>
@@ -39,10 +39,10 @@
                 </div>
                 <div class="sorter data-fdr">
                     <el-pagination 
-                        v-model:current-page="currentPage4" 
-                        v-model:page-size="pageSize4" 
+                        v-model:current-page="pageIndex" 
+                        v-model:page-size="pageSize" 
                         :page-sizes="[10, 20, 30]" 
-                        :size="size" :disabled="disabled"
+                        :size="size"
                         :background="background"
                         layout="total, sizes, prev, pager, next, jumper"
                         :total="total"
@@ -58,14 +58,10 @@
 import type { ComponentSize } from 'element-plus';
 import TitleCard from '@/components/TitleCard.vue';
 import Gantt from '@/components/Gantt.vue';
-import {getGdgsEntry,getSjdwEntry,getKhjlEntry} from '@/api/home/index.ts';
+import {getGdgsEntry,getSjdwEntry,getKhjlEntry,getKyxmData} from '@/api/home/index.ts';
 import ganttData from '@/assets/json/ganttData.json';
 
-const form = reactive({
-    powerSupplyCompany:'',
-    accountManager:'',
-    designUnit:''
-})
+const form = reactive({ khjl:'', sjdw:'', gdgs:''})
 
 const powerSupplyCompanyOption:any[] = ref([])
 
@@ -73,18 +69,17 @@ const accountManagerOption:any[] = ref([])
 
 const designUnitOption:any[] = ref([])
 
-const currentPage4 = ref(4)
-const pageSize4 = ref(100)
+const pageIndex = ref(1)
+const pageSize = ref(10)
 const size = ref<ComponentSize>('default')
 const background = ref(false)
-const disabled = ref(false)
-const total = ref(400)
+const total = ref(0)
 
 const handleSizeChange = (val: number) => {
-  console.log(val)
+    pageSize.value = val
 }
 const handleCurrentChange = (val: number) => {
-  console.log(val)
+    pageIndex.value = val
 }
 
 const commGetFunction = async (fun:Function,optionArray:any)=>{
@@ -94,10 +89,26 @@ const commGetFunction = async (fun:Function,optionArray:any)=>{
     }
 }   
 
+const getGanttData = async ()=>{
+    let params:any = {
+        params:form,
+        pageSize: pageSize.value,
+        pageIndex: pageIndex.value
+    }
+
+    const res = await getKyxmData(params);
+    if(res.code === 200){
+        total.value = res.data.total
+    }
+    console.log(res);
+    
+}
+
 onMounted(()=>{
     commGetFunction(getGdgsEntry,powerSupplyCompanyOption);
     commGetFunction(getKhjlEntry,accountManagerOption);
     commGetFunction(getSjdwEntry,designUnitOption);
+    getGanttData()
 })
 
 </script>

@@ -13,7 +13,7 @@ interface Params{
 }
 
 const props = withDefaults(defineProps<Params>(),{
-    radius:[20,80],
+    radius:[10,80],
     center:['35%', '48%'],
     itemGap:20,
     showLabelNormal:true
