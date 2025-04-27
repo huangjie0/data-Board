@@ -11,3 +11,7 @@ export const pieGetData = (params:any) => {
 export const getKytgl = ()=>{
   return request.get('/api/view/getKytgl');
 }
+
+export const getKyxmTimeData = (params:any)=>{
+  return request.post('/api/kyxm/getKyxmTimeData',params);
+}
