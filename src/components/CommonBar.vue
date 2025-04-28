@@ -1,6 +1,6 @@
 <template>
-    <div class="data-home-bottom-left data-w-h">
-        <TitleCard title="在途项目平均时长" icon-class="icon-qingdan">
+    <div class="common-bar data-w-h">
+        <TitleCard :title="cardTitle" :icon-class="iconClass">
             <template #rightValue>
                 <el-radio-group v-model="btnValue1" size="small" fill="#1ba49b" @change="changeRadio1">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options1" :key="index"/>
@@ -14,10 +14,18 @@
         </TitleCard>
     </div>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 import TitleCard from '@/components/TitleCard.vue';
 import Bar from '@/components/Bar.vue';
 import { getKyxmTimeData } from '@/api/home/index.ts';
+
+interface Params{
+    cardTitle:string;
+    iconClass:string;
+    kytype:string
+}
+
+const props = defineProps<Params>();
 
 const btnValue1 = ref('sjdw')
 const btnValue2 = ref('month')
@@ -67,7 +75,7 @@ const pushData = (data:any,da:any,type:string)=>{
 const getBarData = async ()=>{
     chartLoading.value = true;
     d.value = [];
-    const res = await getKyxmTimeData({ type: btnValue1.value,time:btnValue2.value , kytype:'ztxm'});
+    const res = await getKyxmTimeData({ type: btnValue1.value,time:btnValue2.value , kytype: props.kytype });
     if(res.code === 200){
         d.value.push(['product', '同比', '环比', '指标值','与总平均时长比较'])
         btnValue1.value === 'sjdw' ? pushData(res.data,d,'sjdw') : pushData(res.data,d,'khjl')
@@ -79,12 +87,11 @@ onMounted(()=>{getBarData()})
 
 </script>
 <style lang="less" scoped>
-.data-home-bottom-left{
+.common-bar{
     background-color: var(--vt-c-white);
     border-radius: var(--small-radius);
     .el-radio-group{
         margin-left: var(--common-split);
     }
 }
-    
 </style>

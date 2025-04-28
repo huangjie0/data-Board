@@ -11,6 +11,7 @@ declare module 'vue' {
     BackgroundCard: typeof import('./../components/BackgroundCard.vue')['default']
     Bar: typeof import('./../components/Bar.vue')['default']
     ChartCard: typeof import('./../components/ChartCard.vue')['default']
+    CommonBar: typeof import('./../components/CommonBar.vue')['default']
     CommonPie: typeof import('./../components/CommonPie.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']

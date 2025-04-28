@@ -1,12 +1,14 @@
 <template>
-    <TitleCard :title="cardTitle" :icon-class="iconClass">
-        <template #rightValue>
-            <el-radio-group v-model="btnValue" size="small" fill="#1ba49b" @change="changeRadio">
-                <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
-            </el-radio-group>
-        </template>
-        <Pie :data="pieData" :showLabelNormal="false" v-if="!chartLoading"/>
-    </TitleCard>
+    <div class="common-pie data-w-h">
+        <TitleCard :title="cardTitle" :icon-class="iconClass">
+            <template #rightValue>
+                <el-radio-group v-model="btnValue" size="small" fill="#1ba49b" @change="changeRadio">
+                    <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
+                </el-radio-group>
+            </template>
+            <Pie :data="pieData" :showLabelNormal="false" v-if="!chartLoading"/>
+        </TitleCard>
+    </div>
 </template>
 <script setup lang="ts">
 import TitleCard from '@/components/TitleCard.vue';
@@ -62,5 +64,8 @@ const changeRadio = (val:number) => {
 
 </script>
 <style lang="less" scoped>
-    
+.common-pie{
+    background-color: var(--vt-c-white);
+    border-radius: var(--small-radius);
+}
 </style>

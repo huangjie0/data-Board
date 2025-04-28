@@ -6,10 +6,10 @@
         <div class="data-home-center data-fdr">
             <div class="data-home-center-left data-fdc">
                 <div class="data-f1 data-home-center-left-top">
-                    <CenterLeftTop/>
+                    <CommonPie card-title="本年委托可研项目数量" icon-class="icon-pingpangqiu" name="bnwt"/>
                 </div>
                 <div class="data-f1">
-                    <CenterLeftBottom/>
+                    <CommonPie card-title="本年已完成可研项目数量" icon-class="icon-muai" name="bnywc"/>
                 </div>
             </div>
             <div class="data-f1">
@@ -18,10 +18,10 @@
         </div>
         <div class="data-home-bottom data-fdr">
             <div class="data-home-bottom-left data-f1">
-                <BottomLeft/>
+                <CommonBar cardTitle="在途项目平均时长" icon-class="icon-qingdan" kytype="ztxm"/>
             </div>
             <div class="data-home-bottom-center data-f1">
-                <BottomCenter/>
+                <CommonBar cardTitle="可研批复平均时长" icon-class="icon-qihang" kytype="kypf"/>
             </div>
             <div class="data-f1">
                 <BottomRight/>
@@ -32,11 +32,9 @@
 <script setup lang="ts">
 import Top from './components/Top.vue';
 import CenterRight from './components/CenterRight.vue';
-import CenterLeftTop from './components/CenterLeftTop.vue';
-import CenterLeftBottom from './components/CenterLeftBottom.vue';
-import BottomLeft from './components/BottomLeft.vue';
-import BottomCenter from './components/BottomCenter.vue';
 import BottomRight from './components/BottomRight.vue';
+import CommonPie from '@/components/CommonPie.vue';
+import CommonBar from '@/components/CommonBar.vue';
 
 </script>
 <style lang="less" scoped>
