@@ -16,7 +16,7 @@
 </template>
 <script setup lang="ts">
 interface Params{
-    title:string,
+    title:string;
     iconClass:string
 }
 

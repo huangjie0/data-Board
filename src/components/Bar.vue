@@ -5,7 +5,7 @@
 import * as echarts from 'echarts';
 
 interface Params{
-    data?:any[],
+    data?:any[];
     crosswiseData?:any[]
 }
 
@@ -27,6 +27,7 @@ const initChart = ()=>{
         yAxis: {},
         series: []
     };
+
     if(props.data && props.data.length){
         option.xAxis = {
             type: 'category',
@@ -66,7 +67,7 @@ const initChart = ()=>{
             axisLine:{
                 show:false
             },
-            data:props.crosswiseData?.map((item:any)=>{ return item.sjdw}),
+            data:props.crosswiseData?.map((item:any)=>{ return item.yData }),
             axisTick:{
                 show:false
             }
@@ -74,7 +75,7 @@ const initChart = ()=>{
 
         option.series = [
             { 
-                data:props.crosswiseData?.map((item:any)=>{ return item['AVG(sjdwzf)'] }),
+                data: props.crosswiseData?.map((item:any)=>{ return item.xData }),
                 type:'bar',
                 label:{
                     show:true,

@@ -6,9 +6,9 @@
 <script lang="ts" setup>
 
 interface Params {
-    color?: string,
-    percentage: number,
-    bgColor?: string,
+    color?: string;
+    percentage: number;
+    bgColor?: string
 }
 
 const props = withDefaults(defineProps<Params>(), {

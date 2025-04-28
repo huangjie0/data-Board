@@ -9,7 +9,7 @@
             <div class="data-home-center-right-container data-fdc data-w-h">
                 <div class="data-f1 data-home-center-right-container-top data-fdr">
                     <div class="data-home-center-right-container-top-left">
-                        <Bar :crosswise-data="designUnitData" v-if="designUnitData?.length"/>
+                        <Bar :crosswise-data="crosswiseData" v-if="!chartLoading"/>
                     </div>
                     <div class="data-f1">
                         <CenterRightTopRight/>
@@ -40,7 +40,8 @@ const options = [
     }
 ]
 const btnValue = ref('sjdw')
-const designUnitData = ref([])
+const crosswiseData = ref([])
+const chartLoading = ref(null)
 
 const changeRadio = (val:number)=>{
     btnValue.value = val;
@@ -52,9 +53,17 @@ onMounted(()=>{
 })
 
 const getDesignUnitData = async ()=>{
+    chartLoading.value = true;
+    crosswiseData.value = []
     const res = await getPf({ type: btnValue.value,pfType:'sjdwzf' })
     if(res.code === 200){
-        designUnitData.value = res.data
+        crosswiseData.value = res.data.map((item:any)=>{
+            return {
+                xData: item['AVG(sjdwzf)'],
+                yData: item[btnValue.value]
+            }
+        })
+        chartLoading.value = false;
     }
 }
 

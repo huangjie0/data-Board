@@ -5,11 +5,11 @@
 import * as echarts from 'echarts';
 
 interface Params{
-    radius?: any[],
-    center?: any[],
-    data:any[],
-    itemGap?:number,
-    showLabelNormal?:boolean,
+    radius?: any[];
+    center?: any[];
+    data:any[];
+    itemGap?:number;
+    showLabelNormal?:boolean
 }
 
 const props = withDefaults(defineProps<Params>(),{

@@ -14,10 +14,10 @@
 </template>
 <script setup lang="ts">
 interface Params{
-    number:number,
-    unit?:string,
-    text:string,
-    color:string,
+    number:number;
+    unit?:string;
+    text:string;
+    color:string;
     iconClass:string
 }
 
