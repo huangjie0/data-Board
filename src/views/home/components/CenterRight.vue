@@ -9,14 +9,14 @@
             <div class="data-home-center-right-container data-fdc data-w-h">
                 <div class="data-f1 data-home-center-right-container-top data-fdr">
                     <div class="data-home-center-right-container-top-left">
-                        <Bar :crosswise-data="crosswiseData" v-if="!chartLoading"/>
+                        <Bar :crosswise-data="crosswiseData" v-if="!chartLoading" bar-title="设计单位总分数"/>
                     </div>
                     <div class="data-f1">
-                        <CenterRightTopRight/>
+                        <CenterRightTopRight ref="centerRightTopRightRef" :btn-value="btnValue"/>
                     </div>
                 </div>
                 <div class="data-f1 data-home-center-right-container-bottom">
-                    <CenterRightBottom/>
+                    <CenterRightBottom ref="centerRightBottomRef" :btn-value="btnValue"/>
                 </div>
             </div>
         </TitleCard>
@@ -42,10 +42,18 @@ const options = [
 const btnValue = ref('sjdw')
 const crosswiseData = ref([])
 const chartLoading = ref(null)
+const centerRightTopRightRef = ref()
+const centerRightBottomRef = ref()
 
 const changeRadio = (val:number)=>{
     btnValue.value = val;
-    getDesignUnitData()
+    getDesignUnitData();
+    centerRightTopRightRef.value.getProjectDurationData();
+    centerRightTopRightRef.value.getFeasibilityStudyApproval();
+
+    centerRightBottomRef.value.getFeasibilityStudyReviewData()
+    centerRightBottomRef.value.getFeasibilityClosedData()
+    centerRightBottomRef.value.getLappeableAdjustmentData()
 }
 
 onMounted(()=>{

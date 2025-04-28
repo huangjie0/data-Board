@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BackgroundCard: typeof import('./../components/BackgroundCard.vue')['default']
     Bar: typeof import('./../components/Bar.vue')['default']
+    ChartCard: typeof import('./../components/ChartCard.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElForm: typeof import('element-plus/es')['ElForm']
