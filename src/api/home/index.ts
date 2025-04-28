@@ -15,3 +15,7 @@ export const getKytgl = ()=>{
 export const getKyxmTimeData = (params:any)=>{
   return request.post('/api/kyxm/getKyxmTimeData',params);
 }
+
+export const getPf  = (params:any)=>{
+  return request.post('/api/kyxm/getPf',params);
+}

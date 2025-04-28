@@ -5,7 +5,8 @@
 import * as echarts from 'echarts';
 
 interface Params{
-    data:any[]
+    data?:any[],
+    crosswiseData?:any[]
 }
 
 const props = defineProps<Params>();
@@ -19,12 +20,15 @@ const initChart = ()=>{
     } 
 
     let option:any = {
-        legend: {},
-        tooltip: {},
         dataset: {
             source: props.data
         },
-        xAxis: { 
+        xAxis: {},
+        yAxis: {},
+        series: []
+    };
+    if(props.data && props.data.length){
+        option.xAxis = {
             type: 'category',
             axisLine:{
                 lineStyle:{
@@ -34,15 +38,72 @@ const initChart = ()=>{
             axisTick:{
                 show:false
             }
-        },
-        yAxis: {},
-        series: [
+        }
+
+        option.series = [
             { type: 'bar',label:{ show:true, position:'top', color:'#808080'}, itemStyle: { color:'#07b6a9' } },
             { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#fd987c' } },
             { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#85daf6' } },
             { type: 'bar',label:{ show:true, position: 'top', color: '#808080'}, itemStyle: { color:'#fdaa58' } }
         ]
-    };
+    }
+    if(props.crosswiseData && props.crosswiseData.length){
+        option.title = {
+            text:'设计单位总分数',
+            left:'200px',
+            textStyle:{
+                fontSize:14,
+                color:'#707070'
+            }
+        }
+        option.xAxis = {
+            type:'value',
+            show:false
+        }
+
+        option.yAxis = {
+            type: 'category',
+            axisLine:{
+                show:false
+            },
+            data:props.crosswiseData?.map((item:any)=>{ return item.sjdw}),
+            axisTick:{
+                show:false
+            }
+        }
+
+        option.series = [
+            { 
+                data:props.crosswiseData?.map((item:any)=>{ return item['AVG(sjdwzf)'] }),
+                type:'bar',
+                label:{
+                    show:true,
+                    fontSize: 12,
+                    color:'#fff'
+                },
+                itemStyle:{
+                    color:new echarts.graphic.LinearGradient(0,0,1,1,[
+                        {
+                            offset: 0,
+                            color: '#0f8780'
+                        },
+                        {
+                            offset: 1,
+                            color: '#a1cfcc'
+                        }
+                    ])
+                }
+            }
+        ]
+        option.grid = {
+            top: '10%',
+            left: '15%',
+            right: '5%',
+            bottom: '15%'
+        }
+    }
+
+
     myChart && myChart.setOption(option)
 }
 
