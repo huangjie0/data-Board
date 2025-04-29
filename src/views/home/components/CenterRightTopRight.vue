@@ -1,21 +1,9 @@
 <template>
-    <div class="data-w-h">
-        <ChartCard title="项目时长评分">
-            <div class="data-w-h data-fdr">
-                <div class="data-f1">
-                    <Bar :vertical-data="verticalData_1" v-if="!chartLoading_1" bar-title="在途项目平均时长评分"/>
-                </div>
-                <div class="data-f1">
-                    <Bar :vertical-data="verticalData_2" v-if="!chartLoading_2" bar-title="可研批复平均时长评分"/>
-                </div>
-            </div>
-        </ChartCard>
-    </div>
+    <CommonBasicBar title="项目时长评分" :bar-list="barList"/>
 </template>
 <script lang="ts" setup>
-import ChartCard from '@/components/ChartCard.vue';
-import Bar from '@/components/Bar.vue';
 import { getPf } from '@/api/home/index.ts';
+import CommonBasicBar from '@/components/CommonBasicBar.vue';
 
 interface Params{
     btnValue?:string
@@ -27,6 +15,11 @@ const verticalData_1 = ref([])
 const verticalData_2 = ref([])
 const chartLoading_1 = ref(null)
 const chartLoading_2 = ref(null)
+
+const barList = ref([
+    { verticalData: verticalData_1, barTitle:'在途项目平均时长评分',chartLoading: chartLoading_1 },
+    { verticalData: verticalData_2, barTitle:'可研批复平均时长评分',chartLoading: chartLoading_2 },
+])
 
 onMounted(()=>{
     getProjectDurationData()

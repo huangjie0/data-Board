@@ -1,22 +1,10 @@
 <template>
-    <ChartCard title="项目质量评分">
-        <div class="data-w-h data-fdr">
-            <div class="data-f1">
-                <Bar :vertical-data="verticalData_1" v-if="!chartLoading_1" bar-title="可研评审问题评分"/>
-            </div>
-            <div class="data-f1">
-                <Bar :vertical-data="verticalData_2" v-if="!chartLoading_2" bar-title="可研收口问题评分"/>
-            </div>
-            <div class="data-f1">
-                <Bar :vertical-data="verticalData_3" v-if="!chartLoading_3" bar-title="可研调整评分"/>
-            </div>
-        </div>
-    </ChartCard>
+    <CommonBasicBar title="项目质量评分" :bar-list="barList"/>
 </template>
 <script lang="ts" setup>
-import ChartCard from '@/components/ChartCard.vue';
-import Bar from '@/components/Bar.vue';
 import { getPf } from '@/api/home/index.ts';
+import CommonBasicBar from '@/components/CommonBasicBar.vue';
+
 
 interface Params{
     btnValue?:string
@@ -30,6 +18,12 @@ const verticalData_3 = ref([])
 const chartLoading_1 = ref(null)
 const chartLoading_2 = ref(null)
 const chartLoading_3 = ref(null)
+
+const barList = ref([
+    { verticalData:verticalData_1,barTitle:'可研评审问题评分',chartLoading: chartLoading_1},
+    { verticalData:verticalData_2,barTitle:'可研收口问题评分',chartLoading: chartLoading_2},
+    { verticalData:verticalData_3,barTitle:'可研调整评分',chartLoading: chartLoading_3},
+])
 
 const getCommonData = async (chartLoading:any,targetData:any,pfType:string,xData:string)=>{
     chartLoading.value = true
