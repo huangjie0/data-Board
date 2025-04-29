@@ -30,8 +30,6 @@ const getCommonData = async (chartLoading:any,targetData:any,pfType:string,xData
     targetData.value = []
     const res = await getPf({ type: props.btnValue, pfType:pfType })
     if(res.code === 200){
-        console.log(res.data);
-        
         targetData.value = res.data.map((item:any)=>{
             return {
                 xData: item[xData],

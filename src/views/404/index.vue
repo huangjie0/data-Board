@@ -1,7 +1,5 @@
 <template>
-    <div>
-        
-    </div>
+     <el-empty :image-size="200" description="访问的页面不存在！"/>
 </template>
 <script setup lang="ts">
 
