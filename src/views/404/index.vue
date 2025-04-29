@@ -1,9 +1,11 @@
 <template>
-     <el-empty :image-size="200" description="访问的页面不存在！"/>
+     <div class="data-w-h data-center">
+          <el-empty :image-size="200" description="访问的页面不存在！"/>
+     </div>
 </template>
 <script setup lang="ts">
 
 </script>
 <style lang="less" scoped>
-    
+
 </style>
