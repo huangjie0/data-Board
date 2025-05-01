@@ -6,7 +6,7 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
-            <Pie :data="pieData" :showLabelNormal="false" v-if="!chartLoading"/>
+            <Pie :data="pieData" :showLabelNormal="false" v-if="pieData.length"/>
         </TitleCard>
     </div>
 </template>
@@ -37,7 +37,6 @@ const options = [
     }
 ]
 const pieData:any = ref([])
-const chartLoading = ref(null)
 
 const props = defineProps<Params>();
 
@@ -48,11 +47,9 @@ const getPieData = async ()=>{
         name:props.name,
         type:btnValue.value
     }
-    chartLoading.value = true;
     const res:any = await pieGetData(params);
     if(res.code == 200){
         pieData.value = res.data
-        chartLoading.value = false
     }
 }
 

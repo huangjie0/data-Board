@@ -10,7 +10,7 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options2" :key="index"/>
                 </el-radio-group>
             </template> 
-            <Bar :data="d" v-if="!chartLoading"/>
+            <Bar :data="d" v-if="d.length"/>
         </TitleCard>
     </div>
 </template>
@@ -30,7 +30,6 @@ const props = defineProps<Params>();
 const btnValue1 = ref('sjdw')
 const btnValue2 = ref('month')
 const d:any = ref([])
-const chartLoading = ref(null)
  
 const options1 = [
     {
@@ -73,13 +72,11 @@ const pushData = (data:any,da:any,type:string)=>{
 }
 
 const getBarData = async ()=>{
-    chartLoading.value = true;
     d.value = [];
     const res = await getKyxmTimeData({ type: btnValue1.value,time:btnValue2.value , kytype: props.kytype });
     if(res.code === 200){
         d.value.push(['product', '同比', '环比', '指标值','与总平均时长比较'])
         btnValue1.value === 'sjdw' ? pushData(res.data,d,'sjdw') : pushData(res.data,d,'khjl')
-        chartLoading.value = false;
     }
 }
 

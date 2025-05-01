@@ -9,7 +9,7 @@
             <div class="data-home-center-right-container data-fdc data-w-h">
                 <div class="data-f1 data-home-center-right-container-top data-fdr">
                     <div class="data-home-center-right-container-top-left">
-                        <Bar :crosswise-data="crosswiseData" v-if="!chartLoading" bar-title="设计单位总分数"/>
+                        <Bar :crosswise-data="crosswiseData" v-if="crosswiseData.length" bar-title="设计单位总分数"/>
                     </div>
                     <div class="data-f1">
                         <CenterRightTopRight ref="centerRightTopRightRef" :btn-value="btnValue"/>
@@ -41,7 +41,6 @@ const options = [
 ]
 const btnValue = ref('sjdw')
 const crosswiseData = ref([])
-const chartLoading = ref(null)
 const centerRightTopRightRef = ref()
 const centerRightBottomRef = ref()
 
@@ -61,7 +60,6 @@ onMounted(()=>{
 })
 
 const getDesignUnitData = async ()=>{
-    chartLoading.value = true;
     crosswiseData.value = []
     const res = await getPf({ type: btnValue.value,pfType:'sjdwzf' })
     if(res.code === 200){
@@ -71,7 +69,6 @@ const getDesignUnitData = async ()=>{
                 yData: item[btnValue.value]
             }
         })
-        chartLoading.value = false;
     }
 }
 

@@ -2,7 +2,7 @@
     <ChartCard :title="title">
         <div class="data-w-h data-fdr">
             <div class="data-f1" v-for="(item,index) in barList" :key="index">
-                <Bar :vertical-data="item.verticalData" :bar-title="item.barTitle" v-if="!item.chartLoading"/>
+                <Bar :vertical-data="item.verticalData" :bar-title="item.barTitle" v-if="item.verticalData.length"/>
             </div>
         </div>
     </ChartCard>
