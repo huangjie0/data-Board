@@ -11,8 +11,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import TitleCard from '@/components/TitleCard.vue';
-import Pie from '@/components/Pie.vue';
 import { pieGetData } from '@/api/home/index.ts';
 
 interface Params{

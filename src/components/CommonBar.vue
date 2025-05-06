@@ -15,8 +15,6 @@
     </div>
 </template>
 <script lang="ts" setup>
-import TitleCard from '@/components/TitleCard.vue';
-import Bar from '@/components/Bar.vue';
 import { getKyxmTimeData } from '@/api/home/index.ts';
 
 interface Params{

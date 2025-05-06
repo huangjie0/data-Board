@@ -8,8 +8,6 @@
     </ChartCard>
 </template>
 <script setup lang="ts">
-import ChartCard from '@/components/ChartCard.vue';
-import Bar from '@/components/Bar.vue';
 
 interface Params{
     title:string;
