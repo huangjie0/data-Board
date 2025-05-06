@@ -10,8 +10,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import TitleCard from '@/components/TitleCard.vue';
-import Progress from '@/components/Progress.vue';
 import { getKytgl } from '@/api/home/index.ts'
 
 const data = ref([])

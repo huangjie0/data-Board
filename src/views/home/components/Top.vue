@@ -6,7 +6,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import BackgroundCard from '@/components/BackgroundCard.vue';
 import { getTopData } from '@/api/home/index.ts'
 
 const topData = ref({})

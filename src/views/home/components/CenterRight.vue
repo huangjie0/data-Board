@@ -23,10 +23,8 @@
     </div>
 </template>
 <script setup lang="ts">
-import TitleCard from '@/components/TitleCard.vue';
 import CenterRightBottom from './CenterRightBottom.vue';
 import CenterRightTopRight from './CenterRightTopRight.vue';
-import Bar from '@/components/Bar.vue';
 import { getPf } from '@/api/home/index.ts';
 
 const options = [

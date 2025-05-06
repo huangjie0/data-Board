@@ -2,9 +2,7 @@
     <CommonBasicBar title="项目质量评分" :bar-list="barList"/>
 </template>
 <script lang="ts" setup>
-import CommonBasicBar from '@/components/CommonBasicBar.vue';
 import useBasicBar from '@/hooks/useBasicBar.ts';
-
 
 interface Params{
     btnValue?:string

@@ -33,8 +33,6 @@
 import Top from './components/Top.vue';
 import CenterRight from './components/CenterRight.vue';
 import BottomRight from './components/BottomRight.vue';
-import CommonPie from '@/components/CommonPie.vue';
-import CommonBar from '@/components/CommonBar.vue';
 
 </script>
 <style lang="less" scoped>
