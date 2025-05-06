@@ -6,7 +6,7 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
-            <Pie :data="pieData" :showLabelNormal="false" v-if="pieData.length"/>
+            <Pie :data="pieData" v-if="!l"/>
         </TitleCard>
     </div>
 </template>
@@ -22,6 +22,7 @@ interface Params{
 }
 
 const btnValue = ref(0)
+const l = ref(false);
 const options = [
     {
         label:'设计单位',
@@ -47,9 +48,11 @@ const getPieData = async ()=>{
         name:props.name,
         type:btnValue.value
     }
+    l.value = true;
     const res:any = await pieGetData(params);
     if(res.code == 200){
         pieData.value = res.data
+        l.value = false
     }
 }
 

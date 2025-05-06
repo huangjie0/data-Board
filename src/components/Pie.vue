@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Params>(),{
 const pieRef = ref();
 const myChart = ref(null);
 
+
 const initChart = ()=>{
     if(pieRef.value) myChart.value = echarts.init(pieRef.value);
     
