@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<Params>(),{
 })
 
 const pieRef = ref();
-const myChart = ref(null);
+const myChart = ref();
 
 
 const initChart = ()=>{
