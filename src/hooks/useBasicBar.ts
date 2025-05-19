@@ -1,6 +1,6 @@
 import { getPf } from '@/api/home/index.ts';
 
-export default function useBasicBar(props:any ){
+export default function useBasicBar(props:any){
     const getCommonData = async (targetData:any,pfType:string,xData:string)=>{
         targetData.value = []
         const res = await getPf({ type: props.btnValue, pfType:pfType })
