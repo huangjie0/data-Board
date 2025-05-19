@@ -15,7 +15,7 @@ import { getKytgl } from '@/api/home/index.ts'
 const data = ref<any>([])
 
 onMounted(async ()=>{
-    const res = await getKytgl();
+    const res:any = await getKytgl();
     if(res.code === 200){
         data.value = res.data
     }
