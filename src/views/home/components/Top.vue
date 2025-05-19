@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { getTopData } from '@/api/home/index.ts'
 
-const topData = ref({})
+const topData = ref<any>({})
 
 const countData = computed(()=>{
     return [

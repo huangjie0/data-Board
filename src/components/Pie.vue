@@ -5,8 +5,8 @@
 import * as echarts from 'echarts';
 
 interface Params{
-    radius?: any[];
-    center?: any[];
+    radius?: any;
+    center?: any;
     data:any[];
     itemGap?:number;
     showLabelNormal?:boolean
@@ -21,7 +21,6 @@ const props = withDefaults(defineProps<Params>(),{
 
 const pieRef = ref();
 const myChart = ref();
-
 
 const initChart = ()=>{
     if(pieRef.value) myChart.value = echarts.init(pieRef.value);

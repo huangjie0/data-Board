@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { getKytgl } from '@/api/home/index.ts'
 
-const data = ref([])
+const data = ref<any>([])
 
 onMounted(async ()=>{
     const res = await getKytgl();
