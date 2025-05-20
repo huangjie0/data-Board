@@ -63,6 +63,5 @@ const style= computed(()=>{
         width: 12ch;
         text-align: center;
     }
-    
 }
 </style>

@@ -160,8 +160,6 @@ const initChart = ()=>{
             bottom: '15%'
         }
     }
-
-
     myChart && myChart.setOption(option)
 }
 
