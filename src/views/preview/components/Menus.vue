@@ -1,6 +1,7 @@
 <template>
     <div class="data-menus data-between">
-        <SmallCircle icon="icon-canyin"/>
+        <SmallCircle icon="icon-jiantou1"/>
+        <SmallCircle icon="icon-jiantou"/>
     </div>
 </template>
 <script lang="ts" setup>

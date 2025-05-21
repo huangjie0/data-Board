@@ -27,6 +27,7 @@ const style = computed(()=>{
         border-radius: 50%;
         width: var(--smallCircle);
         height: var(--smallCircle);
-        background-color: greenyellow;
+        background: linear-gradient(223deg, #DBE6FC, #F8FAFF);;
+        color: var(--vt-c-white);
     }
 </style>
