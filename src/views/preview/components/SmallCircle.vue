@@ -1,23 +1,26 @@
 <template>
     <div class="small-circle data-center" :style="style">
-        <i class="iconfont" :class="icon"></i>
+        <i class="iconfont small-circle-icon" :class="icon"></i>
     </div>
 </template>
 <script lang="ts" setup>
 
 interface Params{
-    size?:number,
+    size?:number;
+    iconSize?:number;
     icon:string
 }
 
 
 const props = withDefaults(defineProps<Params>(),{
-    size:31
+    size:31,
+    iconSize:15
 })
 
 const style = computed(()=>{
     return {
-        '--smallCircle':props.size + 'px'
+        '--smallCircle':props.size + 'px',
+        '--smallCircleIcon':props.iconSize + 'px'
     }
 })
 
@@ -29,5 +32,8 @@ const style = computed(()=>{
         height: var(--smallCircle);
         background: linear-gradient(223deg, #DBE6FC, #F8FAFF);;
         color: var(--vt-c-white);
+        &-icon{
+            font-size: var(--smallCircleIcon);
+        }
     }
 </style>
