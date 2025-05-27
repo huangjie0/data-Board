@@ -26,7 +26,7 @@ declare module 'vue' {
     Progress: typeof import('./../components/Progress.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SmallCircle: typeof import('./../components/SmallCircle.vue')['default']
+    SmallCircle: typeof import('../components/SmallCircle.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
   }
   export interface ComponentCustomProperties {
