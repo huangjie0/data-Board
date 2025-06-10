@@ -26,18 +26,19 @@
 import CenterRightBottom from './CenterRightBottom.vue';
 import CenterRightTopRight from './CenterRightTopRight.vue';
 import { getPf } from '@/api/home/index.ts';
+import Type from '../type/index.ts'
 
 const options = [
     {
         label:'设计单位',
-        value:'sjdw'
+        value: Type.designUnit
     },
     {
         label:'客户经理',
-        value:'khjl'
+        value: Type.customerManager
     }
 ]
-const btnValue = ref('sjdw')
+const btnValue = ref<any>(Type.designUnit)
 const crosswiseData = ref([])
 const centerRightTopRightRef = ref()
 const centerRightBottomRef = ref()
