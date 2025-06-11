@@ -3,6 +3,7 @@
 </template>
 <script lang="ts" setup>
 import useBasicBar from '@/hooks/useBasicBar.ts';
+import Type from '../type/index.ts';
 
 interface Params{
     btnValue?:string
@@ -25,8 +26,8 @@ onMounted(()=>{
     getFeasibilityStudyApproval()
 })
 
-const getProjectDurationData = ()=>getCommonData(verticalData_1,'ztxmpjscpf','AVG(ztxmpjscpf)')
-const getFeasibilityStudyApproval = ()=>getCommonData(verticalData_2,'kypfpjscpf','AVG(kypfpjscpf)')
+const getProjectDurationData = ()=>getCommonData(verticalData_1, Type.ztxmpjscpf , Type['AVG(ztxmpjscpf)'] )
+const getFeasibilityStudyApproval = ()=>getCommonData(verticalData_2, Type.kypfpjscpf , Type['AVG(kypfpjscpf)'] )
 
 defineExpose({
     getProjectDurationData,

@@ -60,11 +60,11 @@ onMounted(()=>{
 
 const getDesignUnitData = async ()=>{
     crosswiseData.value = []
-    const res:any = await getPf({ type: btnValue.value,pfType:'sjdwzf' })
+    const res:any = await getPf({ type: btnValue.value,pfType: Type.sjdwzf })
     if(res.code === 200){
         crosswiseData.value = res.data.map((item:any)=>{
             return {
-                xData: item['AVG(sjdwzf)'],
+                xData: item[Type['AVG(sjdwzf)']],
                 yData: item[btnValue.value]
             }
         })
