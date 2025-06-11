@@ -6,10 +6,10 @@
         <div class="data-home-center data-fdr">
             <div class="data-home-center-left data-fdc">
                 <div class="data-f1 data-home-center-left-top">
-                    <CommonPie card-title="本年委托可研项目数量" icon-class="icon-pingpangqiu" name="bnwt"/>
+                    <CommonPie card-title="本年委托可研项目数量" icon-class="icon-pingpangqiu" :name="Type.bnwt"/>
                 </div>
                 <div class="data-f1">
-                    <CommonPie card-title="本年已完成可研项目数量" icon-class="icon-muai" name="bnywc"/>
+                    <CommonPie card-title="本年已完成可研项目数量" icon-class="icon-muai" :name="Type.bnywc"/>
                 </div>
             </div>
             <div class="data-f1">
@@ -18,10 +18,10 @@
         </div>
         <div class="data-home-bottom data-fdr">
             <div class="data-home-bottom-left data-f1">
-                <CommonBar cardTitle="在途项目平均时长" icon-class="icon-qingdan" kytype="ztxm"/>
+                <CommonBar cardTitle="在途项目平均时长" icon-class="icon-qingdan" :kytype="Type.ztxm"/>
             </div>
             <div class="data-home-bottom-center data-f1">
-                <CommonBar cardTitle="可研批复平均时长" icon-class="icon-qihang" kytype="kypf"/>
+                <CommonBar cardTitle="可研批复平均时长" icon-class="icon-qihang" :kytype="Type.kypf"/>
             </div>
             <div class="data-f1">
                 <BottomRight/>
@@ -33,6 +33,7 @@
 import Top from './components/Top.vue';
 import CenterRight from './components/CenterRight.vue';
 import BottomRight from './components/BottomRight.vue';
+import Type from './type/index.ts';
 
 </script>
 <style lang="less" scoped>

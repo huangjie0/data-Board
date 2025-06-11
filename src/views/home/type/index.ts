@@ -12,7 +12,12 @@ enum Type{
     ztxmpjscpf = 'ztxmpjscpf',
     'AVG(ztxmpjscpf)' = 'AVG(ztxmpjscpf)',
     kypfpjscpf = 'kypfpjscpf',
-    'AVG(kypfpjscpf)' = 'AVG(kypfpjscpf)'
+    'AVG(kypfpjscpf)' = 'AVG(kypfpjscpf)',
+    bnwt = 'bnwt',
+    bnywc = 'bnywc',
+    ztxm = 'ztxm',
+    kypf = 'kypf'
+
 }
 
 export default Type;
