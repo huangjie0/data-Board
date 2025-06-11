@@ -4,7 +4,7 @@
             <div class="progress-item" v-if="data.length" v-for="item in data" :key="item.label">
                 <span class="progress-item-name">{{ item.label }}</span>
                 <Progress :percentage="item.value" color="#0D867F"></Progress>
-                <span class="progress-item-percent">{{ item.value * 100 + '%' }}</span>
+                <span class="progress-item-percent">{{ (Math.round(item.value * 100) / 100) * 100  + '%' }}</span>
             </div>
         </TitleCard>
     </div>
