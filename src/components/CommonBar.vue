@@ -16,6 +16,7 @@
 </template>
 <script lang="ts" setup>
 import { getKyxmTimeData } from '@/api/home/index.ts';
+import Type from '@/views/home/type/index.ts'
 
 interface Params{
     cardTitle:string;
@@ -25,18 +26,18 @@ interface Params{
 
 const props = defineProps<Params>();
 
-const btnValue1 = ref('sjdw')
+const btnValue1 = ref<any>(Type.designUnit)
 const btnValue2 = ref('month')
 const d:any = ref([])
  
 const options1 = [
     {
         label:'设计单位',
-        value:'sjdw'
+        value: Type.designUnit 
     },
     {
         label:'客户经理',
-        value:'khjl'
+        value: Type.customerManager
     }
 ]
 

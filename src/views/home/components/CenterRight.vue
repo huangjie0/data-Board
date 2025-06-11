@@ -26,7 +26,7 @@
 import CenterRightBottom from './CenterRightBottom.vue';
 import CenterRightTopRight from './CenterRightTopRight.vue';
 import { getPf } from '@/api/home/index.ts';
-import Type from '../type/index.ts'
+import Type from '../type/index.ts';
 
 const options = [
     {
