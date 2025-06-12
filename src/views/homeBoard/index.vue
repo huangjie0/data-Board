@@ -30,8 +30,8 @@
                     </template>
                 </el-dropdown>
                 <div class="data-f1 data-w-h home-board-top-time-date">
-                    <div class="data-f1 home-board-top-time-date-t1">23:50:24</div>
-                    <div class="data-f1 home-board-top-time-date-t2">2025/5/5周一</div>
+                    <div class="data-f1 home-board-top-time-date-t1">{{ currentTime }}</div>
+                    <div class="data-f1 home-board-top-time-date-t2">{{ dayTime }}</div>
                 </div>
             </div>
         </div>
@@ -44,6 +44,7 @@
 import SmallCircleCard from './components/SmallCircleCard.vue';
 import ParallelogramCard from './components/ParallelogramCard.vue';
 import FirstCard from './components/FirstCard.vue';
+import DateTimeUtils from '@/utils/date';
 
 const circleUrl = ref('https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png');
 const cou =  ref(4)
@@ -91,6 +92,21 @@ const previous = ()=>{
     if(cou.value > 4) cou.value -= 4;
     lastCou.value = cou.value - 4;
 }
+
+const currentTime = ref(new Date().toLocaleDateString())
+const timer = ref<any>(null)
+
+onMounted(()=>{
+    timer.value = setInterval(()=>{
+        currentTime.value = new Date().toLocaleTimeString();
+    },1000)
+})
+
+onUnmounted(()=>{
+    clearInterval(timer.value)
+})
+
+const dayTime = computed(()=>{ return  DateTimeUtils.formatDate(new Date().getTime(), 'YYYY/M/D' ) + DateTimeUtils.getDayOfWeek(new Date()) })
 
 </script>
 <style lang="less" scoped>

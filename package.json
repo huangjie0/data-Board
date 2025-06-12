@@ -16,6 +16,7 @@
     "@vitejs/plugin-legacy": "^6.0.2",
     "autofit.js": "^3.2.5",
     "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
     "dhtmlx-gantt": "^8.0.6",
     "echarts": "^5.6.0",
     "element-plus": "^2.9.7",
