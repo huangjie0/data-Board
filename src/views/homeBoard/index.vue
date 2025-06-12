@@ -5,6 +5,7 @@
                 <i class="iconfont icon-shendusikao home-board-top-title-icon"></i>
                 <span class="home-board-top-title-font">上海业扩可研分析管控</span>
             </div>
+            <!-- menus菜单 -->
             <div class="home-board-top-menus data-w-h data-between">
                 <SmallCircleCard icon-class="icon-jiantou1" @chang-menus="previous" v-if="menusList.length > 4"></SmallCircleCard>
                 <div class="data-f1 data-w-h menus">
