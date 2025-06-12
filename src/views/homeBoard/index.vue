@@ -35,13 +35,14 @@
             </div>
         </div>
         <div class="home-board-container data-w-h">
-           
+           <FirstCard/>
         </div>
     </div>
 </template>
 <script lang="ts" setup>
 import SmallCircleCard from './components/SmallCircleCard.vue';
 import ParallelogramCard from './components/ParallelogramCard.vue';
+import FirstCard from './components/FirstCard.vue';
 
 const circleUrl = ref('https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png');
 const cou =  ref(4)
@@ -146,7 +147,6 @@ const previous = ()=>{
                 align-items: center;
                 padding: 0 70px;
                 overflow-x: auto;
-
             }
         }
     }
