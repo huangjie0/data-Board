@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="home-board-container">
+        <div class="home-board-container data-w-h">
            
         </div>
     </div>
@@ -69,7 +69,7 @@ const menusList = [
     }
 ]
 
-const countData = ( initialValue:number = 0 )=>{
+const countData = (initialValue:number = 0 )=>{
     let menus = [];
     if(menusList.length && menusList.length > 4){
         menus = menusList.slice(initialValue,cou.value)
@@ -146,8 +146,12 @@ const previous = ()=>{
                 align-items: center;
                 padding: 0 70px;
                 overflow-x: auto;
+
             }
         }
+    }
+    &-container{
+        padding: 38px;
     }
 }
 </style> 
