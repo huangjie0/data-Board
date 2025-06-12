@@ -1,5 +1,5 @@
 <template>
-    <div class="small-circle-card data-center">
+    <div class="small-circle-card data-center" @click="changePath">
         <i class="iconfont small-circle-card-icon" :class="iconClass" :style="style"></i>
     </div>
 </template>
@@ -18,6 +18,12 @@ const style = computed(()=>{
         '--iconSize':props.iconSize + 'px'
     }
 })
+
+const emits = defineEmits(['changMenus'])
+
+const changePath = ()=>{
+    emits('changMenus')
+}
 </script>
 <style lang="less" scoped>
 .small-circle-card{
