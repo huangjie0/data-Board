@@ -1,13 +1,70 @@
 <template>
     <div class="first-card data-between">
-        <div class="data-f1"></div>
-        <div class="data-f1"></div>
-        <div class="data-f1"></div>
+        <div class="data-f1 data-w-h data-fdc first-card-box" v-for="(item,index) in d" :key="index">
+            <div class="first-card-box-item" v-for="(item2,index2) in item.d" :key="index2">
+                <NumberTextCard :img-url="item2.imgUrl" :text="item2.text" :number="item2.number" :unit="item2.unit"/>
+            </div>
+        </div>
     </div>
 </template>
 <script lang="ts" setup>
+import NumberTextCard from './NumberTextCard.vue';
+import i1 from '@/assets/style/image/i1.png';
+import i2 from '@/assets/style/image/i2.png';
+import i3 from '@/assets/style/image/i3.png';
+import i4 from '@/assets/style/image/i4.png';
 
-</script>
+const d = computed(()=>{
+    return [
+        {
+            d:[
+                {
+                    imgUrl:i1,
+                    text:"本年累计委托可研项目数量",
+                    number:213,
+                    unit:"个"
+                },
+                {
+                    imgUrl:i2,
+                    text:"本年度已批复项目平均时长",
+                    number:107,
+                    unit:"日"
+                },
+            ]
+        },
+        {
+            d:[
+                {
+                    imgUrl:i3,
+                    text:"本年累计完成评审项目",
+                    number:213,
+                    unit:"个"
+                },
+                {
+                    imgUrl:i4,
+                    text:"当前在途项目平均时长",
+                    number:107,
+                    unit:"日"
+                }
+            ]
+        },
+        {
+            d:[
+                {
+                    text:"目前在途超长项目数量",
+                    number:213,
+                    unit:"个"
+                },
+                {
+                    text:"近三月在途项目结存率",
+                    number:80,
+                    unit:"%"
+                }
+            ]
+        }
+    ]
+})
+</script> 
 <style lang="less" scoped>
 .first-card{
     width: 100%;
@@ -16,5 +73,11 @@
     border-radius: var(--small-radius);
     box-shadow: 0px 3px 7px 0px rgba(139,168,213,0.13);
     padding: 20px 46px;
-}
+    &-box{
+        justify-content: space-between;
+        &-item{
+            height: 45%;
+        }
+    }
+} 
 </style>

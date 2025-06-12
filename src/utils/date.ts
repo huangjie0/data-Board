@@ -11,8 +11,7 @@ export default class DateTimeUtils{
     static formatDate(date:Date | string | number,format = "YYYY-MM-DD"){
         return dayjs(date).format(format)
     }
-
-
+    
     /**
      * 
      * @param  { Date | string | number } date 日期对象、日期字符串或时间戳
@@ -23,6 +22,5 @@ export default class DateTimeUtils{
         const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
         return days[date.getDay()]
     }
-
 }
 

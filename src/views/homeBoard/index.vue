@@ -52,7 +52,7 @@ const lastCou = ref()
 const menusList = [
     {
         pathName:"首页看板",
-        path:"/"
+        path:"/homeBoard"
     },
     {
         pathName:"项目详情总览",
