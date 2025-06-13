@@ -23,7 +23,7 @@ const clickPath = ()=>{
 .parallelogram {
     width: 207px;
     height: 51px;
-    transform: skew(-40deg); 
+    transform: skew(-50deg); 
     background: linear-gradient(223deg, #F8FAFF, #DBE6FC);
     border-radius: 5px;
     font-size: 18px;
@@ -31,7 +31,7 @@ const clickPath = ()=>{
     color: var(--common-home-bg-4);
 }
 .parallelogram span {   
-    transform: skew(40deg);
+    transform: skew(50deg);
 }
 
 .parallelogram:hover{
