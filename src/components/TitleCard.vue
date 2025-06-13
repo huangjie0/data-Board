@@ -1,6 +1,6 @@
 <template>
     <div class="title-card data-w-h data-fdc">
-        <div class="title-card-top">
+        <div class="title-card-top" :style="style">
             <i class="iconfont title-card-top-icon" :class="iconClass"></i>
             <span class="title-card-top-text">
                 {{ title }}
@@ -18,10 +18,19 @@
 
 interface Params{
     title:string;
-    iconClass:string
+    iconClass:string,
+    color?:string
 }
 
-defineProps<Params>();
+const props = withDefaults(defineProps<Params>(),{
+    color:'#0d867f'
+})
+
+const style = computed(()=>{
+    return {
+        "--title-color": props.color
+    }
+})
 </script>
 <style lang="less" scoped>
 .title-card{
@@ -33,12 +42,13 @@ defineProps<Params>();
         border-bottom: 1px solid var(--vt-c-text-dark-2);
         &-icon{
             font-size: 25px;
-            color: #0d867f;
+            color: var(--title-color);
             padding: 0 10px;
         }
         &-text{
             font-size: 17px;
             font-weight: 550;
+            color:var(--title-color)
         }
     }
     &-content{

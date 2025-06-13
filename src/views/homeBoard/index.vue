@@ -37,6 +37,7 @@
         </div>
         <div class="home-board-container data-w-h">
            <FirstCard/>
+           <SecondCard/>
         </div>
     </div>
 </template>
@@ -44,6 +45,7 @@
 import SmallCircleCard from './components/SmallCircleCard.vue';
 import ParallelogramCard from './components/ParallelogramCard.vue';
 import FirstCard from './components/FirstCard.vue';
+import SecondCard from './components/SecondCard.vue';
 import DateTimeUtils from '@/utils/date';
 
 const circleUrl = ref('https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png');

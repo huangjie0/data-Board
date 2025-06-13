@@ -28,7 +28,6 @@ const animateToValue = ()=>{
         scrollTrigger: ".num-" + id.value,
         duration: props.duration,
         num:props.value
-
     })
 }
 
@@ -45,7 +44,6 @@ onMounted(()=>{
 })
 
 watch(() => props.value,()=>{ asynchronousRendering() })
-
 
 </script>
 <style lang="less" scoped>
