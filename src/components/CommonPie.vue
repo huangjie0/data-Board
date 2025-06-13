@@ -54,7 +54,7 @@ const getPieData = async ()=>{
     }
 }
 
-const changeRadio = (val:number) => {
+const changeRadio = (val:any) => {
     btnValue.value = val;
     getPieData()
 } 
