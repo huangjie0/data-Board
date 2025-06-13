@@ -1,7 +1,9 @@
 <template>
     <div class="data-w-h data-fdr number-text-card" :style="style">
         <div class="number-text-card-item data-fdr">
-            <img :src="imgUrl">
+            <div class="image-container">
+                <img :src="imgUrl">
+            </div>
             <div class="number-text-card-item-title data-center">{{ text }}</div>
         </div>
         <NumberCard :value="item" v-for="(item,index) in n" :key="index"/>
@@ -53,4 +55,13 @@ const style = computed(()=>{
         }
     }
 }
+.image-container{
+    display: inline-block; 
+    transition: transform 3s; 
+}
+
+.number-text-card:hover .image-container{
+    transform: rotate(360deg);
+}
+
 </style>

@@ -15,7 +15,7 @@ const d = reactive({
 
 interface Params{
     value:number,
-    duration:number
+    duration?:number
 }
 
 const props = withDefaults(defineProps<Params>(),{
