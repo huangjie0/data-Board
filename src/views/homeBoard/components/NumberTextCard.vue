@@ -1,5 +1,5 @@
 <template>
-    <div class="data-w-h data-fdr number-text-card">
+    <div class="data-w-h data-fdr number-text-card" :style="style">
         <div class="number-text-card-item data-fdr">
             <img :src="imgUrl">
             <div class="number-text-card-item-title data-center">{{ text }}</div>
@@ -15,14 +15,21 @@ interface Params{
     imgUrl:string
     text:string
     number:number
-    unit:string
+    unit:string,
+    justifyContent?:string
 }
 
 const props = withDefaults(defineProps<Params>(),{
-    unit:'个'
+    unit:'个',
+    justifyContent:'start'
 })
 
 const n = computed(()=>{ return MathUtils.singleNumber(props.number) })
+const style = computed(()=>{
+    return {
+        justifyContent:props.justifyContent
+    }
+})
 
 </script>
 <style lang="less" scoped> 

@@ -2,7 +2,7 @@
     <div class="first-card data-between">
         <div class="data-f1 data-w-h data-fdc first-card-box" v-for="(item,index) in d" :key="index">
             <div class="first-card-box-item" v-for="(item2,index2) in item.d" :key="index2">
-                <NumberTextCard :img-url="item2.imgUrl" :text="item2.text" :number="item2.number" :unit="item2.unit"/>
+                <NumberTextCard :img-url="item2.imgUrl" :text="item2.text" :number="item2.number" :unit="item2.unit" :justify-content="item?.justifyContent"/>
             </div>
         </div>
     </div>
@@ -35,6 +35,7 @@ const d = computed(()=>{
             ]
         },
         {
+            justifyContent:"center",
             d:[
                 {
                     imgUrl:i3,
@@ -51,6 +52,7 @@ const d = computed(()=>{
             ]
         },
         {
+            justifyContent:"end",
             d:[
                 {
                     imgUrl:i5,
@@ -61,7 +63,7 @@ const d = computed(()=>{
                 {
                     imgUrl:i6,
                     text:"近三月在途项目结存率",
-                    number:80,
+                    number:100,
                     unit:"%"
                 }
             ]
