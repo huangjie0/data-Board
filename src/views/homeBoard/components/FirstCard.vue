@@ -13,6 +13,8 @@ import i1 from '@/assets/style/image/i1.png';
 import i2 from '@/assets/style/image/i2.png';
 import i3 from '@/assets/style/image/i3.png';
 import i4 from '@/assets/style/image/i4.png';
+import i5 from '@/assets/style/image/i5.png';
+import i6 from '@/assets/style/image/i6.png';
 
 const d = computed(()=>{
     return [
@@ -51,11 +53,13 @@ const d = computed(()=>{
         {
             d:[
                 {
+                    imgUrl:i5,
                     text:"目前在途超长项目数量",
                     number:213,
                     unit:"个"
                 },
                 {
+                    imgUrl:i6,
                     text:"近三月在途项目结存率",
                     number:80,
                     unit:"%"
