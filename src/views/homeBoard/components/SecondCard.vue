@@ -51,7 +51,6 @@ const changeRadio = (type:any)=>{
         margin-top: 30px;
     }
 
-
     :deep(.el-radio-button:hover .el-radio-button__inner) {
         background-color: var(--common-home-bg-2);
         border-color: var(--common-home-bg-2);
