@@ -89,5 +89,11 @@ const getDesignUnitData = async ()=>{
             margin-top: 5px;
         }
     }
-}   
+} 
+
+:deep(.el-radio-button:hover .el-radio-button__inner) {
+    background-color: var(--board-home);
+    border-color: var(--board-home);
+    color: var(--vt-c-white);
+} 
 </style>

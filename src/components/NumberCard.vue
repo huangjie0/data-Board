@@ -1,5 +1,5 @@
 <template>
-    <div class="number-card data-center" :class="'num-' + id" :style="style">
+    <div class="number-card data-center" :class="'num-' + id">
         {{ d.num.toFixed(0) }}
     </div>
 </template>
