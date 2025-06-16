@@ -47,7 +47,7 @@ const style = computed(()=>{
         }
         &-text{
             font-size: 17px;
-            font-weight: 550;
+            font-weight: 800;
             color:var(--title-color)
         }
     }

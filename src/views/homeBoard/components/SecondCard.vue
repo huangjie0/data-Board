@@ -1,20 +1,30 @@
 <template>
     <div class="second-card data-fdr">
-        <div class="data-f1">
+        <div class="data-f1 data-m-r">
             <TitleCard title="设计单位评分一览" icon-class="icon-faya" color="#1F3696">
                 <template #rightValue>
-                  
+                    <div>
+
+                    </div>
                 </template>
+                <div class="data-w-h data-bg data-b-r">
+
+                </div>
             </TitleCard>
         </div>
-        <div class="data-f1">
+        <div class="data-f1 data-m-l">
             <TitleCard title="项目时长评分" icon-class="icon-muai" color="#1F3696">
                 <template #rightValue>
-                  
+                  <div class="data-w-h">
+
+                  </div>
                 </template>
-            </TitleCard>
+                <div class="data-w-h data-bg data-b-r">
+
+                </div>
+            </TitleCard> 
         </div>
-    </div>
+    </div> 
 </template>
 <script lang="ts" setup>
 
