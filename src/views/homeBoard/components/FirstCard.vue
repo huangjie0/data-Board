@@ -70,7 +70,7 @@ const d = computed(()=>{
         }
     ]
 })
-</script> 
+</script>  
 <style lang="less" scoped>
 .first-card{
     width: 100%;

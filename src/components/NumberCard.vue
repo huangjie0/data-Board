@@ -48,7 +48,7 @@ watch(() => props.value,()=>{ asynchronousRendering() })
 </script>
 <style lang="less" scoped>
     .number-card{
-        width: 26px;
+        padding: 12px 7px 12px 7px;
         height: 100%;
         border-radius: 3px;
         background: linear-gradient(0deg, #526BFB 0%, #3F7DF8 100%);
