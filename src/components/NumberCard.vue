@@ -1,5 +1,5 @@
 <template>
-    <div class="number-card data-center" :class="'num-' + id">
+    <div class="number-card data-center" :class="'num-' + id" :style="style">
         {{ d.num.toFixed(0) }}
     </div>
 </template>
@@ -48,8 +48,8 @@ watch(() => props.value,()=>{ asynchronousRendering() })
 </script>
 <style lang="less" scoped>
     .number-card{
-        padding: 12px 7px 12px 7px;
         height: 100%;
+        width: 26px;
         border-radius: 3px;
         background: linear-gradient(0deg, #526BFB 0%, #3F7DF8 100%);
         color: white;

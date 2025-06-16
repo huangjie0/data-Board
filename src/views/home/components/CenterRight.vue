@@ -43,7 +43,7 @@ const crosswiseData = ref([])
 const centerRightTopRightRef = ref()
 const centerRightBottomRef = ref()
 
-const changeRadio = (val:string)=>{
+const changeRadio = (val:any)=>{
     btnValue.value = val;
     getDesignUnitData();
     centerRightTopRightRef.value.getProjectDurationData();

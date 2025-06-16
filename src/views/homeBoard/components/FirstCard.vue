@@ -74,7 +74,7 @@ const d = computed(()=>{
 <style lang="less" scoped>
 .first-card{
     width: 100%;
-    height: 134px;
+    height: 8.37rem;
     background-color: white;
     border-radius: var(--small-radius);
     box-shadow: 0px 3px 7px 0px rgba(139,168,213,0.13);

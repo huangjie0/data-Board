@@ -52,12 +52,12 @@ const options2 = [
     }
 ]
 
-const changeRadio1 = (type:string) => {
+const changeRadio1 = (type:any) => {
     btnValue1.value = type
     getBarData()
 }
 
-const changeRadio2 = (type:string) => {
+const changeRadio2 = (type:any) => {
     btnValue2.value = type
     getBarData()
 }
