@@ -1,5 +1,5 @@
 <template>
-    <div class="data-center parallelogram" @click="clickPath">
+    <div class="data-center parallelogram" @click="clickPath" :class="{ active:isActive }">
         <span>{{ pathName }}</span>
     </div>
 </template>
@@ -7,6 +7,8 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+const routerPath = computed(()=>{ return router.currentRoute.value.path })
+const isActive = computed(()=>{ return props.path === routerPath.value })
 
 interface Params{
     pathName:string
@@ -18,6 +20,8 @@ const props = defineProps<Params>()
 const clickPath = ()=>{
     router.push(props.path);
 }
+
+
 </script>
 <style lang="less" scoped>
 .parallelogram {
@@ -38,5 +42,10 @@ const clickPath = ()=>{
     background: linear-gradient(223deg, #7484FF, #2772FF);
     color: white;
     cursor: pointer;
+}
+
+.active{
+    background: linear-gradient(223deg, #7484FF, #2772FF);
+    color: white;
 }
 </style>

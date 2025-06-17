@@ -28,7 +28,7 @@ interface Params{
 const props = withDefaults(defineProps<Params>(),{
     value: 10,
     bgColor: '#2772FF'
-})
+}) 
 
 const style = computed(()=>{
     return {
