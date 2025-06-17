@@ -26,7 +26,7 @@ interface Params{
 }
 
 const props = withDefaults(defineProps<Params>(),{
-    value:10,
+    value: 10,
     bgColor: '#2772FF'
 })
 
@@ -46,7 +46,7 @@ const fStyle = computed(()=>{
 <style lang="less" scoped>
     .progress-box{
         height: 2.3rem;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         &-score{
             width: 3.125rem;
             height: 2rem;

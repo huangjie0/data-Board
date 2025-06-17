@@ -69,7 +69,7 @@ const changeRadio3 = (type:any)=>{ commonFn(type,btnValue3) }
 
 const d = computed(()=>{
     return [
-        { number: 3, text:"久隆设计" },
+        { number: 10, text:"久隆设计" },
         { number: 82, text:"东揭设计" },
         { number: 33, text:"上电设计" },
         { number: 53, text:"上海院" },
