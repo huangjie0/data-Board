@@ -31,6 +31,9 @@ const changePath = ()=>{
     height: 21px;
     border-radius: 50%;
     background: linear-gradient(223deg, #DBE6FC, #F8FAFF);
+    :hover{
+        cursor: pointer;
+    }
     &-icon{
         color: white;
         font-size: var(--iconSize);

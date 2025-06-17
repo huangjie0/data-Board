@@ -37,5 +37,6 @@ const clickPath = ()=>{
 .parallelogram:hover{
     background: linear-gradient(223deg, #7484FF, #2772FF);
     color: white;
+    cursor: pointer;
 }
 </style>

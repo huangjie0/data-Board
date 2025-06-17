@@ -1,65 +1,37 @@
 <template>
-     <div class="progress-box" :style="style">
-        <div class="progress-box-item" v-for="i in sumItem" :style="getColor(i)"></div>
+     <div class="progress-container">
+        <div class="progress-container-item" v-for="(_item,index) in rangeCount" :key="index" :style="{ backgroundColor: index < currentCount ? bgColor : transparentGrid }"></div>
     </div>
 </template>
 <script lang="ts" setup>
+import NumberUtils from '@/utils/number.ts'
 
-interface Params {
-    color?: string;
-    percentage: number;
-    bgColor?: string
+interface Params{
+    value?:number,
+    bgColor?:string
 }
 
-const props = withDefaults(defineProps<Params>(), {
-    color: '#048FFD'
+const props = withDefaults(defineProps<Params>(),{
+    value: 0,
+    bgColor: '#2772FF'
 })
 
-const style = computed(() => {
-    return {
-        '--progress-color': props.color,
-        '--progress-bg-color': props.bgColor,
-    }
-})
-
-const sumItem = ref(50)
-const getColor = (index: number) => {
-    const m = 100 / sumItem.value
-    const res: any = {}
-    const a = index * m
-    const val = props.percentage * 100
-    // 计算透明度
-    const n = (index - 1) * m
-    let t = (100 - n / 2) / 100
-    let color = props.color
-
-    if (val >= a) {
-        res.backgroundColor = color
-        res.opacity = t
-    }
-    return res
-}
+//设置进度格子数
+const rangeCount = 50;
+const currentCount = computed(() => Math.floor((props.value / 100) * rangeCount));
+const transparentGrid = computed(() => NumberUtils.hexToRgba( props.bgColor,0.5));
 
 </script>
 <style lang="less" scoped>
-.progress-box {
+.progress-container {
     width: 100%;
     height: 1rem;
-    border-radius: 0.125rem;
-    border: 0.0625rem solid var(--progress-color);
-    background-color: var(--progress-bg-color);
-    box-sizing: border-box;
-    padding: 0.0625rem;
     display: flex;
-    flex-direction: row;
-
-    &-item {
-        margin-right: 0.0625rem;
+    overflow: hidden;
+    &-item{
         flex: 1;
-
-        &:last-child {
-            margin-right: 0;
-        }
+        margin-right: 0.41rem;
+        height: 100%;
     }
 }
 </style>
