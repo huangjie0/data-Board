@@ -33,7 +33,7 @@
 <script lang="ts" setup>
 import Type from '@/views/home/type/index.ts'
 import ProgressBox from './ProgressBox.vue';
-import ScoreStatistics from './ScoreStatistics.vue'
+import ScoreStatistics from './ScoreStatistics.vue';
 
 const btnValue = ref<any>(Type.designUnit);
 const btnValue2 = ref<any>(Type.designUnit);

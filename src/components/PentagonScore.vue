@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pentagon-score">
         
     </div>
 </template>
@@ -7,5 +7,9 @@
 
 </script>
 <style lang="less" scoped>
-    
+    .pentagon-score{
+        width: 100%;
+        height: 2.3rem;
+    }
+
 </style>

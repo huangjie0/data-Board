@@ -1,7 +1,7 @@
 <template>
     <div class="data-fdr progress-box">
         <div class="data-fdr al-end">
-            <div class="progress-box-score data-center" :style="style">
+            <div class="progress-box-score data-center">
                 {{ value }}
             </div>
         </div>
@@ -10,14 +10,13 @@
             <Progress :value="value" :bg-color="bgColor"/>
         </div>
         <div class="data-fdr al-end progress-box-score-item" :style="fStyle"> 
-          <div class="progress-box-score-item-value">{{ value }}</div>
-          <div class="progress-box-score-item-text">分</div>
+            <span>{{ value }}</span>
+            <span class="progress-box-score-item-text">分</span>
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import Progress from '@/components/Progress.vue';
-import NumberUtils from '@/utils/number.ts';
 
 interface Params{
     value?:number,
@@ -30,15 +29,9 @@ const props = withDefaults(defineProps<Params>(),{
     bgColor: '#2772FF'
 }) 
 
-const style = computed(()=>{
-    return {
-        "--bg-color": props.bgColor
-    }
-})
-
 const fStyle = computed(()=>{
     return {
-        "--f-c":  NumberUtils.hexToRgba( props.bgColor,0.9)
+        "--f-c": props.bgColor
     }
 })
 
@@ -52,20 +45,16 @@ const fStyle = computed(()=>{
             height: 2rem;
             border-radius: var(--small-radius);
             color: white;
-            background-color: var(--bg-color);
+            background: linear-gradient(0deg, #526BFB 0%, #3F7DF8 100%);
             font-size: 18px;
             font-weight: bold;
             margin-right: 20px;
             &-item{
                 margin-left: 20px;
                 color: var(--f-c);
-                &-value{
-                    font-size: 18px;
-                }
                 &-text{
-                    font-size: 14px;
+                    font-size: 13px;
                 }
-
             }
         }
     }

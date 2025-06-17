@@ -1,7 +1,5 @@
 <template>
-    <div>
-        111
-    </div>
+    <PentagonScore></PentagonScore>
 </template>
 <script lang="ts" setup>
 
