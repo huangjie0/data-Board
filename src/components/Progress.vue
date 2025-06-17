@@ -25,7 +25,7 @@ const transparentGrid = computed(() => NumberUtils.hexToRgba( props.bgColor,0.5)
 <style lang="less" scoped>
 .progress-container {
     width: 100%;
-    height: 1rem;
+    height: 1rem; 
     display: flex;
     overflow: hidden;
     &-item{

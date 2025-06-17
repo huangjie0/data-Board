@@ -23,8 +23,8 @@
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                     </el-radio-group>
                 </template>
-                <div class="data-w-h data-bg data-b-r">
-
+                <div class="data-w-h data-bg data-b-r score-statistics-container">
+                    <ScoreStatistics v-for="(item,index) in d" :key="index" :text="item.text" :value="item.number"/>
                 </div>
             </TitleCard> 
         </div>
@@ -33,6 +33,7 @@
 <script lang="ts" setup>
 import Type from '@/views/home/type/index.ts'
 import ProgressBox from './ProgressBox.vue';
+import ScoreStatistics from './ScoreStatistics.vue'
 
 const btnValue = ref<any>(Type.designUnit);
 const btnValue2 = ref<any>(Type.designUnit);
@@ -70,7 +71,7 @@ const changeRadio3 = (type:any)=>{ commonFn(type,btnValue3) }
 const d = computed(()=>{
     return [
         { number: 10, text:"久隆设计" },
-        { number: 82, text:"东揭设计" },
+        { number: 19, text:"东揭设计" },
         { number: 33, text:"上电设计" },
         { number: 53, text:"上海院" },
         { number: 93, text:"市南设计" }
@@ -82,7 +83,7 @@ const d = computed(()=>{
     .second-card{
         height: 21.56rem;
         margin-top: 30px;
-        .progress-container{
+        .progress-container,.score-statistics-container{
             padding: 20px;
         }
     }
