@@ -9,7 +9,7 @@
                 <slot name="rightValue"></slot>
             </div>
         </div>
-        <div class="title-card-content data-f1">
+        <div class="title-card-content data-f1 data-w-h" :style="slStyle">
             <slot/>
         </div>
     </div>
@@ -19,16 +19,24 @@
 interface Params{
     title:string;
     iconClass:string,
-    color?:string
+    color?:string,
+    bgColor?:string
 }
 
 const props = withDefaults(defineProps<Params>(),{
-    color:'#0d867f'
+    color:'#0d867f',
+    bgColor:'white'
 })
 
 const style = computed(()=>{
     return {
         "--title-color": props.color
+    }
+})
+
+const slStyle = computed(()=> {
+    return {
+        '--bg-color':props.bgColor
     }
 })
 </script>
@@ -52,6 +60,7 @@ const style = computed(()=>{
         }
     }
     &-content{
+        background-color: var(--bg-color);
         overflow-y: auto;
         overflow-x: hidden;
     }

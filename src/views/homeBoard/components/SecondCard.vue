@@ -1,19 +1,19 @@
 <template>
     <div class="second-card data-fdr">
         <div class="data-f1 data-m-r">
-            <TitleCard title="设计单位评分一览" icon-class="icon-faya" color="#1F3696">
+            <TitleCard title="设计单位评分一览" icon-class="icon-faya" color="#1F3696" bg-color="#E3EEFD">
                 <template #rightValue>
                     <el-radio-group v-model="btnValue" size="small" fill="#2471FF" @change="changeRadio1">
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                     </el-radio-group>
                 </template>
-                <div class="data-w-h data-bg data-b-r progress-container">
+                <div class="data-w-h data-b-r progress-container">
                      <ProgressBox :text="item.text" :value="item.number" v-for="(item,index) in d" :key="index"></ProgressBox>
                 </div>
             </TitleCard>
         </div>
         <div class="data-f1 data-m-l">
-            <TitleCard title="项目时长评分" icon-class="icon-muai" color="#1F3696">
+            <TitleCard title="项目时长评分" icon-class="icon-muai" color="#1F3696" bg-color="#E3EEFD">
                 <template #rightValue>
                     <el-radio-group v-model="btnValue3" size="small" fill="#2471FF" @change="changeRadio3" class="data-m-r">
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options2" :key="index"/>
@@ -74,14 +74,21 @@ const d = computed(()=>{
         { number: 19, text:"东揭设计" },
         { number: 33, text:"上电设计" },
         { number: 53, text:"上海院" },
-        { number: 93, text:"市南设计" }
+        { number: 93, text:"市南设计" },
+        { number: 100, text:"市南设计" },
+        { number: 12, text:"市南设计" },
+        { number: 30, text:"市南设计" },
+        { number: 60, text:"市南设计" },
+        { number: 17, text:"市南设计" },
+        { number: 25, text:"市南设计" },
+        { number: 38, text:"市南设计" },
     ]
 })
 
 </script>
 <style lang="less" scoped>
     .second-card{
-        height: 21.56rem;
+        height: 22.5rem;
         margin-top: 30px;
         .progress-container,.score-statistics-container{
             padding: 20px;

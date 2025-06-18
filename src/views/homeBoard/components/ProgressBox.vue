@@ -37,7 +37,7 @@ const fStyle = computed(()=>{
 </script>
 <style lang="less" scoped>
     .progress-box{
-        height: 2.6rem;
+        height: 2.7rem;
         margin-bottom: 15px;
         &-score{
             width: 3.125rem;
@@ -52,7 +52,6 @@ const fStyle = computed(()=>{
                 width: 6%;
                 color: var(--f-c);
             }
-            
         }
     }
     .al-end{
