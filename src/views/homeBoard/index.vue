@@ -172,6 +172,7 @@ const dayTime = computed(()=>{ return  DateTimeUtils.formatDate(new Date().getTi
         }
     }
     &-container{
+        overflow-y: auto;
         padding: 38px;
     }
 }

@@ -1,11 +1,20 @@
 <template>
     <div class="pentagon-score">
         <div class="pentagon-score-left">
-
+            
         </div>
     </div>
 </template>
 <script setup lang="ts">
+interface Params{
+    text:string
+    grade:number
+}
+
+withDefaults(defineProps<Params>(),{
+    grade:0
+})
+
 
 </script>
 <style lang="less" scoped>

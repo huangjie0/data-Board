@@ -24,7 +24,7 @@
                     </el-radio-group>
                 </template>
                 <div class="data-w-h data-bg data-b-r score-statistics-container">
-                    <ScoreStatistics v-for="(item,index) in d" :key="index" :text="item.text" :value="item.number"/>
+                    <ScoreStatistics v-for="(item,index) in d" :key="index" :text="item.text" :grade="item.number"/>
                 </div>
             </TitleCard> 
         </div>
@@ -74,14 +74,7 @@ const d = computed(()=>{
         { number: 19, text:"东揭设计" },
         { number: 33, text:"上电设计" },
         { number: 53, text:"上海院" },
-        { number: 93, text:"市南设计" },
-        { number: 100, text:"市南设计" },
-        { number: 12, text:"市南设计" },
-        { number: 30, text:"市南设计" },
-        { number: 60, text:"市南设计" },
-        { number: 17, text:"市南设计" },
-        { number: 25, text:"市南设计" },
-        { number: 38, text:"市南设计" },
+        { number: 93, text:"市南设计" }
     ]
 })
 
