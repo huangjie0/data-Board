@@ -69,11 +69,11 @@ const changeRadio2 = (type:any)=>{ commonFn(type,btnValue2) }
 const changeRadio3 = (type:any)=>{ commonFn(type,btnValue3) }
 
 const d = [
-    { number: 10, text:"久隆设计" },
+    { number: 34, text:"久隆设计" },
     { number: 19, text:"东揭设计" },
     { number: 33, text:"上电设计" },
     { number: 53, text:"上海院" },
-    { number: 93, text:"市南设计" }
+    { number: 93, text:"市南设计" },
 ]
 
 const sortScore = d.sort((a:any,b:any) => b.number - a.number );

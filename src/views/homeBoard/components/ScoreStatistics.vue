@@ -1,10 +1,27 @@
 <template>
-    <div class="pentagon-score">
+    <div class="pentagon-score data-fdr">
         <div class="pentagon-score-left data-center">
             <img :src="f" v-if="index+1 === 1">
             <img :src="s" v-else-if="index+1 === 2">
             <img :src="t" v-else-if="index+1 === 3">
             <SmallCircleNumberCard :number="index + 1" v-else/>
+        </div>
+        <div class="data-between data-w-h data-f1">
+            <div class="pentagon-score-item data-center">
+                {{ grade }} 分
+            </div>
+            <div class="data-f1 data-between data-w-h">
+                <div class="pentagon-score-item-left">
+                    <el-progress :percentage="grade" :show-text="false" color="#4F6EFA" :stroke-width="10"/>
+                </div>
+                <div class="data-f1 data-w-h data-center">{{ text }}</div>
+                <div class="pentagon-score-item-right">
+                    <el-progress :percentage="grade"  :show-text="false" color="#5BC49F" :stroke-width="10"/>
+                </div>
+            </div>
+            <div class="pentagon-score-item data-center">
+                {{ grade }} 分
+            </div>
         </div>
     </div>
 </template>
@@ -29,7 +46,7 @@ withDefaults(defineProps<Params>(),{
     .pentagon-score{
         width: 100%;
         height: 2.5rem;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         position: relative;
         box-shadow: 0px 3px 7px 1px rgba(36,113,255,0.14);
         border: 1px solid #A5C2FB;
@@ -43,6 +60,16 @@ withDefaults(defineProps<Params>(),{
             0 100%,
             0 12px
         );
+        &-item{
+            height: 100%;
+            width: 8%;
+            &-left{
+                transform: rotate(180deg);
+            }
+            &-left,&-right{
+                width: 40%;
+            }
+        }
         &-left{
             width: 70px;
             height: 100%;
