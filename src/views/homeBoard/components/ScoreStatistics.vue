@@ -1,20 +1,28 @@
 <template>
     <div class="pentagon-score">
-        <div class="pentagon-score-left">
-            
+        <div class="pentagon-score-left data-center">
+            <img :src="f" v-if="index+1 === 1">
+            <img :src="s" v-else-if="index+1 === 2">
+            <img :src="t" v-else-if="index+1 === 3">
+            <SmallCircleNumberCard :number="index + 1" v-else/>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import SmallCircleNumberCard from './SmallCircleNumberCard.vue';
+import f from '@/assets/style/image/first.png';
+import s from '@/assets/style/image/second.png';
+import t from '@/assets/style/image/third.png';
+
 interface Params{
     text:string
     grade:number
+    index:number
 }
 
 withDefaults(defineProps<Params>(),{
     grade:0
 })
-
 
 </script>
 <style lang="less" scoped>

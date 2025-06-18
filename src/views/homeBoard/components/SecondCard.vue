@@ -24,7 +24,7 @@
                     </el-radio-group>
                 </template>
                 <div class="data-w-h data-bg data-b-r score-statistics-container">
-                    <ScoreStatistics v-for="(item,index) in d" :key="index" :text="item.text" :grade="item.number"/>
+                    <ScoreStatistics v-for="(item,index) in sortScore" :key="index" :text="item.text" :grade="item.number" :index="index"/>
                 </div>
             </TitleCard> 
         </div>
@@ -68,15 +68,15 @@ const changeRadio1 = (type:any)=>{ commonFn(type,btnValue) }
 const changeRadio2 = (type:any)=>{ commonFn(type,btnValue2) }
 const changeRadio3 = (type:any)=>{ commonFn(type,btnValue3) }
 
-const d = computed(()=>{
-    return [
-        { number: 10, text:"久隆设计" },
-        { number: 19, text:"东揭设计" },
-        { number: 33, text:"上电设计" },
-        { number: 53, text:"上海院" },
-        { number: 93, text:"市南设计" }
-    ]
-})
+const d = [
+    { number: 10, text:"久隆设计" },
+    { number: 19, text:"东揭设计" },
+    { number: 33, text:"上电设计" },
+    { number: 53, text:"上海院" },
+    { number: 93, text:"市南设计" }
+]
+
+const sortScore = d.sort((a:any,b:any) => b.number - a.number );
 
 </script>
 <style lang="less" scoped>
