@@ -7,11 +7,10 @@
         </div>
         <div class="data-fdc data-f1">
             <div>{{ text }}</div>
-            <Progress :value="value" :bg-color="bgColor"/>
-        </div>
-        <div class="data-fdr al-end progress-box-score-item" :style="fStyle"> 
-            <span>{{ value }}</span>
-            <span class="progress-box-score-item-text">分</span>
+            <div class="data-center">
+                <Progress :value="value" :bg-color="bgColor"/>
+                <div class="data-center progress-box-score-text" :style="fStyle">{{ value }}分</div>
+            </div>
         </div>
     </div>
 </template>
@@ -38,7 +37,7 @@ const fStyle = computed(()=>{
 </script>
 <style lang="less" scoped>
     .progress-box{
-        height: 2.3rem;
+        height: 2.6rem;
         margin-bottom: 15px;
         &-score{
             width: 3.125rem;
@@ -49,13 +48,11 @@ const fStyle = computed(()=>{
             font-size: 18px;
             font-weight: bold;
             margin-right: 20px;
-            &-item{
-                margin-left: 20px;
+            &-text{
+                width: 6%;
                 color: var(--f-c);
-                &-text{
-                    font-size: 13px;
-                }
             }
+            
         }
     }
     .al-end{
