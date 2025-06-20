@@ -6,6 +6,17 @@
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
+             <div class="third-card-container data-w-h data-fdr">
+                <div class="data-f1">
+                    <Bar :home-board-data="d" bar-title="可研评审问题评分" home-board-color="#407CF8"></Bar>
+                </div>
+                <div class="data-f1 third-card-container-center">
+                    <Bar :home-board-data="d" bar-title="可研评审问题评分" home-board-color="#5BC49F "></Bar>
+                </div>
+                <div class="data-f1">
+                    <Bar :home-board-data="d" bar-title="可研评审问题评分" home-board-color="#FEB64D"></Bar>
+                </div>
+             </div>
         </TitleCard>
     </div>
 </template>
@@ -24,11 +35,28 @@ const options = [
     }  
 ]
 const changeRadio1 = (type:any)=>{ btnValue.value = type }
-
+const d = computed(()=>{ 
+    return [
+        { name:"上海院",value:89 },
+        { name:"九隆设计",value:89 },
+        { name:"市南设计",value:89 },
+        { name:"上电设计",value:89 },
+        { name:"东捷设计",value:89 } 
+    ]
+ })
+ 
 </script>
 <style lang="less" scoped>
 .third-card{
     height: 22.5rem;
     margin-top: 30px;
+    &-container{
+        height: 100%;
+        padding: 16px;
+        &-center{
+            border-left: 2px solid rgb(255, 255, 255 , 0.47);
+            border-right: 2px solid rgb(255, 255, 255 , 0.47);
+        }
+    }
 }
 </style>

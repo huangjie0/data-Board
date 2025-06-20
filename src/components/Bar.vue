@@ -5,13 +5,20 @@
 import * as echarts from 'echarts';
 
 interface Params{
-    data?:any[];
-    crosswiseData?:any[],
-    verticalData?:any[],
+    data?:any[]
+    crosswiseData?:any[]
+    verticalData?:any[]
+    homeBoardData?:any[]
+    homeBoardColor?:string
     barTitle?:string
+    barBorderRadius?:any,
+    barWidth?:number
 }
 
-const props = defineProps<Params>();
+const props = withDefaults(defineProps<Params>(),{
+    barBorderRadius:[7, 7, 7, 7],
+    barWidth:20
+})
 
 const barRef = ref();
 let myChart:any = null;
@@ -29,6 +36,27 @@ const initChart = ()=>{
         yAxis: {},
         series: []
     };
+
+    if(props.homeBoardData && props.homeBoardData.length){
+        option.xAxis = {
+            type: 'category',
+            data: props.homeBoardData?.map((item:any)=>{ return item.name })
+        }
+        option.yAxis = {
+            type: 'value'
+        }
+        option.series = [
+            {
+                data: props.homeBoardData?.map((item:any)=>{ return item.value }),
+                type: 'bar',
+                itemStyle: {
+                    color: props.homeBoardColor, // 设置柱状图的颜色
+                    barBorderRadius: props.barBorderRadius
+                },
+                barWidth: props.barWidth
+            }
+        ]
+    }
 
     if(props.data && props.data.length){
         option.xAxis = {

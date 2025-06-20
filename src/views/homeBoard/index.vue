@@ -39,6 +39,8 @@
            <FirstCard/>
            <SecondCard/>
            <ThirdCard/>
+           <FourthCard/>
+           <FifthCard/>
         </div>
     </div>
 </template>
@@ -48,6 +50,8 @@ import ParallelogramCard from './components/ParallelogramCard.vue';
 import FirstCard from './components/FirstCard.vue';
 import SecondCard from './components/SecondCard.vue';
 import ThirdCard from './components/ThirdCard.vue';
+import FourthCard from './components/FourthCard.vue';
+import FifthCard from './components/FifthCard.vue';
 import DateTimeUtils from '@/utils/date';
 
 const circleUrl = ref('https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png');
