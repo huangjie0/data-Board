@@ -10,6 +10,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     BackgroundCard: typeof import('./../components/BackgroundCard.vue')['default']
     Bar: typeof import('./../components/Bar.vue')['default']
+    Bar2: typeof import('./../components/Bar2.vue')['default']
+    Bar3: typeof import('./../components/Bar3.vue')['default']
     ChartCard: typeof import('./../components/ChartCard.vue')['default']
     CommonBar: typeof import('./../components/CommonBar.vue')['default']
     CommonBasicBar: typeof import('./../components/CommonBasicBar.vue')['default']
@@ -23,6 +25,7 @@ declare module 'vue' {
     ElProgress: typeof import('element-plus/es')['ElProgress']
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
+    MyE: typeof import('./../components/MyE.vue')['default']
     NumberCard: typeof import('./../components/NumberCard.vue')['default']
     PentagonScore: typeof import('./../components/PentagonScore.vue')['default']
     Pie: typeof import('./../components/Pie.vue')['default']
