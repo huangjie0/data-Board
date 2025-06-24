@@ -14,6 +14,19 @@ const router = createRouter({
             component: () => import("@/views/test/index.vue")
         },
         {
+            path:"/showBoard",
+            name:"showBoard",
+            component:() => import("@/views/showBoard/index.vue"),
+            redirect:'/showBoard/homeBoard',
+            children:[
+                {
+                    path:'homeBoard',
+                    name:'homeBoard',
+                    component:() => import("@/views/homeBoard/index.vue")
+                }
+            ]
+        },
+        {
             path:'/:pathMatch(.*)*',
             name:'notFound',
             component: () => import("@/views/404/index.vue")

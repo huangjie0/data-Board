@@ -12,7 +12,8 @@ const props = withDefaults(defineProps<Params>(), {
 });
 
 const o = computed(() => {
-  let c = ["#DA5111", "#E87A0F", "#F29417" , "#F5B24F", "#FADDB0"];
+  let c:any = ["#DA5111", "#E87A0F", "#F29417" , "#F5B24F", "#FADDB0"];
+  let c1:any = [];
   return {
     legend: {
       type: "scroll",
@@ -36,7 +37,7 @@ const o = computed(() => {
         itemStyle: {
           borderRadius: 3,
         },
-        color: c,
+        color: c1,
         label: {
           formatter: "{a|{b}：{c}}\n{hr|}",
           rich: {

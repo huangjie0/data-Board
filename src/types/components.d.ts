@@ -25,6 +25,7 @@ declare module 'vue' {
     ElProgress: typeof import('element-plus/es')['ElProgress']
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     MyE: typeof import('./../components/MyE.vue')['default']
     NumberCard: typeof import('./../components/NumberCard.vue')['default']
     PentagonScore: typeof import('./../components/PentagonScore.vue')['default']
