@@ -10,10 +10,10 @@
             <Bar2 title-text="可研调整评分" bar-color="#FEB64D" :data="d" y-name="分"></Bar2>
         </div>
         <div class="test">
-            <Bar3 :data="d2" :bar-search-name="['同比','环比','指标值']"></Bar3>
+            <Bar3 :data="d2"></Bar3>
         </div>
-        <div class="test">
-            <Bar3 :data="d3" :bar-search-name="['环比','指标值']" y-name="%"></Bar3>
+          <div class="test">
+            <Pie2 :data="d"></Pie2>
         </div>
     </div>
 </template>
@@ -30,21 +30,11 @@ const d = computed(()=>{
 
 const d2 = computed(()=>{
     return [
-        { name:'久隆设计', tb:23, hb: 25, zbz:54 },
-        { name:'东捷设计', tb:89, hb: 35, zbz:44 },
-        { name:'上电设计', tb:23, hb: 25, zbz:54 },
-        { name:'上海院', tb:23, hb: 25, zbz:54 },
-        { name:'市南设计', tb:23, hb: 25, zbz:54 },
-    ]
-})
-
-const d3 = computed(()=>{
-    return [
-        { name:'久隆设计', hb:12 , zbz: 90 },
-        { name:'东捷设计', hb:23 , zbz: 40 },
-        { name:'上电设计', hb:43 , zbz: 40 },
-        { name:'上海院', hb:21 , zbz: 30 },
-        { name:'市南设计', hb:9 , zbz: 20 },
+        { name:'久隆设计', value:0.5 , value2:0.6 , value3:25 },
+        { name:'东捷设计',  value:0.2 , value2:0.5 , value3:60},
+        { name:'上电设计',  value:0.4 , value2:0.4 , value3:70},
+        { name:'上海院',  value:0.6, value2:0.3 , value3:30},
+        { name:'市南设计', value:0.1 , value2:0.2 , value3:19 },
     ]
 })
 </script>

@@ -29,6 +29,7 @@ declare module 'vue' {
     NumberCard: typeof import('./../components/NumberCard.vue')['default']
     PentagonScore: typeof import('./../components/PentagonScore.vue')['default']
     Pie: typeof import('./../components/Pie.vue')['default']
+    Pie2: typeof import('./../components/Pie2.vue')['default']
     Progress: typeof import('./../components/Progress.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
