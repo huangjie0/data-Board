@@ -61,12 +61,16 @@ const o = {
             }
         }
     },
-    yAxis: {
-        name:props.yName,
-        splitLine:{
-            show: props.showSplitLine
+    yAxis: [
+        {
+            type:'value',
+            position: 'left',
+            name:props.yName,
+            splitLine:{
+                show: props.showSplitLine
+            }
         }
-    },
+    ],
     series: series.value
 }
 

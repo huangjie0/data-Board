@@ -13,7 +13,7 @@
             <Bar3 :data="d2" :bar-search-name="['同比','环比','指标值']"></Bar3>
         </div>
         <div class="test">
-            <Bar3 :data="d3" :bar-search-name="['环比','指标值']"></Bar3>
+            <Bar3 :data="d3" :bar-search-name="['环比','指标值']" y-name="%"></Bar3>
         </div>
     </div>
 </template>
