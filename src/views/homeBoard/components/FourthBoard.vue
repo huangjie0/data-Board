@@ -81,7 +81,7 @@ const changeRadio3 = (type:any)=>{
 
 const d = computed(()=>{
     return [
-        { name:"久隆设计", value:0.2, value2:-0.6, value3: 350 },
+        { name:"久隆设计", value:0.2, value2:0.6, value3: 350 },
         { name:"东捷设计", value:0.3, value2:0.17, value3: 20 },
         { name:"上电设计", value:0.27, value2:0.25, value3: 15 },
         { name:"上海院", value:0.18, value2:0.26, value3: 35 },
@@ -92,9 +92,9 @@ const d = computed(()=>{
 const d2 = computed(()=>{
     return [
         { name:"久隆设计", value:0.1, value2:0.6, value3: 150 },
-        { name:"东捷设计", value:-0.3, value2:0.17, value3: 10 },
-        { name:"上电设计", value:0.7, value2:-0.25, value3: 20 },
-        { name:"上海院", value:-0.22, value2:-0.46, value3: 35 },
+        { name:"东捷设计", value:0.3, value2:0.17, value3: 10 },
+        { name:"上电设计", value:0.7, value2:0.25, value3: 20 },
+        { name:"上海院", value:0.22, value2:0.46, value3: 35 },
         { name:"市南设计", value:0.14, value2:0.78, value3: 26 },
     ]
 })

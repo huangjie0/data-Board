@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<Params>(),{
 const option = computed(() => {
   return {
     legend: {
-      data: ['同比', '指标值', '环比', '总平均时长']
+      data: ['环比', '指标值']
     },
     grid: {
       bottom: '12%'
@@ -44,7 +44,7 @@ const option = computed(() => {
     yAxis: [
       {
         type: "value",
-        name: "日",
+        name: "个",
         position: 'left',
         splitLine: {
           show: true,
@@ -67,12 +67,12 @@ const option = computed(() => {
     ],
     series: [
       {
-        name: "同比",
+        name: "环比",
         type: "bar",
         data: props.data?.map((item: any) => {
           return {
             name: item.name,
-            value: item.value * 100
+            value: item.value1 * 100
           }
         }),
         tooltip: {
@@ -84,7 +84,7 @@ const option = computed(() => {
         barWidth: 15,
         itemStyle: {
           borderRadius: 5, // 统一设置四个角的圆角大小
-          color: "#FEB64D",
+          color: "#526BFB",
         },
       },
       {
@@ -93,69 +93,15 @@ const option = computed(() => {
         data: props.data?.map((item: any) => {
           return {
             name: item.name,
-            value: item.value3
+            value: item.value2
           }
         }),
         yAxisIndex: 0,
-        barWidth: 15,
-        itemStyle: {
-          borderRadius: 5, // 统一设置四个角的圆角大小
-          color: "#526BFB",
-        },
-      },
-      {
-        name: "环比",
-        type: "bar",
-        data: props.data?.map((item: any) => {
-          return {
-            name: item.name,
-            value: item.value2 * 100
-          }
-        }),
-        tooltip: {
-          valueFormatter: function(value: string) {
-            return parseFloat(value).toFixed(2) + '%';
-          }
-        },
-        yAxisIndex: 1,
         barWidth: 15,
         itemStyle: {
           borderRadius: 5, // 统一设置四个角的圆角大小
           color: "#5BC49F",
         },
-      },
-      {
-        name: "总平均时长",
-        type: "line",
-        yAxisIndex: 0,
-        markLine: {
-            symbol: 'none',
-            data: [{
-                yAxis: props.data.totalAvgTime || 0,  // 这里设置你的自定义平均值
-                label: {
-                  show: false,
-                  position: 'middle', // 标签位置
-                  formatter: '总平均时长: {c}', // 标签内容
-                  padding: [5, 5], // 标签内边距
-                  backgroundColor: '#fff', // 标签背景色
-                  borderColor: '#999', // 标签边框颜色
-                  borderWidth: 1, // 标签边框宽度
-                  borderRadius: 4, // 标签圆角
-                  distance: [0, 5], // 垂直偏移，负值表示向上移动
-                  color: '#192C7D' // 文字颜色
-                },
-                emphasis: {
-                  label: {
-                    show: true // 鼠标悬停时显示 label
-                  },
-                },
-                lineStyle: {
-                    color: '#192C7D',  // 线条颜色
-                    width: 1,
-                    type: 'dashed'  // 虚线样式
-                },
-            }]
-        }
       }
     ],
     dataZoom: [

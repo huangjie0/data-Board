@@ -12,6 +12,7 @@ declare module 'vue' {
     Bar: typeof import('./../components/Bar.vue')['default']
     Bar2: typeof import('./../components/Bar2.vue')['default']
     Bar3: typeof import('./../components/Bar3.vue')['default']
+    Bar4: typeof import('./../components/Bar4.vue')['default']
     ChartCard: typeof import('./../components/ChartCard.vue')['default']
     CommonBar: typeof import('./../components/CommonBar.vue')['default']
     CommonBasicBar: typeof import('./../components/CommonBasicBar.vue')['default']

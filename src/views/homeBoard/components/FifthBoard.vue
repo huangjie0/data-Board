@@ -27,7 +27,7 @@
             </div>
             <div class="data-f1 data-m-l">
                 <TitleCard title="近三月在途项目结存率" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
-                    <!-- <Bar3 :data="d"/>  -->
+                    <Bar4 :data="d2"/> 
                 </TitleCard>
             </div>
         </div>
@@ -62,6 +62,16 @@ const d = computed(()=>{
         { name:"市南设计",value: 19 },
         { name:"上电设计",value: 25 },
         { name:"东捷设计",value: 16 },
+    ]
+})
+
+const d2 = computed(()=>{
+    return [
+        { name:"上海院",value1: 0.37 , value2: 81},
+        { name:"久隆设计",value1: 0.21 , value2: 23},
+        { name:"市南设计",value1: 0.19 , value: 78},
+        { name:"上电设计",value1: 0.25 , value2:28},
+        { name:"东捷设计",value1: 0.16 , value2: 67},
     ]
 })
 
