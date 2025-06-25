@@ -4,7 +4,7 @@
             <TitleCard title="当前在途项目分布及超期情况" iconClass="icon-faya" color="#192C7D" bg-color="#F0F6FF">
                 <div class="data-fdr data-w-h">
                     <div class="data-f1 data-m-r fourth-board-left">
-                        1111
+                        <Pie2 :data="d4" :center="['45%','45%']"/>
                     </div>
                     <div class="data-f1 data-m-l fourth-board-right data-fdc">
                         <div class="fourth-board-right-buttons data-fdr">
@@ -106,6 +106,14 @@ const d3 = computed(()=>{
         { name:"东捷设计",value:19 },
         { name:"上电设计",value:17 },
         { name:"市南设计",value:27 },
+    ]
+})
+
+const d4 = computed(()=>{
+    return [
+        { name:"可研评审阶段",value:6 },
+        { name:"可研编制阶段",value:11 },
+        { name:"可研审批阶段",value:23 }
     ]
 })
 
