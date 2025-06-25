@@ -17,7 +17,7 @@ const option = computed(() => {
       data: ['环比', '指标值']
     },
     grid: {
-      bottom: '12%'
+      bottom: '25%'
     },
     tooltip: {
       trigger: "axis",
