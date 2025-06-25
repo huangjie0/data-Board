@@ -9,7 +9,7 @@ interface Params{
     titleText?:string
     titleLeft?:string
     titleTop?:string
-    barColor?:string //柱子的颜色
+    barColor:string //柱子的颜色
     barBorderRadius?:any
     barWidth?:number
     showSplitLine?:boolean

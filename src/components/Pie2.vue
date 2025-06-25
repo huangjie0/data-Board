@@ -3,12 +3,15 @@
 </template>
 <script setup lang="ts">
 interface Params {
-  isClick?: boolean;
-  data: any;
+  isClick?: boolean
+  type?:string
+  data: any
+  center?:any
 }
 
 const props = withDefaults(defineProps<Params>(), {
   isClick: false,
+  center:["40%","50%"]
 });
 
 const o = computed(() => {
@@ -32,12 +35,12 @@ const o = computed(() => {
         name: "测试玫瑰图",
         type: "pie",
         radius: [10, 70],
-        center: ["40%", "50%"],
+        center: props.center,
         roseType: "area",
         itemStyle: {
           borderRadius: 3,
         },
-        color: c1,
+        color: props.type === '0' ? c : c1,
         label: {
           formatter: "{a|{b}：{c}}\n{hr|}",
           rich: {
@@ -61,7 +64,7 @@ const o = computed(() => {
           //第一段
           length: 3,
           //第二段
-          length2: 40,
+          length2: 20,
         },
         data: props.data,
       },

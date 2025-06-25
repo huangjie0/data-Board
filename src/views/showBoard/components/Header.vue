@@ -62,9 +62,7 @@ onUnmounted(() => { // 组件卸载时清除定时器
   clearInterval(intervalId)
 })
 
-const d = computed(()=>{
-    return   DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD") + DateTimeUtils.getDayOfWeek(new Date())
-})
+const d = computed(()=>{return DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD") + DateTimeUtils.getDayOfWeek(new Date())})
 
 </script>
 <style lang="less" scoped>
