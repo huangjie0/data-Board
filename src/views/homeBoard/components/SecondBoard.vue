@@ -22,6 +22,10 @@
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                     </el-radio-group>
                 </template>
+                <div class="data-w-h second-board-right-container">
+
+                    <!-- <ScoreCard></ScoreCard> -->
+                </div>
             </TitleCard>
         </div>
     </div>
@@ -86,6 +90,9 @@ const d = computed(()=>{
         margin: 0 0 2.375rem 0;
         &-container{
             padding: 1.125rem 2.1875rem 1.125rem 2.1875rem;
+        }
+        &-right-container{
+            padding: 1.5625rem  3rem;
         }
     }
     :deep(.el-radio-button:hover .el-radio-button__inner) {

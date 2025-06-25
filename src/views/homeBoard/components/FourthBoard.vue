@@ -28,7 +28,7 @@
                         </el-radio-group>
                     </template>
                     <div class="data-w-h">
-                        <Bar3 :data="d"/>
+                        <Bar3 :data="d"/>  
                     </div>
                 </TitleCard>
 

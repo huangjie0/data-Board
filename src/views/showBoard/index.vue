@@ -17,7 +17,7 @@ import Header from './components/Header.vue';
     background-color: var(--common-home-bg);
     &-box{
         margin-top: 4.4375rem;
-        height: 100vh - 4.4375rem;
+        height: 100% - 4.4375rem;
 
     }
 }

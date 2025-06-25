@@ -38,6 +38,7 @@ declare module 'vue' {
     ProgressScrollBar: typeof import('./../components/ProgressScrollBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScoreCard: typeof import('./../components/ScoreCard.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
   }
 }
