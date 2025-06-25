@@ -23,8 +23,9 @@
                     </el-radio-group>
                 </template>
                 <div class="data-w-h second-board-right-container">
-
-                    <!-- <ScoreCard></ScoreCard> -->
+                    <div class="second-board-right-container-item" v-for="(item,index) in d" :key="index">
+                        <ScoreCard :number="item.number" :name="item.text" :index="index + 1"></ScoreCard>
+                    </div>
                 </div>
             </TitleCard>
         </div>
@@ -93,6 +94,10 @@ const d = computed(()=>{
         }
         &-right-container{
             padding: 1.5625rem  3rem;
+            &-item{
+                height: 2.5625rem;
+                margin-bottom: .625rem;
+            }
         }
     }
     :deep(.el-radio-button:hover .el-radio-button__inner) {

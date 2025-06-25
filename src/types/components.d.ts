@@ -39,6 +39,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScoreCard: typeof import('./../components/ScoreCard.vue')['default']
+    SmallCircleIntegral: typeof import('./../components/SmallCircleIntegral.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
   }
 }

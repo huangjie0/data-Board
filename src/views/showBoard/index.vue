@@ -18,7 +18,6 @@ import Header from './components/Header.vue';
     &-box{
         margin-top: 4.4375rem;
         height: 100% - 4.4375rem;
-
     }
 }
 </style>
