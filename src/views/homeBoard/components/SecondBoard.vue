@@ -14,7 +14,14 @@
         </div>
         <div class="data-f1 data-m-l">
             <TitleCard title="项目时长评分" iconClass="icon-muai" color="#192C7D" bg-color="#E8F1FD">
-
+                <template #rightValue>
+                    <el-radio-group v-model="btnValue3" size="small" fill="#2772FF" @change="changeRadio3">
+                        <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options2" :key="index"/>
+                    </el-radio-group>
+                    <el-radio-group v-model="btnValue2" size="small" fill="#2772FF" @change="changeRadio2" class="data-m-l">
+                        <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
+                    </el-radio-group>
+                </template>
             </TitleCard>
         </div>
     </div>
@@ -32,9 +39,35 @@ const options = [
         value: Type.customerManager
     }
 ]
+
+const options2 = [
+    {
+        label:'在途项目平均时长评分',
+        value: '0'
+    },
+    {
+        label:'可研批复平均时长评分',
+        value: '1'
+    }
+]
+
 const btnValue = ref<any>(Type.designUnit)
+const btnValue2 = ref<any>(Type.designUnit)
+const btnValue3 = ref('0')
+
+const commonFn = (type:any,v:any)=>{
+    v.value = type
+}
+
 const changeRadio = (type:any)=>{
-    btnValue.value = type 
+    commonFn(type,btnValue)
+}
+const changeRadio2 = (type:any)=>{
+    commonFn(type,btnValue2)
+}
+
+const changeRadio3 = (type:any)=>{
+    commonFn(type,btnValue3)
 }
 
 const d = computed(()=>{
