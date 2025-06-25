@@ -34,6 +34,7 @@ declare module 'vue' {
     Pie2: typeof import('./../components/Pie2.vue')['default']
     Progress: typeof import('./../components/Progress.vue')['default']
     ProgressGrid: typeof import('./../components/ProgressGrid.vue')['default']
+    ProgressScrollBar: typeof import('./../components/ProgressScrollBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']

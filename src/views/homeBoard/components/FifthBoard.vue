@@ -20,7 +20,9 @@
         <div class="data-f1 data-m-l data-fdr">
             <div class="data-f1 data-m-r">
                 <TitleCard title="当月可研评审通过率" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
-              
+                    <div class="data-w-h fifth-board-right-left">
+                        <ProgressScrollBar v-for="(item,index) in d" :key="index" :text="item.name" :number="item.value"/>
+                    </div>
                 </TitleCard>
             </div>
             <div class="data-f1 data-m-l">
@@ -62,9 +64,13 @@ const d = computed(()=>{
         { name:"东捷设计",value: 16 },
     ]
 })
+
 </script>
 <style lang="less" scoped>
     .fifth-board{
         height: 20rem;
+        &-right-left{
+            padding: 1.875rem; 
+        }
     }
 </style>
