@@ -12,7 +12,7 @@ export default class MathUtils{
       return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     }
 
-    static darkenColor(color:string | undefined,amount: number){
+    static darkenColor(color:any,amount: number){
       // 去除可能存在的 # 号
       color = color.replace("#", "");
       // 将颜色值转换为RGB格式
