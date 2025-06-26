@@ -4,10 +4,9 @@
             <i class="iconfont icon-shendusikao home-header-left-icon"></i>
             <span class="home-header-left-text">上海业扩可研分析管控</span>
         </div>
-        <div class="data-f1 data-w-h" style="display: flex;">
-           <!-- <div v-for="i in 1000" :key="i">
-                {{ i }}
-           </div> -->
+        <div class="home-header-center data-between">
+            <SmallCircleIcon icon-name="icon-jiantou1"></SmallCircleIcon>
+            <SmallCircleIcon icon-name="icon-jiantou"></SmallCircleIcon>
         </div>
         <div class="home-header-right data-fdr data-between">
               <el-avatar :icon="UserFilled" :size="30"/>
@@ -40,6 +39,7 @@
 <script setup lang="ts">
 import { UserFilled, ArrowDown } from '@element-plus/icons-vue'
 import DateTimeUtils from '@/utils/date.ts'
+import SmallCircleIcon from './SmallCircleIcon.vue'
 
 const u = computed(()=>{
     return [
@@ -87,6 +87,11 @@ const d = computed(()=>{return DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD")
                 font-size: 28px;
                 color: var(--common-home-bg-3);
             }
+        }
+        &-center{
+            width: 100vw - 45%;
+            height: 100%;
+            overflow-x: auto;
         }
         &-right{
             align-items: center;
