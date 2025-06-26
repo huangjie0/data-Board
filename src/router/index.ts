@@ -23,6 +23,11 @@ const router = createRouter({
                     path:'homeBoard',
                     name:'homeBoard',
                     component:() => import("@/views/homeBoard/index.vue")
+                },
+                {
+                    path:'projectOverview',
+                    name:'projectOverview',
+                    component:() => import("@/views/projectOverview/index.vue")
                 }
             ]
         },

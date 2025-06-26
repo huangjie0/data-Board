@@ -5,8 +5,11 @@
             <span class="home-header-left-text">上海业扩可研分析管控</span>
         </div>
         <div class="home-header-center data-between">
-            <SmallCircleIcon icon-name="icon-jiantou1"></SmallCircleIcon>
-            <SmallCircleIcon icon-name="icon-jiantou"></SmallCircleIcon>
+            <SmallCircleIcon icon-name="icon-jiantou1" @click-bu="clickBu('previous')"  v-if="menusList.length > 5"></SmallCircleIcon>
+            <div class="home-header-center-menus data-f1 data-w-h data-fdr">
+                <Menus v-for="(item,index) in countData(lastCou)" :key="index" :text="item.name" :path="item.path"/>
+            </div>
+            <SmallCircleIcon icon-name="icon-jiantou"  @click-bu="clickBu('next')" v-if="menusList.length > 5"></SmallCircleIcon>
         </div>
         <div class="home-header-right data-fdr data-between">
               <el-avatar :icon="UserFilled" :size="30"/>
@@ -40,6 +43,7 @@
 import { UserFilled, ArrowDown } from '@element-plus/icons-vue'
 import DateTimeUtils from '@/utils/date.ts'
 import SmallCircleIcon from './SmallCircleIcon.vue'
+import Menus from './Menus.vue'
 
 const u = computed(()=>{
     return [
@@ -51,6 +55,8 @@ const u = computed(()=>{
 
 const time = ref(new Date().toLocaleTimeString())
 let intervalId:any = null
+const cou =  ref(5)
+const lastCou = ref()
 
 onMounted(() => {
   intervalId = setInterval(() => {
@@ -63,7 +69,35 @@ onUnmounted(() => { // 组件卸载时清除定时器
 })
 
 const d = computed(()=>{return DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD") + DateTimeUtils.getDayOfWeek(new Date())})
+const menusList = [
+        { name:"首页看板", path:'/showBoard/homeBoard' },
+        { name:"项目详情总览", path:'/showBoard/projectOverview' },
+        { name:"超期项目分析", path:'/' },
+        { name:"可研完成情况", path:'/' },
+        { name:"可研评审专题", path:'/' }
+]
 
+const countData = (initialValue:number = 0 )=>{
+    let menus = [];
+    if(menusList.length && menusList.length > 5){
+        menus = menusList.slice(initialValue,cou.value)
+        return menus;
+    }else{
+        menus = menusList
+        return menus;
+    }
+}
+
+const clickBu = (t:string)=>{
+    if(t === 'previous'){
+        if(cou.value > 5) cou.value -= 5;
+        lastCou.value = cou.value - 5;
+    }
+    if(t === 'next'){
+        if(menusList.length > cou.value) cou.value += 5;
+        lastCou.value = cou.value - 5;
+    }
+}
 </script>
 <style lang="less" scoped>
     .home-header{ 
@@ -92,6 +126,10 @@ const d = computed(()=>{return DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD")
             width: 100vw - 45%;
             height: 100%;
             overflow-x: auto;
+            &-menus{
+                align-items: center;
+                padding: 0 2.1875rem;
+            }
         }
         &-right{
             align-items: center;

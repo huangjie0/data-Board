@@ -1,5 +1,5 @@
 <template>
-    <div class="small-circle-icon data-center" ref="smallCircleIconRef" :style="cicleStyle">
+    <div class="small-circle-icon data-center" ref="smallCircleIconRef" @click="click" :style="cicleStyle">
         <i class="iconfont" :class="iconName" :style="style"></i>
     </div>
 </template>
@@ -31,6 +31,12 @@ const cicleStyle = computed(()=>{
         '--small-circle': `${props.circleSize}px`
     }
 })
+
+const emits = defineEmits(['clickBu'])
+
+const click = ()=>{
+    emits('clickBu')
+}
 
 </script>
 <style lang="less" scoped>
