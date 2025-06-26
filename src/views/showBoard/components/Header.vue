@@ -29,12 +29,8 @@
                 </el-dropdown>
               </div>
               <div class="home-header-right-time data-fdc">
-                <div class="data-f1 home-header-right-time-d1 data-center">
-                    {{ time }}
-                </div>
-                <div class="data-f1 home-header-right-time-d2 data-center">
-                     {{ d }}
-                </div>
+                <div class="data-f1 home-header-right-time-d1 data-center">{{ time }}</div>
+                <div class="data-f1 home-header-right-time-d2 data-center">{{ d }}</div>
               </div>
         </div>
     </div>
