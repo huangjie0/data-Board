@@ -2,7 +2,7 @@
     <div class="data-between progress-scroll-bar">
         <div class="progress-scroll-bar-text">{{ text }}</div>
         <div class="data-f1">
-            <el-progress color="#407CF8" :percentage="number" :stroke-width="13" striped striped-flow />
+            <el-progress :duration="1.5" color="#407CF8" :percentage="number" :stroke-width="13" striped striped-flow />
         </div>
     </div>
 </template>
