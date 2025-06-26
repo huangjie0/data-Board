@@ -13,22 +13,7 @@ interface Params{
 }
 const router = useRouter()
 const route = useRoute()
-
-// const hasRoute = ref()
-
-// console.log(hasRoute.value);
-
 const hasRoute = computed(()=> { return route.fullPath === props.path })
-
-onMounted(()=>{
-    console.log(hasRoute.value);
-    
-    
-    
-    
-    
-})
-
 const props = defineProps<Params>()
 const goPath = ()=>{
     router.push(props.path)
