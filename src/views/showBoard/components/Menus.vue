@@ -1,8 +1,6 @@
 <template>
     <div class="menus data-center" @click="goPath" :class="{ activePath: hasRoute }">
-        <span class="menus-text">
-            {{ text }}
-        </span>
+        <span class="menus-text">{{ text }}</span>
     </div>
 </template>
 <script lang="ts" setup>

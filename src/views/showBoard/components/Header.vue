@@ -152,7 +152,4 @@ const clickBu = (t:string)=>{
             height: 100%;
         }
     }
-
-
-    //  flex-shrink: 0; /* 防止该子项缩小 */
 </style>
