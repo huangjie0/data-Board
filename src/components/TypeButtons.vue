@@ -20,6 +20,7 @@ const changeType = (type:string)=>{
 .type-buttons{
     align-items: center;
     margin-right: 10px;
+    cursor: pointer;
     &-btn{
         width: .5625rem;
         height: .5625rem;
