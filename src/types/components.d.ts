@@ -52,6 +52,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScoreCard: typeof import('./../components/ScoreCard.vue')['default']
     SmallCircleIntegral: typeof import('./../components/SmallCircleIntegral.vue')['default']
+    SmallTextButtons: typeof import('./../components/SmallTextButtons.vue')['default']
     TaSe: typeof import('./../components/TaSe.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
   }
