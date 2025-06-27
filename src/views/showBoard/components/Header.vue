@@ -121,7 +121,7 @@ const clickBu = (t:string)=>{
         &-center{
             width: 100vw - 45%;
             height: 100%;
-            overflow-x: auto;
+            overflow-x: hidden;
             &-menus{
                 align-items: center;
                 padding: 0 2.1875rem;

@@ -36,8 +36,10 @@ const ns = computed(()=>{
         border-bottom-left-radius: var(--common-split);
         background: linear-gradient(90deg, #DBE6FC 0%, rgba(255,255,255,0.65) 100%);
         align-items: center;
+        cursor: pointer;
         img{
-            padding: 0 5px 0 15px;
+            animation: spin 1s linear infinite;
+            margin: 0 5px 0 15px;
         }
         &-t{
             font-weight: 400;
@@ -49,5 +51,13 @@ const ns = computed(()=>{
         align-items: end;
         font-weight: bold;
         color: #407CF8
+    }
+    @keyframes spin{
+        from {  
+            transform: rotate(0deg);  
+        }  
+        to {  
+            transform: rotate(360deg);  
+        } 
     }
 </style>
