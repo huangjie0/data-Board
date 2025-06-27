@@ -5,7 +5,7 @@
 </template>
 <script setup lang="ts">
 interface Params{
-    circleSize:number
+    circleSize?:number
     iconName:string
 }
 
