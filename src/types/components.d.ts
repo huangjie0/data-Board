@@ -55,6 +55,7 @@ declare module 'vue' {
     SmallTextButtons: typeof import('./../components/SmallTextButtons.vue')['default']
     TaSe: typeof import('./../components/TaSe.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
+    TypeButtons: typeof import('./../components/TypeButtons.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

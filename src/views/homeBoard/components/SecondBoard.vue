@@ -15,6 +15,7 @@
         <div class="data-f1 data-m-l">
             <TitleCard title="项目时长评分" iconClass="icon-muai" color="#192C7D" bg-color="#E8F1FD">
                 <template #rightValue>
+                    <TypeButtons :option="o" @change="changeType"/>
                     <el-radio-group v-model="btnValue3" size="small" fill="#2772FF" @change="changeRadio3">
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options2" :key="index"/>
                     </el-radio-group>
@@ -84,6 +85,17 @@ const d = computed(()=>{
         { text:'市南设计', number:73 },
     ]
 })
+
+const o = computed(()=>{
+    return [
+        { type:'0',name:'在途', color:'#4F6EFA' },
+        { type:'1',name:'可研', color:'#5BC49F' },
+    ]
+})
+
+const changeType = (type:string)=>{
+    console.log(type);
+}
 
 </script>
 <style lang="less" scoped>
