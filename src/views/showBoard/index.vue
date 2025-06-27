@@ -3,7 +3,12 @@
         <Header/>
         <div class="home-board-box">
             <el-scrollbar>
-                <router-view />
+                <router-view v-slot="{ Component , route }">
+                    <keep-alive v-if="route.meta.keepAlive">
+                        <component :is="Component"></component>
+                    </keep-alive>
+                    <component :is="Component" v-else></component>
+                </router-view>
             </el-scrollbar>
         </div>
     </div>

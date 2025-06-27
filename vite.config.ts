@@ -2,6 +2,7 @@ import { UserConfig, ConfigEnv, loadEnv, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import legacy from "@vitejs/plugin-legacy";
 import path from 'path'
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 const pathSrc = path.resolve(__dirname, "src")
 //自动导入插件
@@ -23,6 +24,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     base: `${env.VITE_BASE_PATH}/`,
     plugins: [
       vue(),
+      vueJsx(),
       legacy({
         targets: ["chrome 72"]
       }),

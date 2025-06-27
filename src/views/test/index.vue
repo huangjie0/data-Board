@@ -12,12 +12,17 @@
         <div class="test">
             <Bar3 :data="d2"></Bar3>
         </div>
-          <div class="test">
+        <div class="test">
             <Pie2 :data="d"></Pie2>
+        </div>
+         <div class="test">
+            <Test></Test>
         </div>
     </div>
 </template>
 <script setup lang="ts">
+import Test from './test.jsx';
+
 const d = computed(()=>{
     return [
         { name:"上海院",value:89 },

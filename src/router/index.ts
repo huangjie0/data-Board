@@ -6,12 +6,18 @@ const router = createRouter({
         {
             path: "/",
             name: "home",
-            component: () => import("@/views/home/index.vue")
+            component: () => import("@/views/home/index.vue"),
+            meta:{
+                keepAlive: true
+            }
         },
         {
             path:"/test",
             name:"test",
-            component: () => import("@/views/test/index.vue")
+            component: () => import("@/views/test/index.vue"),
+            meta:{
+                keepAlive: true
+            }
         },
         {
             path:"/showBoard",
@@ -22,12 +28,18 @@ const router = createRouter({
                 {
                     path:'homeBoard',
                     name:'homeBoard',
-                    component:() => import("@/views/homeBoard/index.vue")
+                    component:() => import("@/views/homeBoard/index.vue"),
+                    meta:{
+                        keepAlive: true
+                    }
                 },
                 {
                     path:'projectOverview',
                     name:'projectOverview',
-                    component:() => import("@/views/projectOverview/index.vue")
+                    component:() => import("@/views/projectOverview/index.vue"),
+                    meta:{
+                        keepAlive:true
+                    }
                 }
             ]
         },
