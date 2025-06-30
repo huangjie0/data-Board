@@ -2,9 +2,7 @@
     <div class="title-card data-w-h data-fdc">
         <div class="title-card-top" :style="style">
             <i class="iconfont title-card-top-icon" :class="iconClass"></i>
-            <span class="title-card-top-text">
-                {{ title }}
-            </span>
+            <span class="title-card-top-text">{{ title }}</span>
             <div class="right-value data-f1">
                 <slot name="rightValue"></slot>
             </div>

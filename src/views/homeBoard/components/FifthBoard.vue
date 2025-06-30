@@ -50,11 +50,9 @@ const options = [
     }
 ]
 const btnValue = ref<any>('0')
-
 const changeRadio = (type:any)=>{
     btnValue.value = type 
 }
-
 const d = computed(()=>{
     return [
         { name:"上海院",value: 37 },
@@ -64,7 +62,6 @@ const d = computed(()=>{
         { name:"东捷设计",value: 16 },
     ]
 })
-
 const d2 = computed(()=>{
     return [
         { name:"上海院", value1: 0.37 , value2: 81},
@@ -74,7 +71,6 @@ const d2 = computed(()=>{
         { name:"东捷设计",value1: 0.16 , value2: 67},
     ]
 })
-
 </script>
 <style lang="less" scoped>
     .fifth-board{
