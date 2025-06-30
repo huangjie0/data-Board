@@ -70,11 +70,15 @@ const menusList = [
         { name:"项目详情总览", path:'/showBoard/projectOverview' },
         { name:"超期项目分析", path:'/' },
         { name:"可研完成情况", path:'/' },
-        { name:"可研评审专题", path:'/' }
+        { name:"可研评审专题", path:'/' },
+        { name:"可研评审专题", path:'/' },
+        { name:"可研评审专题", path:'/' },
+        { name:"可研评审专题", path:'/' },
+        { name:"可研评审专题", path:'/' },
 ]
 
 const countData = (initialValue:number = 0 )=>{
-    let menus = [];
+    let menus:any[] = [];
     if(menusList.length && menusList.length > 5){
         menus = menusList.slice(initialValue,cou.value)
         return menus;
