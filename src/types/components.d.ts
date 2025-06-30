@@ -8,7 +8,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    A: typeof import('./../components/a.vue')['default']
     BackgroundCard: typeof import('./../components/BackgroundCard.vue')['default']
     Bar: typeof import('./../components/Bar.vue')['default']
     Bar2: typeof import('./../components/Bar2.vue')['default']
@@ -19,31 +18,19 @@ declare module 'vue' {
     CommonBasicBar: typeof import('./../components/CommonBasicBar.vue')['default']
     CommonPie: typeof import('./../components/CommonPie.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElCol: typeof import('element-plus/es')['ElCol']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElEmpty: typeof import('element-plus/es')['ElEmpty']
-    ElForm: typeof import('element-plus/es')['ElForm']
-    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInput: typeof import('element-plus/es')['ElInput']
-    ElOption: typeof import('element-plus/es')['ElOption']
-    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElProgress: typeof import('element-plus/es')['ElProgress']
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
-    ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
-    ElSelect: typeof import('element-plus/es')['ElSelect']
-    ElTable: typeof import('element-plus/es')['ElTable']
-    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     MyE: typeof import('./../components/MyE.vue')['default']
     NumberCard: typeof import('./../components/NumberCard.vue')['default']
     NumberTextCard: typeof import('./../components/NumberTextCard.vue')['default']
-    PentagonScore: typeof import('./../components/PentagonScore.vue')['default']
     Pie: typeof import('./../components/Pie.vue')['default']
     Pie2: typeof import('./../components/Pie2.vue')['default']
     Progress: typeof import('./../components/Progress.vue')['default']
@@ -53,12 +40,8 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     ScoreCard: typeof import('./../components/ScoreCard.vue')['default']
     SmallCircleIntegral: typeof import('./../components/SmallCircleIntegral.vue')['default']
-    SmallTextButtons: typeof import('./../components/SmallTextButtons.vue')['default']
     TaSe: typeof import('./../components/TaSe.vue')['default']
     TitleCard: typeof import('./../components/TitleCard.vue')['default']
     TypeButtons: typeof import('./../components/TypeButtons.vue')['default']
-  }
-  export interface ComponentCustomProperties {
-    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
