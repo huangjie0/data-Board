@@ -88,6 +88,6 @@ const slStyle = computed(()=> {
 }
 
 .activated{
-    color: var(--common-home-bg-3);
+    color: var(--title-color);
 }
 </style>
