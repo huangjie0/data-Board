@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-right data-w-h">
-        <TitleCard title="当月可研评审通过率" icon-class="icon-penhu">
+        <TitleCard icon-class="icon-penhu" :options="[{ title:'当月可研评审通过率' , type:'0' }]" v-model="v">
             <div class="progress-item" v-if="data.length" v-for="item in data" :key="item.label">
                 <span class="progress-item-name">{{ item.label }}</span>
                 <Progress :percentage="item.value" color="#0D867F"></Progress>
@@ -13,6 +13,7 @@
 import { getKytgl } from '@/api/home/index.ts'
 
 const data = ref<any>([])
+const v = ref('0')
 
 onMounted(async ()=>{
     const res:any = await getKytgl();

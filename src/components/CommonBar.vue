@@ -1,6 +1,6 @@
 <template>
     <div class="common-bar data-w-h">
-        <TitleCard :title="cardTitle" :icon-class="iconClass">
+        <TitleCard v-model="v" :icon-class="iconClass" :options="[{ title: cardTitle, type:'0' }]">
             <template #rightValue>
                 <el-radio-group v-model="btnValue1" size="small" fill="#1ba49b" @change="changeRadio1">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options1" :key="index"/>
@@ -29,6 +29,7 @@ const props = defineProps<Params>();
 const btnValue1 = ref<any>(Type.designUnit)
 const btnValue2 = ref('month')
 const d:any = ref([])
+const v = ref('0')
  
 const options1 = [
     {

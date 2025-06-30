@@ -1,7 +1,7 @@
 <template>
     <div class="fourth-board data-fdr">
         <div class="data-f1 data-m-r">
-            <TitleCard title="当前在途项目分布及超期情况" iconClass="icon-faya" color="#192C7D" bg-color="#F0F6FF">
+            <TitleCard v-model="v" :options="[{ title:'当前在途项目分布及超期情况', type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#F0F6FF">
                 <div class="data-fdr data-w-h">
                     <div class="data-f1 data-m-r fourth-board-left">
                         <Pie2 :data="d4" :center="['45%','45%']"/>
@@ -21,7 +21,7 @@
         </div>
         <div class="data-f1 data-m-l data-fdr">
             <div class="data-f1 data-m-r">
-                <TitleCard title="当前在途项目平均时长" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
+                <TitleCard v-model="v" :options="[{ title:'当前在途项目平均时长', type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
                     <template #rightValue>
                         <el-radio-group v-model="btnValue" size="small" fill="#2772FF" @change="changeRadio">
                             <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -34,7 +34,7 @@
 
             </div>
             <div class="data-f1 data-m-l">
-                <TitleCard title="本年度已批复项目平均时长" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
+                <TitleCard v-model="v" :options="[{ title:'本年度已批复项目平均时长' , type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
                     <template #rightValue>
                         <el-radio-group v-model="btnValue2" size="small" fill="#2772FF" @change="changeRadio2">
                             <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -116,6 +116,7 @@ const d4 = computed(()=>{
         { name:"可研审批阶段",value:23 }
     ]
 })
+const v = ref('0')
 
 </script>
 <style lang="less" scoped>

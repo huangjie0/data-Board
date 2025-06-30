@@ -1,7 +1,7 @@
 <template>
     <div class="second-board data-fdr">
         <div class="data-f1 data-m-r">
-            <TitleCard title="设计单位评分一览" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
+            <TitleCard v-model="v" :options="[{ title:'设计单位评分一览' , type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
                 <template #rightValue>
                     <el-radio-group v-model="btnValue" size="small" fill="#2772FF" @change="changeRadio">
                         <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -13,7 +13,7 @@
             </TitleCard>
         </div>
         <div class="data-f1 data-m-l">
-            <TitleCard title="项目时长评分" iconClass="icon-muai" color="#192C7D" bg-color="#E8F1FD">
+            <TitleCard v-model="v" :options="[{ title:'项目时长评分', type:'0' }]" iconClass="icon-muai" color="#192C7D" bg-color="#E8F1FD">
                 <template #rightValue>
                     <TypeButtons :option="o" @change="changeType" v-model="type"/>
                     <el-radio-group v-model="btnValue3" size="small" fill="#2772FF" @change="changeRadio3">
@@ -91,6 +91,7 @@ const o = computed(()=>{
 const changeType = (t:string)=>{
     type.value = t
 }
+const v = ref('0')
 </script>
 <style lang="less" scoped>
     .second-board{

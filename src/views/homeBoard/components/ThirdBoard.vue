@@ -1,6 +1,6 @@
 <template>
     <div class="third-board">
-        <TitleCard title="设计单位评分一览" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
+        <TitleCard v-model="v" :options="[{ title:'设计单位评分一览' , type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
             <template #rightValue>
                     <el-radio-group v-model="btnValue" size="small" fill="#2772FF" @change="changeRadio">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -37,7 +37,6 @@ const btnValue = ref<any>(Type.designUnit)
 const changeRadio = (type:any)=>{
     btnValue.value = type 
 }
-
 const d = computed(()=>{
     return [
         { name:'上海院',value:89 },
@@ -47,7 +46,7 @@ const d = computed(()=>{
         { name:'东捷设计',value:49 },
     ]
 })
-
+const v = ref('0') 
 </script>
 <style lang="less" scoped>
     .third-board{

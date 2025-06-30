@@ -1,6 +1,6 @@
 <template>
     <div class="common-pie data-w-h">
-        <TitleCard :title="cardTitle" :icon-class="iconClass">
+        <TitleCard v-model="v" :icon-class="iconClass" :options="[{ title:cardTitle , type:'0' }]">
             <template #rightValue>
                 <el-radio-group v-model="btnValue" size="small" fill="#1ba49b" @change="changeRadio">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -58,8 +58,7 @@ const changeRadio = (val:any) => {
     btnValue.value = val;
     getPieData()
 } 
-
-
+const v = ref("0")
 </script>
 <style lang="less" scoped>
 .common-pie{

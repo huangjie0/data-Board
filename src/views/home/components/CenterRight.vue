@@ -1,6 +1,6 @@
 <template>
     <div class="data-home-center-right data-w-h">
-        <TitleCard title="本年在途项目一览" icon-class="icon-dianpu1">
+        <TitleCard v-model="v" icon-class="icon-dianpu1" :options="[{ title:'本年在途项目一览', type:'0' }]">
             <template #rightValue> 
                 <el-radio-group v-model="btnValue" size="small" fill="#1ba49b" @change="changeRadio">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
@@ -42,6 +42,7 @@ const btnValue = ref<any>(Type.designUnit)
 const crosswiseData = ref([])
 const centerRightTopRightRef = ref()
 const centerRightBottomRef = ref()
+const v = ref('0')
 
 const changeRadio = (val:any)=>{
     btnValue.value = val;
