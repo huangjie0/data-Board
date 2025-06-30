@@ -29,9 +29,22 @@ const transparentGrid = computed(() => NumberUtils.hexToRgba( props.bgColor,0.5)
     display: flex;
     overflow: hidden;
     &-item{
+        animation: slideLeft 2s infinite linear; /* 应用动画 */
+        animation-iteration-count: 1;
         flex: 1;
         margin-right: 0.41rem;
         height: 100%;
     }
 }
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%); /* 从右向左开始 */
+        opacity: 0; /* 开始时透明 */
+    }
+    to {
+        transform: translateX(0); /* 移动到初始位置 */
+        opacity: 1; /* 完全不透明 */
+    }
+}
+
 </style>
