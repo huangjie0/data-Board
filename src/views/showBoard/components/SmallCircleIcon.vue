@@ -48,4 +48,7 @@ const click = ()=>{
         color: white;
         cursor: pointer;
     }
+    .small-circle-icon:hover{
+        background: linear-gradient(223deg, #7484FF, #2772FF);
+    }
 </style>
