@@ -45,7 +45,6 @@ const options = [
         value: Type.customerManager
     }
 ]
-
 const options2 = [
     {
         label:'在途项目平均时长评分',
@@ -64,28 +63,24 @@ const btnValue3 = ref('0')
 const commonFn = (type:any,v:any)=>{
     v.value = type
 }
-
-const changeRadio = (type:any)=>{
-    commonFn(type,btnValue)
-}
-const changeRadio2 = (type:any)=>{
-    commonFn(type,btnValue2)
-}
-
-const changeRadio3 = (type:any)=>{
-    commonFn(type,btnValue3)
-}
-
 const d = computed(()=>{
     return [
         { text:'久隆设计', number:93 },
         { text:'东捷设计', number:87 },
         { text:'上电设计', number:84 },
         { text:'上海院', number:79 },
-        { text:'市南设计', number:73 },
+        { text:'市南设计', number:73 }
     ]
 })
-
+const changeRadio = (type:any)=>{
+    commonFn(type,btnValue)
+}
+const changeRadio2 = (type:any)=>{
+    commonFn(type,btnValue2)
+}
+const changeRadio3 = (type:any)=>{
+    commonFn(type,btnValue3)
+}
 const type = ref('0')
 const o = computed(()=>{
     return [
@@ -93,11 +88,9 @@ const o = computed(()=>{
         { type:'1',name:'可研', color:'#5BC49F' },
     ]
 })
-
 const changeType = (t:string)=>{
     type.value = t
 }
-
 </script>
 <style lang="less" scoped>
     .second-board{
