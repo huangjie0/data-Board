@@ -2,7 +2,7 @@
     <div class="third-board">
         <TitleCard title="设计单位评分一览" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">
             <template #rightValue>
-                 <el-radio-group v-model="btnValue" size="small" fill="#2772FF" @change="changeRadio">
+                    <el-radio-group v-model="btnValue" size="small" fill="#2772FF" @change="changeRadio">
                     <el-radio-button :label="item.label" :value="item.value" v-for="(item,index) in options" :key="index"/>
                 </el-radio-group>
             </template>
