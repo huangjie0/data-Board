@@ -31,6 +31,7 @@ const changeType = (type:string)=>{
     }
 }
 .activated{
-    color: var(--common-home-bg-3);
+    // color: var(--common-home-bg-3);
+    color: red;
 }
 </style>
