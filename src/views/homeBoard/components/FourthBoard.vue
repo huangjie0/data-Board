@@ -31,7 +31,6 @@
                         <Bar3 :data="d"/>  
                     </div>
                 </TitleCard>
-
             </div>
             <div class="data-f1 data-m-l">
                 <TitleCard v-model="v" :options="[{ title:'本年度已批复项目平均时长' , type:'0' }]" iconClass="icon-faya" color="#192C7D" bg-color="#E8F1FD">

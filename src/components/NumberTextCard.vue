@@ -38,14 +38,17 @@ const ns = computed(()=>{
         align-items: center;
         cursor: pointer;
         img{
-            animation: spin 1s linear infinite;
             margin: 0 5px 0 15px;
         }
         &-t{
             font-weight: 400;
             font-size: 20px;
             color: #283A84;
+            text-decoration: underline;
         }
+    }
+    .text-card:hover img{
+        animation: spin 1s linear infinite;
     }
     .unit{
         align-items: end;

@@ -8,7 +8,6 @@
     </div>
 </template>
 <script setup lang="ts"> 
-import NumberTextCard from '@/components/NumberTextCard.vue';
 import i1 from '@/assets/style/image/i1.png';
 import i2 from '@/assets/style/image/i2.png';
 import i3 from '@/assets/style/image/i3.png';
