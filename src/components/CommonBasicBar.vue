@@ -10,8 +10,8 @@
 <script setup lang="ts">
 
 interface Params{
-    title:string;
-    barList:any[];
+    title:string
+    barList:any[]
 }
 defineProps<Params>();
 

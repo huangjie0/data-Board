@@ -74,7 +74,7 @@ const menusList = [
         { name:"可研评审专题", path:'/' },
         { name:"可研评审专题", path:'/' },
         { name:"可研评审专题", path:'/' },
-        { name:"可研评审专题", path:'/' },
+        { name:"可研评审专题", path:'/' }
 ]
 
 const countData = (initialValue:number = 0 )=>{
