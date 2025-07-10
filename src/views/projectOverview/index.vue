@@ -34,7 +34,6 @@ const tableConfig = ref({
         { prop: 'a', label:"电压等级" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
         { prop: 'a', label:"用户联系人" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
         { prop: 'a', label:"认领状态" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        // { prop: 'a', label:"xxx" , rules:[], type:'Input', placeholder:'请输入', width:120, disabled: false },
         { prop: 'b', label:"xxx2" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options: [{ 
              value:'0', label :'是'
         },{   value:'1', label:'否'}]},
@@ -47,11 +46,6 @@ const tableConfig = ref({
 
     ]
 })
-
-
-
-
-
 </script>
 <style scoped lang="less">
  .table-config{
@@ -59,7 +53,7 @@ const tableConfig = ref({
     &-functional-area{
         width: 100%;
         height: 44px;
-        background-color: pink;
+        background-color: #DFEAFC;
         margin-bottom: 20px;
     }
  }
