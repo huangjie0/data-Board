@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div> -->
     <!--  动态查询条件   -->
     <el-form
       v-if="tableConfig.searchForm"
@@ -178,7 +178,7 @@
         </el-pagination>
       </el-col>
     </el-row>
-  </div>
+  <!-- </div> -->
 </template>
 <script setup lang="ts">
 interface Params {
@@ -191,7 +191,7 @@ const table = ref();
 const tableData = ref([
   { a: "1", b: "281" },
   { a: "456", b: "281" },
-  { a: "789", b: "281" },
+  { a: "789", b: "281" }
 ]);
 
 const emits = defineEmits(["search", "handleSelectionChange"]);
