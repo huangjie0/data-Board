@@ -2,15 +2,16 @@
     <div class="table-config">
         <TaSe :table-config="tableConfig">
             <template #content>     
-                <!-- <div>
+                <div class="table-config-functional-area">
                     1111
-                </div> -->
+                </div>
             </template>
         </TaSe>
     </div>
 </template>
 <script setup lang="ts">
 const tableConfig = ref({
+    tableHeight: 520,
     searchForm:true,
     searchParams:{
 
@@ -55,6 +56,12 @@ const tableConfig = ref({
 <style scoped lang="less">
  .table-config{
     padding: 20px;
+    &-functional-area{
+        width: 100%;
+        height: 44px;
+        background-color: pink;
+        margin-bottom: 20px;
+    }
  }
 
 </style>
