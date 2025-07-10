@@ -1,6 +1,8 @@
 <template>
     <div :style="style" class="functional-area data-fdr">
-        11111
+        <div @click="item.onClick" class="functional-area-btn data-center" :key="index" v-for="(item,index) in functionList">
+            {{ item.name }}
+        </div>
     </div>
 </template>
 <script lang="ts" setup>
@@ -25,6 +27,24 @@ const style = computed(()=>{
     background-color: var(--bg-color);
     margin-bottom: 1.25rem;
     align-items: center;
-    padding: .625rem;
+    padding: .5rem;
+    &-btn{
+        width: 80px;
+        height: 100%;
+        border-radius: 20px;
+        margin-right: 5px;
+        color: #3D5063;
+        background: #F8FAFF;
+        cursor: pointer;
+        &:last-child{
+            margin: 0;
+        }
+    }
 }
+
+.functional-area-btn:hover{
+    background: linear-gradient(223deg, #7484FF, #2772FF);
+    color: white;
+}
+
 </style>

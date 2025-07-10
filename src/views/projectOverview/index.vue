@@ -22,7 +22,7 @@ const tableData = computed(()=>{
 const functionList = computed(()=>{
     return [
         { icon:'xxx', name:'新建', onClick:()=>{
-
+            alert('1111')
         }},
         { icon:'xxx', name:'编辑' },
         { icon:'xxx', name:'认领' },
