@@ -28,7 +28,7 @@ const functionList = computed(()=>{
         { icon:'xxx', name:'认领' },
         { icon:'xxx', name:'删除' },
         { icon:'xxx', name:'导入' },
-        { icon:'xxx', name:'导出' },
+        { icon:'xxx', name:'导出' }
     ]
 })
 const tableConfig = ref({
