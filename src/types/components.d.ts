@@ -39,6 +39,7 @@ declare module 'vue' {
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
+    FunctionalArea: typeof import('./../components/FunctionalArea.vue')['default']
     MyE: typeof import('./../components/MyE.vue')['default']
     NumberCard: typeof import('./../components/NumberCard.vue')['default']
     NumberTextCard: typeof import('./../components/NumberTextCard.vue')['default']

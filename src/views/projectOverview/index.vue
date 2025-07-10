@@ -1,15 +1,36 @@
 <template>
     <div class="table-config">
-        <TaSe :table-config="tableConfig">
+        <TaSe :table-config="tableConfig" :table-data="tableData">
             <template #content>     
-                <div class="table-config-functional-area">
-                    1111
-                </div>
+                <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
             </template>
         </TaSe>
     </div>
 </template>
 <script setup lang="ts">
+
+const tableData = computed(()=>{
+    return [
+        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' },
+    ]
+})
+const functionList = computed(()=>{
+    return [
+        { icon:'xxx', name:'新建', onClick:()=>{
+
+        }},
+        { icon:'xxx', name:'编辑' },
+        { icon:'xxx', name:'认领' },
+        { icon:'xxx', name:'删除' },
+        { icon:'xxx', name:'导入' },
+        { icon:'xxx', name:'导出' },
+    ]
+})
 const tableConfig = ref({
     tableHeight: 520,
     searchForm:true,
@@ -46,16 +67,11 @@ const tableConfig = ref({
 
     ]
 })
+
 </script>
 <style scoped lang="less">
  .table-config{
     padding: 20px;
-    &-functional-area{
-        width: 100%;
-        height: 44px;
-        background-color: #DFEAFC;
-        margin-bottom: 20px;
-    }
  }
 
 </style>
