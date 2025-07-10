@@ -1,7 +1,8 @@
 <template>
     <div :style="style" class="functional-area data-fdr">
         <div @click="item.onClick" class="functional-area-btn data-center" :key="index" v-for="(item,index) in functionList">
-            {{ item.name }}
+            <i class="iconfont" :class="item.icon"></i>
+            <span class="functional-area-btn-text">{{ item.name }}</span>
         </div>
     </div>
 </template>
@@ -36,6 +37,9 @@ const style = computed(()=>{
         color: #3D5063;
         background: #F8FAFF;
         cursor: pointer;
+        &-text{
+            margin-left: .3125rem;
+        }
         &:last-child{
             margin: 0;
         }

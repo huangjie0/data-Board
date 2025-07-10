@@ -21,6 +21,7 @@
         :placeholder="item.placeholder"
         :style="{ width: item.width }"
         :disabled="item.disabled"
+        clearable
       ></el-input>
       <!-- Select-->
       <el-select
@@ -30,6 +31,7 @@
         :placeholder="item.placeholder"
         :style="{ width: item.width }"
         :disabled="item.disabled"
+        clearable
       >
         <el-option
           v-for="selectItem in item.options"
@@ -48,6 +50,7 @@
         end-placeholder="结束时间"
         :disabled="item.disabled"
         :style="{ width: item.width }"
+        clearable
       />
     </el-form-item>
     <!-- 按钮 -->
