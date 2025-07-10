@@ -46,19 +46,27 @@ const tableConfig = ref({
     formItem:[
         { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
         { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"所属单位" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
+        { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入', disabled: false, options:[
+            { value:'xxx', label:'xxxx' },
+            { value:'xx', label:'xxx' },
+        ] },
         { prop: 'a', label:"申办业务" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
         { prop: 'a', label:"回路数" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
         { prop: 'a', label:"受理人员" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"首收日期" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"客户经理" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"电压等级" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
+        { prop: 'a', label:"首收日期" , rules:[], type:'Daterange', disabled: false },
+        { prop: 'a', label:"客户经理" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
+            { value:'xxx', label:'ssss' },
+            { value:'xsa', label:'ss' }
+        ] },
+        { prop: 'a', label:"电压等级" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
+            { value:'xxx', label:'ssss' },
+            { value:'xsa', label:'ss' }
+        ]},
         { prop: 'a', label:"用户联系人" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"认领状态" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'b', label:"xxx2" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options: [{ 
-             value:'0', label :'是'
-        },{   value:'1', label:'否'}]},
-
+        { prop: 'a', label:"认领状态" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
+            { value:'0', label:'是' },
+            { value:'1', label:'否' },
+        ]}
     ],
     formConfig:{
         resetButton:true

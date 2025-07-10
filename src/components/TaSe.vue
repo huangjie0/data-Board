@@ -38,6 +38,15 @@
           :label="selectItem.label || selectItem[item.selectLabel]"
         ></el-option>
       </el-select>
+      <el-date-picker
+        v-if="item.type === 'Daterange'"
+        v-model="tableConfig.searchParams[item.prop]"
+        type="daterange"
+        range-separator="至"
+        start-placeholder="开始时间"
+        end-placeholder="结束时间"
+        :disabled="item.disabled"
+      />
     </el-form-item>
     <!-- 按钮 -->
     <el-form-item>
