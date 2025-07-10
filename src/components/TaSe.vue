@@ -36,6 +36,7 @@
           :key="selectItem.value || selectItem[item.selectVlaue]"
           :value="selectItem.value || selectItem[item.selectVlaue]"
           :label="selectItem.label || selectItem[item.selectLabel]"
+           :style="{ width: item.width }"
         ></el-option>
       </el-select>
       <el-date-picker
@@ -46,6 +47,7 @@
         start-placeholder="开始时间"
         end-placeholder="结束时间"
         :disabled="item.disabled"
+        :style="{ width: item.width }"
       />
     </el-form-item>
     <!-- 按钮 -->
@@ -171,23 +173,28 @@
   <!--  分页  -->
   <el-row class="padding-top-30">
     <el-col :span="24">
-      <el-pagination
-        v-if="tableConfig.pagination"
-        class="rightClass"
-        background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="tableConfig.searchParams.pageIndex"
-        :page-sizes="[10, 20, 50, 100]"
-        :page-size="10"
-        layout="total, sizes, prev, pager, next, jumper"
-        :total="tableData?.length"
-      >
-      </el-pagination>
+      <el-config-provider :locale="zhCn">
+        <el-pagination
+          v-if="tableConfig.pagination"
+          class="rightClass"
+          background
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="tableConfig.searchParams.pageIndex"
+          :page-sizes="[10, 20, 50, 100]"
+          :page-size="10"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="tableData?.length"
+        >
+        </el-pagination>
+      </el-config-provider>
     </el-col>
   </el-row>
 </template>
 <script setup lang="ts">
+import { ElConfigProvider } from 'element-plus';
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
+
 interface Params {
   tableConfig: any;
   tableData?:any;

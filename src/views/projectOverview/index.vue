@@ -32,41 +32,53 @@ const functionList = computed(()=>{
     ]
 })
 const tableConfig = ref({
+    checkbox:true,
     tableHeight: 520,
     searchForm:true,
     searchParams:{
 
     },
     thead:[
-        { prop:'a', label:'xxx' },
-        { prop:'b', label:'xxx2' },
+        { prop:'a', label:'户名' },
+        { prop:'b', label:'地址' },
+        { prop:'b', label:'所属单位' },
+        { prop:'b', label:'申办业务' },
+        { prop:'b', label:'原有容量 (KVA)' },
+        { prop:'b', label:'新/添装容量 (KVA)' },
+        { prop:'b', label:'合计容量 (KVA)' },
+        { prop:'b', label:'每回路容量(KVA)' },
+        { prop:'b', label:'电压(KV)' },
+        { prop:'b', label:'供电回路' },
+        { prop:'b', label:'受理人员' },
+        { prop:'b', label:'首次收件申请日期' },
+        { prop:'b', label:'用户联系人' }
     ],
     pagination:true,
-    labelWidth: 90,
+    labelWidth: 120,
     formItem:[
-        { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入', disabled: false, options:[
+        { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入', disabled: false, width: '300px' , options:[
             { value:'xxx', label:'xxxx' },
             { value:'xx', label:'xxx' },
         ] },
-        { prop: 'a', label:"申办业务" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"回路数" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"受理人员" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
-        { prop: 'a', label:"首收日期" , rules:[], type:'Daterange', disabled: false },
-        { prop: 'a', label:"客户经理" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
+        { prop: 'a', label:"申办业务" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"回路数" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"受理人员" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"首收日期" , rules:[], type:'Daterange', disabled: false , width: '300px' },
+        { prop: 'a', label:"客户经理" , rules:[], type:'Select', placeholder:'请输入', width: '300px', disabled: false , options:[
             { value:'xxx', label:'ssss' },
             { value:'xsa', label:'ss' }
         ] },
-        { prop: 'a', label:"电压等级" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
+        { prop: 'a', label:"电压等级" , rules:[], type:'Select', placeholder:'请输入', width: '300px', disabled: false , options:[
             { value:'xxx', label:'ssss' },
             { value:'xsa', label:'ss' }
         ]},
-        { prop: 'a', label:"用户联系人" , rules:[], type:'Input', placeholder:'请输入', disabled: false },
+        { prop: 'a', label:"用户联系人" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
         { prop: 'a', label:"认领状态" , rules:[], type:'Select', placeholder:'请输入', disabled: false , options:[
             { value:'0', label:'是' },
             { value:'1', label:'否' },
-        ]}
+        ], width: '300px' }
     ],
     formConfig:{
         resetButton:true
