@@ -1,5 +1,10 @@
 <template>
-    <Dialog ref="dialogRef" :title="title">
+    <Dialog ref="dialogRef" :title="title" :title-icon="titleIcon">
+        <el-row>
+            <el-col :span="12">
+                111
+            </el-col>
+        </el-row>
 
     </Dialog>
 </template>
