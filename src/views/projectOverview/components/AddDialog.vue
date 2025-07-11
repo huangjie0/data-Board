@@ -98,24 +98,16 @@ interface Params{
 }
 
 const dialogRef = ref()
-
 const form = ref({
     name:""
 })
-
-const props = withDefaults(defineProps<Params>(),{
-
-})
-
+defineProps<Params>()
 const openDialog = ()=>{
     dialogRef.value.open()
 }
-
 defineExpose({
     openDialog
 })
-
-
 </script>
 <style lang="less" scoped>
     
