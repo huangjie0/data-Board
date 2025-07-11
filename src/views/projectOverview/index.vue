@@ -3,11 +3,13 @@
         <TaSe :table-config="tableConfig" :table-data="tableData">
             <template #content>     
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
+                <AddDialog ref="addDialogRef" title="项目详情总览编辑" icon-title="icon-qihang"></AddDialog>
             </template>
         </TaSe>
     </div>
 </template>
 <script setup lang="ts">
+import AddDialog from './components/AddDialog.vue';
 
 const tableData = computed(()=>{
     return [
@@ -19,10 +21,11 @@ const tableData = computed(()=>{
         { a:'xxx',b:'xxx' },
     ]
 })
+const addDialogRef = ref();
 const functionList = computed(()=>{
     return [
         { icon:'icon-canyin', name:'新建', onClick:()=>{
-            alert('1111')
+            addDialogRef.value.openDialog()
         }},
         { icon:'icon-canjiren', name:'编辑' },
         { icon:'icon-muai', name:'认领' },
