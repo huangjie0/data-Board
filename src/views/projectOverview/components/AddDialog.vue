@@ -1,5 +1,5 @@
 <template>
-    <Dialog ref="dialogRef" :title="title" :title-icon="titleIcon" dialog-width="900" @confirm="confirm">
+    <Dialog ref="dialogRef" :title="title" :title-icon="titleIcon" dialog-width="900" @confirm="confirm" @cancelRacharge="cancelRacharge">
         <el-form :model="form" label-width="130" ref="ruleFormRef" :rules="rules">
             <el-row>
                 <el-col :span="8">
@@ -140,6 +140,9 @@ const rules = ref<FormRules>({
     khjl:[{ required: true, message: '请输入客户经理', trigger: 'blur' }],
 })
 const emits = defineEmits(['confirm'])
+const cancelRacharge = ()=>{
+    ruleFormRef.value?.resetFields()
+}
 const confirm = ()=>{
     emits('confirm')
 }

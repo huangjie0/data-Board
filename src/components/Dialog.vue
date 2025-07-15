@@ -1,5 +1,5 @@
 <template>
-    <el-dialog v-model="dialogVisible" :width="dialogWidth" align-center>
+    <el-dialog v-model="dialogVisible" :width="dialogWidth" align-center :before-close="cancelRacharge">
         <template #title>
             <div :style="style" class="icon-title">
                 <span class="iconfont" :class="titleIcon"></span>
@@ -26,7 +26,7 @@ interface Params{
     cancelTitle?:string
 }
 
-const emits = defineEmits(['confirm'])
+const emits = defineEmits(['confirm','cancelRacharge'])
 
 const props = withDefaults(defineProps<Params>(),{
     color:'#192C7D',
@@ -41,6 +41,10 @@ const style = computed(()=>{
 })
 const cancel = ()=>{
     dialogVisible.value = false
+}
+const cancelRacharge = ()=>{
+    dialogVisible.value = false
+    emits('cancelRacharge')
 }
 const confirm = ()=>{
     emits('confirm')

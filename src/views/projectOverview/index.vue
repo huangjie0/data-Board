@@ -1,6 +1,6 @@
 <template>
     <div class="table-config">
-        <TaSe :table-config="tableConfig" :table-data="tableData">
+        <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange">
             <template #content>     
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
                 <AddDialog ref="addDialogRef" title="项目详情总览编辑" title-icon="icon-qihang" @confirm="confirm"></AddDialog>
@@ -22,15 +22,21 @@ const tableData = computed(()=>{
     ]
 })
 const addDialogRef = ref();
+const dataList = ref<any[]>([])
 const confirm = ()=>{
     alert(1111)
+}
+const handleSelectionChange = (v:any[])=>{
+    dataList.value = v
 }
 const functionList = computed(()=>{
     return [
         { icon:'icon-canyin', name:'新建', onClick:()=>{
             addDialogRef.value.openDialog()
         }},
-        { icon:'icon-canjiren', name:'编辑' },
+        { icon:'icon-canjiren', name:'编辑',onClick:()=>{
+
+        }},
         { icon:'icon-muai', name:'认领' },
         { icon:'icon-qihang', name:'删除' },
         { icon:'icon-qingdan', name:'导入' },
