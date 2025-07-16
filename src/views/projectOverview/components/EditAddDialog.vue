@@ -152,7 +152,21 @@ const rules = ref<FormRules>({
     khjl:[{ required: true, message: '请输入客户经理', trigger: 'blur' }],
 })
 const cancelRacharge = ()=>{
-    ruleFormRef.value?.resetFields()
+    form.value.hm = "",
+    form.value.ssdw="",
+    form.value.sbyw="",
+    form.value.yyrl="",
+    form.value.xtzrl="",
+    form.value.hjrl="",
+    form.value.mhlrl="",
+    form.value.dy="0",
+    form.value.gdhl="",
+    form.value.slry="",
+    form.value.sqrq="",
+    form.value.yhlxr="",
+    form.value.yhlxdh="",
+    form.value.khjl="",
+    form.value.dz=""
 }
 const confirm = async (formEl: FormInstance | undefined)=>{
     if(!formEl) return;

@@ -3,13 +3,15 @@
         <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange">
             <template #content>     
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
-                <EditAddDialog ref="editAddDialogRef" title="项目详情总览编辑" title-icon="icon-qihang"></EditAddDialog>
+                <EditAddDialog ref="editAddDialogRef" :title="dataList.length ? '项目详情总览编辑' : '项目详情总览新增'" title-icon="icon-qihang"></EditAddDialog>
+                <ExportDialog ref="exportDialogRef" title="项目详情总览导出" title-icon="icon-qihang"></ExportDialog>
             </template>
         </TaSe>
     </div>
 </template>
 <script setup lang="ts">
 import EditAddDialog from './components/EditAddDialog.vue';
+import ExportDialog from './components/ExportDialog.vue';
 import { ElMessage } from 'element-plus';
 
 let tableData = ref([
@@ -19,6 +21,7 @@ let tableData = ref([
 ])
 
 const editAddDialogRef = ref();
+const exportDialogRef = ref();
 const dataList = ref<any[]>([])
 const handleSelectionChange = (v:any[])=>{
     dataList.value = v
@@ -33,14 +36,18 @@ const functionList = computed(()=>{
             if(dataList.value.length > 1) return ElMessage({ message:"只能勾选一条数据进行编辑！", type:'warning' })
              editAddDialogRef.value.openDialog(dataList.value)
         }},
-        { icon:'icon-muai', name:'认领' },
+        { icon:'icon-muai', name:'认领',onClick:()=>{
+            if(!dataList.value?.length) return ElMessage({ message:"请勾选数据进行认领！", type:'warning' })
+        }},
         { icon:'icon-qihang', name:'删除',onClick:()=>{
             if(!dataList.value?.length) return ElMessage({ message:"请勾选数据进行删除！", type:'warning' })
             const ids = dataList.value.map(item=>item.id)
             tableData.value = tableData.value.filter(item=>!ids.includes(item.id))
         }},
         { icon:'icon-qingdan', name:'导入' },
-        { icon:'icon-faya', name:'导出' }
+        { icon:'icon-faya', name:'导出',onClick:()=>{
+            exportDialogRef.value.openDialog()
+        }}
     ]
 })
 const tableConfig = ref({
