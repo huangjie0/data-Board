@@ -10,6 +10,7 @@
 </template>
 <script setup lang="ts">
 import AddDialog from './components/AddDialog.vue';
+import { ElMessage } from 'element-plus';
 
 const tableData = computed(()=>{
     return [
@@ -32,7 +33,9 @@ const functionList = computed(()=>{
             addDialogRef.value.openDialog()
         }},
         { icon:'icon-canjiren', name:'编辑',onClick:()=>{
-
+            if(!dataList.value?.length) return ElMessage({ message:"请勾选数据进行编辑！", type:'warning' })
+            if(dataList.value.length > 1) return ElMessage({ message:"只能勾选一条数据进行编辑！", type:'warning' })
+            
         }},
         { icon:'icon-muai', name:'认领' },
         { icon:'icon-qihang', name:'删除' },
