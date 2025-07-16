@@ -19,7 +19,7 @@ const tableData = computed(()=>{
         { a:'xxx',b:'xxx' },
         { a:'xxx',b:'xxx' },
         { a:'xxx',b:'xxx' },
-        { a:'xxx',b:'xxx' },
+        { a:'xxx',b:'xxx' }
     ]
 })
 const addDialogRef = ref();
@@ -68,7 +68,7 @@ const tableConfig = ref({
     pagination:true,
     labelWidth: 120,
     formItem:[
-        { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入户名', disabled: false , width: '300px' },
+        { prop: 'a', label:"户名" , rules:[{ required:true , message:'请输入户名', trigger: 'blur' }], type:'Input', placeholder:'请输入户名', disabled: false , width: '300px' },
         { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入地址', disabled: false , width: '300px' },
         { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入所属单位', disabled: false, width: '300px' , options:[
             { value:'xxx', label:'xxxx' },
