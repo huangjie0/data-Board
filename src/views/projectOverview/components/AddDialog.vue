@@ -1,94 +1,94 @@
 <template>
-    <Dialog ref="dialogRef" :title="title" :title-icon="titleIcon" dialog-width="900" @confirm="confirm" @cancelRacharge="cancelRacharge">
+    <Dialog ref="dialogRef" :title="title" confirm-title="保存" :title-icon="titleIcon" dialog-width="900" @cancel="cancelRacharge" @confirm="confirm" @cancelRacharge="cancelRacharge">
         <el-form :model="form" label-width="130" ref="ruleFormRef" :rules="rules">
             <el-row>
                 <el-col :span="8">
                     <el-form-item label="户名" prop="hm">
-                        <el-input v-model="form.hm" />
+                        <el-input v-model="form.hm" clearable placeholder="请输入户名"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="所属单位">
-                        <el-select v-model="form.ssdw" placeholder="请输入所属单位">
+                    <el-form-item label="所属单位" prop="ssdw">
+                        <el-select v-model="form.ssdw" placeholder="请输入所属单位" clearable>
                             <el-option :label="item.label" :value="item.value" v-for="(item,index) in ssdwOptions" :key="index"/>
                         </el-select>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="申办业务">
-                        <el-input v-model="form.sbyw" />
+                    <el-form-item label="申办业务" prop="sbyw">
+                        <el-input v-model="form.sbyw" clearable placeholder="请输入申办业务"/>
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="8">
-                    <el-form-item label="原有容量(KVA)">
-                        <el-input v-model="form.yyrl" />
+                    <el-form-item label="原有容量(KVA)" prop="yyrl">
+                        <el-input v-model="form.yyrl" clearable placeholder="请输入原有容量"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="新/添装容量(KVA)">
-                        <el-input v-model="form.xtzrl" />
+                    <el-form-item label="新/添装容量(KVA)" prop="xtzrl">
+                        <el-input v-model="form.xtzrl" clearable placeholder="请输入新/添装容量"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="合计容量(KVA)">
-                        <el-input v-model="form.hjrl" />
+                    <el-form-item label="合计容量(KVA)" prop="hjrl">
+                        <el-input v-model="form.hjrl" clearable placeholder="请输入合计容量"/>
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="8">
-                    <el-form-item label="每回路容量(KVA)">
-                        <el-input v-model="form.mhlrl" />
+                    <el-form-item label="每回路容量(KVA)" prop="mhlrl">
+                        <el-input v-model="form.mhlrl" clearable placeholder="请输入每回路容量"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="电压">
+                    <el-form-item label="电压" prop="dy">
                         <el-select v-model="form.dy" placeholder="请输入电压" disabled>
                             <el-option :label="item.label" :value="item.value" v-for="(item,index) in dyOptions" :key="index"/>
                         </el-select>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="供电回路">
-                        <el-input v-model="form.gdhl" />
+                    <el-form-item label="供电回路" prop="gdhl">
+                        <el-input v-model="form.gdhl" clearable placeholder="请输入供电回路"/>
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="8">
-                    <el-form-item label="受理人员">
-                        <el-input v-model="form.slry" />
+                    <el-form-item label="受理人员" prop="slry">
+                        <el-input v-model="form.slry" clearable placeholder="请输入受理人员"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="首次收件申请日期">
-                        <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入"/>
+                    <el-form-item label="首次收件申请日期" prop="sqrq">
+                        <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入" clearable/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
-                    <el-form-item label="用户联系人">
-                        <el-input v-model="form.yhlxr" />
+                    <el-form-item label="用户联系人" prop="yhlxr">
+                        <el-input v-model="form.yhlxr" clearable placeholder="请输入用户联系人"/>
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="8">
-                    <el-form-item label="用户联系电话">
-                        <el-input v-model="form.yhlxdh" />
+                    <el-form-item label="用户联系电话" prop="yhlxdh">
+                        <el-input v-model="form.yhlxdh" clearable placeholder="用户联系电话"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
                     <el-form-item label="客户经理" prop="khjl">
-                        <el-input v-model="form.khjl" />
+                        <el-input v-model="form.khjl" clearable placeholder="请输入客户经理"/>
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <el-form-item label="地址">
-                        <el-input v-model="form.dz" type="textarea"/>
+                    <el-form-item label="地址" prop="dz">
+                        <el-input v-model="form.dz" type="textarea" clearable placeholder="请输入地址"/>
                     </el-form-item>
                 </el-col>
             </el-row>

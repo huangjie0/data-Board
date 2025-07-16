@@ -26,7 +26,7 @@ interface Params{
     cancelTitle?:string
 }
 
-const emits = defineEmits(['confirm','cancelRacharge'])
+const emits = defineEmits(['confirm','cancelRacharge','cancel'])
 
 const props = withDefaults(defineProps<Params>(),{
     color:'#192C7D',
@@ -41,6 +41,7 @@ const style = computed(()=>{
 })
 const cancel = ()=>{
     dialogVisible.value = false
+    emits('cancel')
 }
 const cancelRacharge = ()=>{
     dialogVisible.value = false
