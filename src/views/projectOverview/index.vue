@@ -3,7 +3,7 @@
         <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange">
             <template #content>     
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
-                <AddDialog ref="addDialogRef" title="项目详情总览编辑" title-icon="icon-qihang" @confirm="confirm"></AddDialog>
+                <AddDialog ref="addDialogRef" title="项目详情总览编辑" title-icon="icon-qihang"></AddDialog>
             </template>
         </TaSe>
     </div>
@@ -23,9 +23,6 @@ const tableData = computed(()=>{
 })
 const addDialogRef = ref();
 const dataList = ref<any[]>([])
-const confirm = ()=>{
-    alert(1111)
-}
 const handleSelectionChange = (v:any[])=>{
     dataList.value = v
 }

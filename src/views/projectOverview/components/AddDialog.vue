@@ -1,5 +1,5 @@
 <template>
-    <Dialog ref="dialogRef" :title="title" confirm-title="保存" :title-icon="titleIcon" dialog-width="900" @cancel="cancelRacharge" @confirm="confirm" @cancelRacharge="cancelRacharge">
+    <Dialog ref="dialogRef" :title="title" confirm-title="保存" :title-icon="titleIcon" dialog-width="900" @cancel="cancelRacharge" @confirm="confirm(ruleFormRef)" @cancelRacharge="cancelRacharge">
         <el-form :model="form" label-width="130" ref="ruleFormRef" :rules="rules">
             <el-row>
                 <el-col :span="8">
@@ -139,12 +139,18 @@ const rules = ref<FormRules>({
     hm:[{ required: true, message: '请输入户名', trigger: 'blur' }],
     khjl:[{ required: true, message: '请输入客户经理', trigger: 'blur' }],
 })
-const emits = defineEmits(['confirm'])
 const cancelRacharge = ()=>{
     ruleFormRef.value?.resetFields()
 }
-const confirm = ()=>{
-    emits('confirm')
+const confirm = async (formEl: FormInstance | undefined)=>{
+    if(!formEl) return;
+    await formEl.validate((valid, fields) => {
+        if (valid) {
+            console.log('submit!')
+        } else {
+            console.log('error submit!', fields)
+        }
+  })
 }
 defineExpose({
     openDialog
