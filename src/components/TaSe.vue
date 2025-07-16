@@ -38,20 +38,23 @@
           :key="selectItem.value || selectItem[item.selectVlaue]"
           :value="selectItem.value || selectItem[item.selectVlaue]"
           :label="selectItem.label || selectItem[item.selectLabel]"
-           :style="{ width: item.width }"
+          :style="{ width: item.width }"
         ></el-option>
       </el-select>
-      <el-date-picker
-        v-if="item.type === 'Daterange'"
-        v-model="tableConfig.searchParams[item.prop]"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始时间"
-        end-placeholder="结束时间"
-        :disabled="item.disabled"
-        :style="{ width: item.width }"
-        clearable
-      />
+
+      <el-config-provider :locale="zhCn">
+        <el-date-picker
+          v-if="item.type === 'Daterange'"
+          v-model="tableConfig.searchParams[item.prop]"
+          type="daterange"
+          range-separator="至"
+          start-placeholder="开始时间"
+          end-placeholder="结束时间"
+          :disabled="item.disabled"
+          :style="{ width: item.width }"
+          clearable
+        />
+      </el-config-provider>
     </el-form-item>
     <!-- 按钮 -->
     <el-form-item>
@@ -195,12 +198,12 @@
   </el-row>
 </template>
 <script setup lang="ts">
-import { ElConfigProvider } from 'element-plus';
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
+import { ElConfigProvider } from "element-plus";
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 
 interface Params {
   tableConfig: any;
-  tableData?:any;
+  tableData?: any;
 }
 
 const loadingTable = ref(false);

@@ -64,7 +64,9 @@
                 </el-col>
                 <el-col :span="8">
                     <el-form-item label="首次收件申请日期" prop="sqrq">
-                        <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入" clearable value-format="YYYY-MM-DD"/>
+                        <el-config-provider :locale="zhCn">
+                            <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入" clearable value-format="YYYY-MM-DD"/>
+                        </el-config-provider>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
@@ -97,6 +99,7 @@
 </template>
 <script setup lang="ts">
 import type { FormInstance, FormRules } from 'element-plus';
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 
 interface Params{
     title?:string
