@@ -12,12 +12,12 @@
 import EditAddDialog from './components/EditAddDialog.vue';
 import { ElMessage } from 'element-plus';
 
-const tableData = computed(()=>{
-    return [
-        { hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2012-10-12',yhlxr:'xxx' },
-        { hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-15',yhlxr:'xxx' }
-    ]
-})
+let tableData = ref([
+    { id:'1', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2012-10-12',yhlxr:'xxx' },
+    { id:'2', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-15',yhlxr:'xxx' },
+    { id:'3', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-16',yhlxr:'xxx' },
+])
+
 const editAddDialogRef = ref();
 const dataList = ref<any[]>([])
 const handleSelectionChange = (v:any[])=>{
@@ -34,7 +34,11 @@ const functionList = computed(()=>{
              editAddDialogRef.value.openDialog(dataList.value)
         }},
         { icon:'icon-muai', name:'认领' },
-        { icon:'icon-qihang', name:'删除' },
+        { icon:'icon-qihang', name:'删除',onClick:()=>{
+            if(!dataList.value?.length) return ElMessage({ message:"请勾选数据进行删除！", type:'warning' })
+            const ids = dataList.value.map(item=>item.id)
+            tableData.value = tableData.value.filter(item=>!ids.includes(item.id))
+        }},
         { icon:'icon-qingdan', name:'导入' },
         { icon:'icon-faya', name:'导出' }
     ]

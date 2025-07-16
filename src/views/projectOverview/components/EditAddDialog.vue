@@ -136,7 +136,6 @@ const form = ref<any>({
 
 defineProps<Params>()
 const openDialog = (v:any)=>{
-    dialogRef.value.open()
     if(v){
         for (const k1 in form.value) {
             for (const k2 in v[0]) {
@@ -146,6 +145,7 @@ const openDialog = (v:any)=>{
             }
         }
     }
+    dialogRef.value.open()
 }
 const rules = ref<FormRules>({
     hm:[{ required: true, message: '请输入户名', trigger: 'blur' }],
