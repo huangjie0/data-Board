@@ -97,85 +97,87 @@
   <!-- 插槽可以引入别的组件或者DOM   -->
   <slot name="content"></slot>
   <!--  动态渲染表格  -->
-  <el-table
-    ref="table"
-    v-loading="loadingTable"
-    element-loading-text="加载中..."
-    :data="tableData"
-    border
-    fit
-    :height="tableConfig.tableHeight"
-    @selection-change="handleSelectionChange"
-    :header-cell-style="{ 'text-align': 'center' }"
-    :cell-style="{ 'text-align': 'center' }"
-  >
-    <el-table-column
-      v-if="tableConfig.checkbox"
-      type="selection"
-      width="40"
-    ></el-table-column>
-    <template v-for="item in tableConfig.thead">
-      <!--操作 -->
+  <el-config-provider :locale="zhCn">
+    <el-table
+      ref="table"
+      v-loading="loadingTable"
+      element-loading-text="加载中..."
+      :data="tableData"
+      border
+      fit
+      :height="tableConfig.tableHeight"
+      @selection-change="handleSelectionChange"
+      :header-cell-style="{ 'text-align': 'center' }"
+      :cell-style="{ 'text-align': 'center' }"
+    >
       <el-table-column
-        align="center"
-        v-if="item.type === 'operation'"
-        :key="item.prop"
-        :prop="item.prop"
-        :label="item.label"
-        :width="item.width"
-      >
-        <template slot-scope="scope">
-          <!--按钮组-->
-          <template v-if="item.buttonGroup && item.buttonGroup.length > 0">
-            <template v-for="button in item.buttonGroup">
-              <!-- 事件 -->
-              <el-button
-                v-if="button.event === 'button'"
-                :type="button.type"
-                :key="button.id"
-                style="margin: 0 5px"
-                @click="button.handler(scope.row)"
-                size="small"
-              >
-                {{ button.label }}
-              </el-button>
-              <!-- 路由跳转 -->
-              <router-link
-                v-if="button.event === 'link'"
-                :key="button.id"
-                :to="{
-                  name: button.name,
-                  query: { [button.key]: scope.row[button.value || 'id'] },
-                }"
-                class="mr-10"
-              >
-                <el-button
-                  style="margin: 0 5px"
-                  :type="button.type"
-                  size="small"
-                  >{{ button.label }}</el-button
-                >
-              </router-link>
-            </template>
-          </template>
-          <!--额外-->
-          <slot
-            v-if="item.slotName"
-            :name="item.slotName"
-            :data="scope.row"
-          ></slot>
-          <!--删除-->
-          <!--            <el-button size="small" v-if="item.default && item.default.deleteButton" :loading="scope.row[item.default.deleteKey || 'id'] == rowId" @click="delConfirm(scope.row[item.default.deleteKey || 'id'])">删除</el-button>-->
-        </template>
-      </el-table-column>
-      <!-- 纯文本渲染 -->
-      <el-table-column
-        v-else
-        :prop="item.prop"
-        :label="item.label"
+        v-if="tableConfig.checkbox"
+        type="selection"
+        width="40"
       ></el-table-column>
-    </template>
-  </el-table>
+      <template v-for="item in tableConfig.thead">
+        <!--操作 -->
+        <el-table-column
+          align="center"
+          v-if="item.type === 'operation'"
+          :key="item.prop"
+          :prop="item.prop"
+          :label="item.label"
+          :width="item.width"
+        >
+          <template slot-scope="scope">
+            <!--按钮组-->
+            <template v-if="item.buttonGroup && item.buttonGroup.length > 0">
+              <template v-for="button in item.buttonGroup">
+                <!-- 事件 -->
+                <el-button
+                  v-if="button.event === 'button'"
+                  :type="button.type"
+                  :key="button.id"
+                  style="margin: 0 5px"
+                  @click="button.handler(scope.row)"
+                  size="small"
+                >
+                  {{ button.label }}
+                </el-button>
+                <!-- 路由跳转 -->
+                <router-link
+                  v-if="button.event === 'link'"
+                  :key="button.id"
+                  :to="{
+                    name: button.name,
+                    query: { [button.key]: scope.row[button.value || 'id'] },
+                  }"
+                  class="mr-10"
+                >
+                  <el-button
+                    style="margin: 0 5px"
+                    :type="button.type"
+                    size="small"
+                    >{{ button.label }}</el-button
+                  >
+                </router-link>
+              </template>
+            </template>
+            <!--额外-->
+            <slot
+              v-if="item.slotName"
+              :name="item.slotName"
+              :data="scope.row"
+            ></slot>
+            <!--删除-->
+            <!--            <el-button size="small" v-if="item.default && item.default.deleteButton" :loading="scope.row[item.default.deleteKey || 'id'] == rowId" @click="delConfirm(scope.row[item.default.deleteKey || 'id'])">删除</el-button>-->
+          </template>
+        </el-table-column>
+        <!-- 纯文本渲染 -->
+        <el-table-column
+          v-else
+          :prop="item.prop"
+          :label="item.label"
+        ></el-table-column>
+      </template>
+    </el-table>
+  </el-config-provider>
   <!--  分页  -->
   <el-row class="padding-top-30">
     <el-col :span="24">
