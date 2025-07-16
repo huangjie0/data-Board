@@ -64,7 +64,7 @@
                 </el-col>
                 <el-col :span="8">
                     <el-form-item label="首次收件申请日期" prop="sqrq">
-                        <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入" clearable/>
+                        <el-date-picker v-model="form.sqrq" type="date" placeholder="请输入" clearable value-format="YYYY-MM-DD"/>
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
@@ -113,7 +113,7 @@ const dyOptions = ref([
 ])
 const ruleFormRef = ref<FormInstance>()
 const dialogRef = ref()
-const form = ref({
+const form = ref<any>({
     hm:"",
     ssdw:"",
     sbyw:"",
@@ -132,8 +132,17 @@ const form = ref({
 })
 
 defineProps<Params>()
-const openDialog = ()=>{
+const openDialog = (v:any)=>{
     dialogRef.value.open()
+    if(v){
+        for (const k1 in form.value) {
+            for (const k2 in v[0]) {
+                if(k1 === k2){
+                    form.value[k1] = v[0][k1]
+                } 
+            }
+        }
+    }
 }
 const rules = ref<FormRules>({
     hm:[{ required: true, message: '请输入户名', trigger: 'blur' }],
