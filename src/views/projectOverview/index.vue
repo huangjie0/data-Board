@@ -2,9 +2,9 @@
     <div class="table-config">
         <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange">
             <template #content>     
-                <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"></FunctionalArea>
-                <EditAddDialog ref="editAddDialogRef" :title="dataList.length ? '项目详情总览编辑' : '项目详情总览新增'" title-icon="icon-qihang"></EditAddDialog>
-                <ExportDialog ref="exportDialogRef" title="项目详情总览导出" title-icon="icon-qihang"></ExportDialog>
+                <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"/>
+                <EditAddDialog ref="editAddDialogRef" :title="dataList.length ? '项目详情总览编辑' : '项目详情总览新增'" title-icon="icon-qihang"/>
+                <ExportDialog ref="exportDialogRef" title="项目详情总览导出" title-icon="icon-qihang"/>
             </template>
         </TaSe>
     </div>

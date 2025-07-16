@@ -7,7 +7,7 @@
             </div>
         </template>
         <slot></slot>
-        <template #footer>
+        <template #footer v-if="showFooter">
             <div class="data-center">
                 <slot name="buttons"></slot>
                 <el-button type="primary" @click="confirm">{{ confirmTitle }}</el-button>
@@ -24,6 +24,7 @@ interface Params{
     dialogWidth?:string
     confirmTitle?:string
     cancelTitle?:string
+    showFooter?:boolean
 }
 
 const emits = defineEmits(['confirm','cancelRacharge','cancel'])
@@ -32,7 +33,8 @@ const props = withDefaults(defineProps<Params>(),{
     color:'#192C7D',
     dialogWidth:'800',
     confirmTitle:'确定',
-    cancelTitle:'取消'
+    cancelTitle:'取消',
+    showFooter:true
 })
 const style = computed(()=>{
     return {
