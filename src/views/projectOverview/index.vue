@@ -68,15 +68,15 @@ const tableConfig = ref({
     pagination:true,
     labelWidth: 120,
     formItem:[
-        { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
-        { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
-        { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入', disabled: false, width: '300px' , options:[
+        { prop: 'a', label:"户名" , rules:[], type:'Input', placeholder:'请输入户名', disabled: false , width: '300px' },
+        { prop: 'a', label:"地址" , rules:[], type:'Input', placeholder:'请输入地址', disabled: false , width: '300px' },
+        { prop: 'a', label:"所属单位" , rules:[], type:'Select', placeholder:'请输入所属单位', disabled: false, width: '300px' , options:[
             { value:'xxx', label:'xxxx' },
             { value:'xx', label:'xxx' },
         ] },
-        { prop: 'a', label:"申办业务" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
-        { prop: 'a', label:"回路数" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
-        { prop: 'a', label:"受理人员" , rules:[], type:'Input', placeholder:'请输入', disabled: false , width: '300px' },
+        { prop: 'a', label:"申办业务" , rules:[], type:'Input', placeholder:'请输入申办业务', disabled: false , width: '300px' },
+        { prop: 'a', label:"回路数" , rules:[], type:'Input', placeholder:'请输入回路数', disabled: false , width: '300px' },
+        { prop: 'a', label:"受理人员" , rules:[], type:'Input', placeholder:'请输入受理人员', disabled: false , width: '300px' },
         { prop: 'a', label:"首收日期" , rules:[], type:'Daterange', disabled: false , width: '300px' },
         { prop: 'a', label:"客户经理" , rules:[], type:'Select', placeholder:'请输入', width: '300px', disabled: false , options:[
             { value:'xxx', label:'ssss' },
