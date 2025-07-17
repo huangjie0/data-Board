@@ -109,6 +109,7 @@
       @selection-change="handleSelectionChange"
       :header-cell-style="{ 'text-align': 'center' }"
       :cell-style="{ 'text-align': 'center' }"
+      @row-click="toDetail"
     >
       <el-table-column
         v-if="tableConfig.checkbox"
@@ -174,6 +175,7 @@
           v-else
           :prop="item.prop"
           :label="item.label"
+          :formatter="item.formatter"
         ></el-table-column>
       </template>
     </el-table>
@@ -212,7 +214,7 @@ const loadingTable = ref(false);
 const form = ref();
 const table = ref();
 
-const emits = defineEmits(["search", "handleSelectionChange"]);
+const emits = defineEmits(["search", "handleSelectionChange","clickColumn"]);
 
 const search = (val: any) => {
   emits("search", val);
@@ -253,6 +255,9 @@ watch(
   },
   { immediate: true }
 );
+const toDetail = (_row:any, column:any, _event:any)=>{
+  emits('clickColumn',column)
+}
 </script>
 <style lang="less" scoped>
 .padding-top-30 {

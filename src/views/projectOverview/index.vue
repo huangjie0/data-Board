@@ -1,6 +1,6 @@
 <template>
     <div class="table-config">
-        <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange">
+        <TaSe :table-config="tableConfig" :table-data="tableData" @handleSelectionChange="handleSelectionChange" @clickColumn="clickColumn">
             <template #content>     
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"/>
                 <EditAddDialog ref="editAddDialogRef" :title="dataList.length ? '项目详情总览编辑' : '项目详情总览新增'" title-icon="icon-qihang"/>
@@ -9,15 +9,15 @@
         </TaSe>
     </div>
 </template>
-<script setup lang="ts">
+<script setup lang="tsx">
 import EditAddDialog from './components/EditAddDialog.vue';
 import ExportDialog from './components/ExportDialog.vue';
 import { ElMessage } from 'element-plus';
 
 let tableData = ref([
-    { id:'1', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2012-10-12',yhlxr:'xxx' },
-    { id:'2', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-15',yhlxr:'xxx' },
-    { id:'3', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-16',yhlxr:'xxx' },
+    { id:'1', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2012-10-12',yhlxr:'xxx',xmxq:'xxx' },
+    { id:'2', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-15',yhlxr:'xxx',xmxq:'qqq' },
+    { id:'3', hm:'xxx',dz:'xxx',ssdw:'xxx',sbyw:'xx',yyrl:'xx',xtzrl:'xx',hjrl:'xx',mhlrl:'xx',dy:'xxx',gdhl:'xx',slry:'xx',sqrq:'2015-08-16',yhlxr:'xxx',xmxq:'ttt' },
 ])
 
 const editAddDialogRef = ref();
@@ -70,7 +70,10 @@ const tableConfig = ref({
         { prop:'gdhl', label:'供电回路' },
         { prop:'slry', label:'受理人员' },
         { prop:'sqrq', label:'首次收件申请日期' },
-        { prop:'yhlxr', label:'用户联系人' }
+        { prop:'yhlxr', label:'用户联系人' },
+        { prop:'xmxq', label:'项目详情', formatter:(_row:any,_column:any,cellValue:any,_index:any)=>{
+            return <span class='blue-font-color'>{cellValue}</span>
+        }},
     ],
     pagination:true,
     labelWidth: 120,
@@ -106,11 +109,21 @@ const tableConfig = ref({
 
     ]
 })
-
+const clickColumn = (c:any)=>{
+    if(c.property === 'xmxq'){
+        alert("1111")
+    }
+}
 </script>
 <style scoped lang="less">
- .table-config{
+.table-config{
     padding: 20px;
- }
-
+}
+</style>
+<style lang="less">
+.blue-font-color {
+  color: #409eff;
+  border-bottom: 1px solid #409eff;
+  cursor: pointer;
+}
 </style>
