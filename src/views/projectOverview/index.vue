@@ -5,6 +5,7 @@
                 <FunctionalArea bg-color="#DFEAFC" :function-list="functionList"/>
                 <EditAddDialog ref="editAddDialogRef" :title="dataList.length ? '项目详情总览编辑' : '项目详情总览新增'" title-icon="icon-qihang"/>
                 <ExportDialog ref="exportDialogRef" title="项目详情总览导出" title-icon="icon-qihang"/>
+                <ProjectDetails  ref="projectDetailsRef" title="项目详情" title-icon="icon-qihang"></ProjectDetails>
             </template>
         </TaSe>
     </div>
@@ -12,6 +13,7 @@
 <script setup lang="tsx">
 import EditAddDialog from './components/EditAddDialog.vue';
 import ExportDialog from './components/ExportDialog.vue';
+import ProjectDetails from './components/ProjectDetails.vue'
 import { ElMessage } from 'element-plus';
 
 let tableData = ref([
@@ -22,6 +24,7 @@ let tableData = ref([
 
 const editAddDialogRef = ref();
 const exportDialogRef = ref();
+const projectDetailsRef = ref();
 const dataList = ref<any[]>([])
 const handleSelectionChange = (v:any[])=>{
     dataList.value = v
@@ -111,7 +114,7 @@ const tableConfig = ref({
 })
 const clickColumn = (c:any)=>{
     if(c.property === 'xmxq'){
-        alert("1111")
+        projectDetailsRef.value.openDialog()
     }
 }
 </script>
