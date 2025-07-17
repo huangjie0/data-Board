@@ -74,9 +74,7 @@ const tableConfig = ref({
         { prop:'slry', label:'受理人员' },
         { prop:'sqrq', label:'首次收件申请日期' },
         { prop:'yhlxr', label:'用户联系人' },
-        { prop:'xmxq', label:'项目详情', formatter:(_row:any,_column:any,cellValue:any,_index:any)=>{
-            return <span class='blue-font-color'>{cellValue}</span>
-        }},
+        { prop:'xmxq', label:'项目详情', formatter:(_row:any,_column:any,cellValue:any,_index:any)=>{ return <span class='blue-font-color'>{cellValue}</span> }},
     ],
     pagination:true,
     labelWidth: 120,
