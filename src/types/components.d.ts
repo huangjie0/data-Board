@@ -18,7 +18,6 @@ declare module 'vue' {
     CommonBasicBar: typeof import('./../components/CommonBasicBar.vue')['default']
     CommonPie: typeof import('./../components/CommonPie.vue')['default']
     Dialog: typeof import('./../components/Dialog.vue')['default']
-    Drawer: typeof import('./../components/Drawer.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']

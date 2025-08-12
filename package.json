@@ -21,11 +21,13 @@
     "dhtmlx-gantt": "^8.0.6",
     "echarts": "^5.6.0",
     "element-plus": "^2.9.7",
+    "file-saver": "^2.0.5",
     "gsap": "^3.13.0",
     "less": "^4.2.2",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^22.13.13",
