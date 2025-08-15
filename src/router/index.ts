@@ -12,14 +12,6 @@ const router = createRouter({
             }
         },
         {
-            path:"/test",
-            name:"test",
-            component: () => import("@/views/test/index.vue"),
-            meta:{
-                keepAlive: true
-            }
-        },
-        {
             path:"/showBoard",
             name:"showBoard",
             component:() => import("@/views/showBoard/index.vue"),
