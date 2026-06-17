@@ -68,7 +68,7 @@ const d = computed(()=>{return DateTimeUtils.formatDate(new Date(),"YYYY/MM/DD")
 const menusList = [
         { name:"首页看板", path:'/showBoard/homeBoard' },
         { name:"项目详情总览", path:'/showBoard/projectOverview' },
-        { name:"超期项目分析", path:'/' },
+        { name:"超期项目分析", path:'/showBoard/a' },
         { name:"可研完成情况", path:'/' },
         { name:"可研评审专题", path:'/' },
         { name:"可研评审专题", path:'/' },
