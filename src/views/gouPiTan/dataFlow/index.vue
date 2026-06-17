@@ -1,5 +1,7 @@
 <template>
-    <GouPiTanCommonPage></GouPiTanCommonPage>
+    <GouPiTanCommonPage>
+        55555
+    </GouPiTanCommonPage>
 </template>
 <script setup lang="ts">
 import GouPiTanCommonPage from '@/components/GouPiTanCommonPage.vue'

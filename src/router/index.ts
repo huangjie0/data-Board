@@ -36,12 +36,20 @@ const router = createRouter({
       ],
     },
     {
-      path: "/gouPiTan",
-      name: "gouPiTan",
-      component: () => import("@/views/gouPiTan/index.vue"),
+      path: "/dataFlow",
+      name: "dataFlow",
+      component: () => import("@/views/gouPiTan/dataFlow/index.vue"),
       meta: {
         keepAlive: true,
-      },
+      }
+    },
+    {
+      path: "/systemArchitecture",
+      name: "systemArchitecture",
+      component: () => import("@/views/gouPiTan/systemArchitecture/index.vue"),
+      meta: {
+        keepAlive: true,
+      }
     },
     {
       path: "/:pathMatch(.*)*",
