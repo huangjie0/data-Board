@@ -4,7 +4,7 @@
             <div class="system-architecture-top data-between">
                 <div class="system-architecture-top-left">
                     <GouPiTanTitleCard title="数字巡检" :bg-url="border1">
-                        <TopLeft />
+                        <TopLeft/>
                     </GouPiTanTitleCard>
                 </div>
                 <div class="system-architecture-top-center-1">
