@@ -1,4 +1,5 @@
 {
+  "ignoreDeprecations": "6.0",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
