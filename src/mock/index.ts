@@ -1,4 +1,3 @@
-// src/mock/mockData.ts
 import Mock from 'mockjs'
 
 // 统一 mock 接口集合

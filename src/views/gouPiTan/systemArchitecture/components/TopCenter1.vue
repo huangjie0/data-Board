@@ -2,10 +2,10 @@
     <div class="data-w-h top-center-1 data-fdc">
         <div class="data-f1 data-fdr data-between">
             <div class="top-center-1-top">
-                <GouPiTanSmallCard name="设备状态评价与维护检修"/>
+                <GouPiTanSmallCard name="设备状态评价与维护检修决策支持"/>
             </div>
             <div class="top-center-1-top">
-                <GouPiTanSmallCard name="设备状态评价与维护"/>
+                <GouPiTanSmallCard name="设备状态评价与维护检修决策支持"/>
             </div>
         </div>
         <div class="data-f1 data-fdr data-between">
